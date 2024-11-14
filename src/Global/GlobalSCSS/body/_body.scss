@@ -1,0 +1,8 @@
+// _body.scss
+
+@forward '_form';
+@forward '_table';
+@forward '../classes/_tableOperationsClass';
+@forward '../classes/_addClass';
+@forward '../classes/_searchClass';
+@forward '../classes/_dependencyClass';

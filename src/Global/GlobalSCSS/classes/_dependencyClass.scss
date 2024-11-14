@@ -1,0 +1,22 @@
+// _form.scss
+.dependency {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid var(--gray);
+    border-radius: 5px;
+}
+
+.dependency label {
+    display: inline-block;
+    margin: 5px;
+    width: 30%;
+    text-align: right;
+}
+
+.dependency input,
+.dependency select {
+    width: 65%;
+    max-width: 500px;
+}

@@ -1,0 +1,8 @@
+// _header.scss
+@forward '../classes/titleClass';
+@forward '../classes/loginClass';
+@forward '_nav';
+
+header {
+    text-align: center;
+}

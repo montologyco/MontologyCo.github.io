@@ -1,0 +1,21 @@
+// _loginClass.scss
+.login {
+    padding: 5px;
+    position: fixed;
+    display: flex;
+    top: 0px; right: 0px;
+    text-align: right;
+    white-space: nowrap;
+    background-color: var(--primary);
+    border-bottom-left-radius: 15px;
+}
+
+.login a {
+    padding: 5px;
+}
+
+.login a:hover,
+.login a:focus,
+.login a.active {
+    filter: drop-shadow(4px 4px 8px var(--black));
+}

@@ -1,0 +1,22 @@
+// _form.scss
+form {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid var(--gray);
+    border-radius: 5px;
+}
+
+form label {
+    display: inline-block;
+    margin: 5px;
+    width: 30%;
+    text-align: right;
+}
+
+form input,
+form select {
+    width: 65%;
+    max-width: 500px;
+}
