@@ -1,12 +1,12 @@
+// src/App.jsx
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import './styles/App.scss';
+import './styles/App.scss'; // Import your styles here
 import Header from './components/Header.jsx';
 import AppPicker from './components/AppPicker.jsx';
-import Footer from './components/Footer.jsx'
+import Footer from './components/Footer.jsx';
 
 function App() {
-
   return (
     <Router>
       <div>
@@ -16,6 +16,6 @@ function App() {
       </div>
     </Router>
   );
-};
+}
 
-export default App
+export default App;
