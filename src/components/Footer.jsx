@@ -1,5 +1,5 @@
 import React from 'react';
-import config from '../company.json'; // Import the JSON file
+import config from '../../company.json';
 
 function Footer() {
   const currentYear = new Date().getFullYear();
