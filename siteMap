@@ -1,0 +1,27 @@
+MontologyCo.github.io
+├── .github
+│   └── workflows
+│       └── deploy.yml
+├── dist
+├── node_modules
+├── public
+│   └── favicon.ico
+├── src
+│   ├── assets
+│   ├── components
+│   │   ├── Footer.jsx
+│   │   └── Header.jsx
+│   ├── styles
+│   │   ├── _root.scss
+│   │   ├── App.scss
+│   │   ├── Footer.scss
+│   │   └── Header.scss
+│   ├── App.jsx
+│   └── main.jsx
+├── CNAME
+├── eslint.config.js
+├── index.html
+├── package-lock.json
+├── package.json
+├── siteMap
+└── vite.config.js
