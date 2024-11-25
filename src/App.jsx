@@ -1,7 +1,7 @@
 // src/App.jsx
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import './styles/App.scss'; // Import your styles here
+import './styles/App.scss';
 import Header from './components/Header.jsx';
 import AppPicker from './components/AppPicker.jsx';
 import Footer from './components/Footer.jsx';
