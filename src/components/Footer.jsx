@@ -7,7 +7,7 @@ function Footer() {
   return (
     <>
       <footer>
-        {currentYear} &copy; {config.registeredName}. All rights reserved. CEO: {config.CEO}
+        {currentYear} &copy; {config.registeredName}. All rights reserved. {config.DBA} and the {config.DBA} logo are trademarks of {config.registeredName}
       </footer>
     </>
   );
