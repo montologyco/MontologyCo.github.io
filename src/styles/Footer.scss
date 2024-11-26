@@ -1,10 +1,14 @@
 // Footer.jsx
 footer {
-    background-color: var(--primary);
-    color: var(--white);
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-  }
+  background-color: var(--primary);
+  color: var(--white);
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+footer a {
+  color: var(--white);
+}
