@@ -9,6 +9,9 @@ function Header() {
         <a href="https://www.montologyco.com" target="_blank">
           <img src={logo} className="logo" alt="logo"/>
         </a>
+        <nav>
+          <ul>test</ul>
+        </nav>
       </header>
     </>
   )
