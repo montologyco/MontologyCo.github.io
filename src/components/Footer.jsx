@@ -9,7 +9,7 @@ function Footer() {
     <>
       <footer>
         <div>
-          {currentYear} &copy; {config.registeredName}. All rights reserved. {config.DBA} and the {config.DBA} logo are trademarks of {config.registeredName}.
+          {currentYear} &copy; {config.registeredName}. All rights reserved. {config.DBA} and the {config.DBA} logo are trademarks of {config.registeredName}
         </div>
         <div>
           {boilerplate.links.map((link, index) => (

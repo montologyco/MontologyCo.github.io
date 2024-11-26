@@ -1,13 +1,18 @@
 // _root.scss
 :root {
-    --primary: #9cc2e5;
-    --white: #FFFFFF;
-    --gray: #A0A0A0;
-    --black: #000000;
-    font-family: sans-serif;
-  }
-  
-  * {
-    margin: 0;
-    padding: 0;
-  }
+  --primary: #9cc2e5;
+  --white: #FFFFFF;
+  --gray: #A0A0A0;
+  --black: #000000;
+  font-family: sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+link {
+  text-decoration: none;
+  color: inherit;
+}
