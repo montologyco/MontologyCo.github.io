@@ -5,11 +5,12 @@
     { "name": "Product Safety & Recalls", "url": "/product-safety-recalls" },
     { "name": "Accessibility Statement", "url": "/accessibility-statement" },
     { "name": "Nondiscriminatory Policy", "url": "/nondiscriminatory-policy" },
-    { "name": "Support and Contact", "url": "/support-and-contact" },
-    { "name": "About and Careers", "url": "/about-and-careers" },
-    { "name": "Sitemap", "url": "/sitemap" },
     { "name": "Press and Investor Relations", "url": "/press-and-investor-relations" },
     { "name": "Governance and Community", "url": "/governance-and-community" },
-    { "name": "FAQ", "url": "/faq" }
+    { "name": "FAQ", "url": "/faq" },
+    { "name": "About", "url": "/about" },
+    { "name": "Careers", "url": "/careers" },
+    { "name": "Sitemap", "url": "/sitemap" },
+    { "name": "Support and Contact", "url": "/support-and-contact" }
   ]
 }

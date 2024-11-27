@@ -1,10 +1,13 @@
 import React from 'react';
+import MontologyTagline from '../assets/MontologyTagline.jsx';
 
-function AppPicker() {
-
+function AppPicker({loggedIn}) {
   return (
     <>
-      <p>AppPicker</p>
+      <div id="AppPicker">
+        <h1>AppPicker</h1>
+        {!loggedIn && <MontologyTagline />}
+      </div>
     </>
   );
 }

@@ -1,4 +1,3 @@
-// _root.scss
 :root {
   --primary: #9cc2e5;
   --white: #FFFFFF;
@@ -16,8 +15,9 @@ body {
   text-align: center;
   background-image: url('../assets/alps.jpg');
   background-size: cover;
-  background-position: center;
-  // background-repeat: no-repeat;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 a {

@@ -1,19 +1,20 @@
-// src/App.jsx
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import './styles/App.scss';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import './styles/index.scss';
 import Header from './components/Header.jsx';
 import AppPicker from './components/AppPicker.jsx';
 import Footer from './components/Footer.jsx';
 
 function App() {
+  const [loggedIn, setLoggedIn] = useState(false);
+
   return (
     <Router>
-      <div>
-        <Header />
-        <AppPicker />
-        <Footer />
-      </div>
+      <Header />
+      <AppPicker
+        loggedIn={loggedIn}
+      />
+      <Footer />
     </Router>
   );
 }

@@ -1,6 +1,6 @@
 import React from 'react';
-import config from '../../company.json';
-import boilerplate from '../../boilerplate.json'; // Import the boilerplate JSON file
+import config from '../assets/company.json';
+import boilerplate from '../assets/boilerplate.json';
 
 function Footer() {
   const currentYear = new Date().getFullYear();
