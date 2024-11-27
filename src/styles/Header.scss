@@ -1,17 +1,16 @@
-// Header.jsx
-
+// Header.scss
 header {
   text-align: center;
 }
 
 header img {
   width: 250px;
-  margin-top: 5px;
+  padding-top: 5px;
 }
 
-header nav {
-  background-color: var(--gray);
-}
+// header nav {
+//   background-color: var(--gray);
+// }
 
 // links
 header nav a {

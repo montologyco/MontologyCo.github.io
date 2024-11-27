@@ -12,6 +12,14 @@
   padding: 0;
 }
 
+body {
+  text-align: center;
+  background-image: url('../assets/alps.jpg');
+  background-size: cover;
+  background-position: center;
+  // background-repeat: no-repeat;
+}
+
 a {
   text-decoration: none;
   color: inherit;
