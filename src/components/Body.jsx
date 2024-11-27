@@ -1,15 +1,15 @@
 import React from 'react';
 import MontologyTagline from '../assets/MontologyTagline.jsx';
 
-function AppPicker({loggedIn}) {
+function Body({loggedIn}) {
   return (
     <>
-      <div id="AppPicker">
-        <h1>AppPicker</h1>
+      <div id="body">
+        {loggedIn && <h1>AppPicker</h1>}
         {!loggedIn && <MontologyTagline />}
       </div>
     </>
   );
 }
 
-export default AppPicker;
+export default Body;
