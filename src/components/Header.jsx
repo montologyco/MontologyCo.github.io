@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import logo from '../assets/IconicLogo.png';
 import Login from './Login.jsx';
 import Navigation from './Navigation.jsx';
-import header from '../assets/header.json';
+import indexLinks from '../assets/indexLinks.json';
 
 
 function Header({ loggedIn }) {
@@ -14,7 +14,7 @@ function Header({ loggedIn }) {
         <Link to="/"><img src={logo} alt="Montology Logo" /></Link>
         {!loggedIn
           &&
-          <Navigation links = {header.links}/>
+          <Navigation links = {indexLinks.links}/>
         }
         <Login
           loggedIn={loggedIn}
