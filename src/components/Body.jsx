@@ -1,8 +1,9 @@
 // Body.jsx
 
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Routes, Route } from 'react-router-dom';
 import MontologyTagline from '../assets/MontologyTagline.jsx';
+import Login from '../assets/login.jsx';
 
 function Body({loggedIn}) {
   return (
@@ -15,14 +16,8 @@ function Body({loggedIn}) {
         )}
         <Route path="/about" element={<h1>About</h1>} />
         <Route path="/contact" element={<h1>Contact</h1>} />
-        <Route path="/login" element={<h1>Login</h1>} />
+        <Route path="/login" element={<Login />} />
       </Routes>
-
-      {!loggedIn ? (
-        <MontologyTagline />
-      ) : (
-      <h1>Logged In!</h1>
-      )}
     </div>
   );
 }
