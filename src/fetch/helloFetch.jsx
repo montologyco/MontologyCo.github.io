@@ -1,4 +1,4 @@
-import baseURL from './ServerConfig.jsx';  // Correct path to ServerConfig
+import baseURL from './serverConfig.jsx';
 
 const HelloFetch = async () => {
   try {
