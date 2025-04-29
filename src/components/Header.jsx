@@ -4,6 +4,7 @@ import logo from '../assets/IconicLogo.png';
 import Login from './Login.jsx';
 import Navigation from './Navigation.jsx';
 import indexLinks from '../assets/indexLinks.json';
+import applications from '../assets/applications.json';
 
 
 function Header({ loggedIn }) {
@@ -12,9 +13,12 @@ function Header({ loggedIn }) {
     <>
       <header>
         <Link to="/"><img src={logo} alt="Montology Logo" /></Link>
-        {!loggedIn
-          &&
+
+        {!loggedIn ? (
           <Navigation links = {indexLinks.links}/>
+        ) : (
+          <Navigation links = {applications.links}/>
+        )
         }
         <Login
           loggedIn={loggedIn}
