@@ -4,7 +4,7 @@ import baseURL from './serverConfig.jsx';
 
 const MontologyTaglineFetch = async () => {
   try {
-    const response = await fetch(`${baseURL}/hello`);
+    const response = await fetch(`${baseURL}/MontologyTagline`);
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }
