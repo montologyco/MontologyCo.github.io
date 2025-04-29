@@ -16,8 +16,8 @@ function Login({ loggedIn }) {
           <p>Password: <input type="password" placeholder="Password" /></p>
         </div>
         <div id="login-buttons">
-          <p>Don't have an account? <Link to="/help">Help</Link></p>
-          <p>Need help? <Link to="/help">Help</Link></p>
+          <p>Don't have an account? <Link to="/FAQ">FAQ</Link></p>
+          <p>Need help? <Link to="/Contact">Contact</Link></p>
         </div>
       </div>
     ) : (
