@@ -23,7 +23,7 @@ function MontologyTagline() {
     ) : data ? (
       <div id="montologyTagline">
       <h1>{data.title}</h1>
-      <p>{data.pronunciation}</p>
+      <p><em>{data.pronunciation}</em></p>
       <p><strong>{data.partOfSpeech}</strong></p>
       <p>{data.definition}</p>
       <p><em>example:</em> {data.example}</p>
