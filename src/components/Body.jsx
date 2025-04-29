@@ -3,7 +3,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MontologyTagline from '../assets/MontologyTagline.jsx';
-import Login from './Login.jsx';
+import Login from './body/Login.jsx';
 
 function Body({loggedIn}) {
   return (
@@ -12,7 +12,7 @@ function Body({loggedIn}) {
         {!loggedIn ? (
           <Route path="/" element={<MontologyTagline />} />
         ) : (
-          <Route path="/" element={<MontologyTagline />} />
+          <Route path="/" element={<h1>Dashboard</h1>} />
         )}
         <Route path="/about" element={<h1>About</h1>} />
         <Route path="/contact" element={<h1>Contact</h1>} />

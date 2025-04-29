@@ -1,7 +1,7 @@
 // MontologyTagline.jsx
 
 import React, { useState, useEffect } from 'react';
-import MontologyTaglineFetch from '../fetch/MontologyTaglineFetch.jsx';
+import MontologyTaglineFetch from '../../server/MontologyTaglineFetch.jsx';
 
 function MontologyTagline() {
   const [data, setData] = useState(null);
