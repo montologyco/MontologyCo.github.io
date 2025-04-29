@@ -1,28 +1,33 @@
-import React, { useState, useEffect } from 'react';  // Make sure to import useState and useEffect
+// Body.jsx
+
+import React, { useState, useEffect } from 'react';  // Import React hooks
 import MontologyTagline from '../assets/MontologyTagline.jsx';
-import HelloFetch from '../fetch/helloFetch.jsx';
+import HelloFetch from '../fetch/helloFetch.jsx';  // Import the HelloFetch function
 
 function Body({ loggedIn }) {
-  // State to store fetched data
-  const [data, setData] = useState(null);
+  const [data, setData] = useState(null);  // State to store fetched data
+  const [loading, setLoading] = useState(true);  // Track loading state
 
   useEffect(() => {
-    // Call HelloFetch and update the state with the fetched data
+    // Function to fetch data
     const fetchData = async () => {
-      const result = await HelloFetch();  // Call the function
-      setData(result);  // Store the result in the state
+      const result = await HelloFetch();  // Fetch data from the server
+      setData(result);  // Update the state with the fetched data
+      setLoading(false);  // Mark loading as false once the data is fetched
     };
 
-    fetchData();  // Trigger the fetch on component mount
-  }, []);  // Empty dependency array means this runs once when the component mounts
+    fetchData();  // Trigger the data fetch on component mount
+  }, []);  // Empty dependency array to ensure it runs only once
 
   return (
     <>
       <div id="body">
-        {data ? (
-          <h1>{data.message}</h1>  // Display the message returned from HelloFetch
+        {loading ? (
+          <p>Loading...</p>  // Show loading message while data is being fetched
+        ) : data ? (
+          <h1>{data.message}</h1>  // Display the message from the API response
         ) : (
-          <p>Loading...</p>  // Show a loading message while fetching
+          <p>Failed to load data.</p>  // Handle any failure in fetching data
         )}
 
         {loggedIn && <h1>AppPicker</h1>}

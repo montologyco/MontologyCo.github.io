@@ -1,3 +1,5 @@
+// helloFetch.jsx
+
 import baseURL from './serverConfig.jsx';
 
 const HelloFetch = async () => {
@@ -10,7 +12,7 @@ const HelloFetch = async () => {
     return data;
   } catch (error) {
     console.error('Error fetching data:', error);
-    return null; // You can return null or handle the error as you wish
+    return null; // Return null or handle error as needed
   }
 };
 
