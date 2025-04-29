@@ -7,7 +7,6 @@ function Body({loggedIn}) {
     <>
       <div id="body">
         {HelloFetch}
-
         {/* {loggedIn && <h1>AppPicker</h1>}
         {!loggedIn && <MontologyTagline />} */}
       </div>
