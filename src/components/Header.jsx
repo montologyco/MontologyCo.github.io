@@ -1,10 +1,10 @@
 // Header.jsx
 
 import React from 'react';
-import MontologyLogo from '../assets/MontologyLogo.jsx';
+import MontologyLogo from '../assets/Brand/MontologyLogo.jsx';
 import NavigationBridge from './NavigationBridge.jsx';
-import loggedInLinks from '../assets/loggedInLinks.json';
-import loggedOutLinks from '../assets/loggedOutLinks.json';
+import loggedInLinks from '../assets/Navigation/loggedInLinks.json';
+import loggedOutLinks from '../assets/Navigation/loggedOutLinks.json';
 
 
 function Header({ loggedIn }) {

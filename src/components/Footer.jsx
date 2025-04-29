@@ -2,7 +2,7 @@
 
 import React from 'react';
 import config from '../assets/company.json';
-import boilerplate from '../assets/boilerplate.json';
+import boilerplate from '../assets/Navigation/boilerplate.json';
 import NavigationBridge from './NavigationBridge.jsx';
 
 function Footer() {
