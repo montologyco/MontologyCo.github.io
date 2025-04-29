@@ -8,15 +8,18 @@ header img {
 }
 
 // links
+header a:hover,
+header a:focus,
+header a.active {
+  filter: drop-shadow(4px 4px 8px var(--black));
+  color: var(--primary);
+}
+// header a:visited {
+//   color: var(--white);
+// }
+
 header nav a {
   color: var(--white);
   padding: 20px;
   display: inline-block;
-}
-
-header nav a:hover,
-header nav a:focus,
-header nav a.active {
-  filter: drop-shadow(4px 4px 8px var(--black));
-  color: var(--primary);
 }
