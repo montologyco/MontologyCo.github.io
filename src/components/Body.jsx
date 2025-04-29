@@ -3,6 +3,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MontologyTagline from '../assets/Brand/MontologyTagline.jsx';
+import About from './body/Boilerplate/About.jsx';
+import Contact from './body/Boilerplate/Contact.jsx';
 import Login from './body/Login.jsx';
 
 function Body({loggedIn}) {
@@ -14,8 +16,8 @@ function Body({loggedIn}) {
         ) : (
           <Route path="/" element={<h1>Dashboard</h1>} />
         )}
-        <Route path="/about" element={<h1>About</h1>} />
-        <Route path="/contact" element={<h1>Contact</h1>} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
       </Routes>
     </div>
