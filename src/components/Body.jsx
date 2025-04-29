@@ -18,6 +18,7 @@ function Body({loggedIn}) {
         )}
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/FAQ" element={<FAQ />} />
         <Route path="/login" element={<Login />} />
       </Routes>
     </div>
