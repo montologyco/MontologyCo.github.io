@@ -18,16 +18,16 @@ function Body({ loggedIn }) {
   return (
     <>
       <div id="body">
-        {loading ? (
-          <p>Loading...</p>
-        ) : data ? (
-          <h1>{data.title}</h1>
-        ) : (
-          <p>Failed to load data.</p>
-        )}
-
+        {!loggedIn &&
+          loading ? (
+            <p>Loading...</p>
+          ) : data ? (
+            <h1>{data.title}</h1>
+          ) : (
+            <p>Failed to load data.</p>
+          )
+        }
         {loggedIn && <h1>Logged In</h1>}
-        {!loggedIn && <h1>Not Logged In</h1>}
       </div>
     </>
   );
