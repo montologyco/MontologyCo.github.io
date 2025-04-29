@@ -10,9 +10,9 @@ function Body({loggedIn}) {
     <div id="body">
       <Routes>
         {!loggedIn ? (
-        <Route path="/" element={<MontologyTagline />} />
+          <Route path="/" element={<MontologyTagline />} />
         ) : (
-        <h1>Logged In!</h1>
+          <Route path="/" element={<MontologyTagline />} />
         )}
         <Route path="/about" element={<h1>About</h1>} />
         <Route path="/contact" element={<h1>Contact</h1>} />
