@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import logo from '../assets/IconicLogo.png';
+import MontologyLogo from '../assets/MontologyLogo.jsx';
 import Login from './Login.jsx';
-import Navigation from './Navigation.jsx';
-import indexLinks from '../assets/indexLinks.json';
-import applications from '../assets/applications.json';
+import NavigationBridge from './NavigationBridge.jsx';
+import loggedInLinks from '../assets/loggedInLinks.json';
+import loggedOutLinks from '../assets/loggedOutLinks.json';
 
 
 function Header({ loggedIn }) {
@@ -12,17 +11,14 @@ function Header({ loggedIn }) {
   return (
     <>
       <header>
-        <Link to="/"><img src={logo} alt="Montology Logo" /></Link>
+        <MontologyLogo />
 
         {!loggedIn ? (
-          <Navigation links = {indexLinks.links}/>
+          <NavigationBridge links = {loggedInLinks.links}/>
         ) : (
-          <Navigation links = {applications.links}/>
+          <NavigationBridge links = {loggedOutLinks.links}/>
         )
         }
-        <Login
-          loggedIn={loggedIn}
-        />
       </header>
     </>
   );
