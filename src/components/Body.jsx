@@ -3,7 +3,7 @@
 import React from 'react';
 import { BrowserRouter as Routes, Route } from 'react-router-dom';
 import MontologyTagline from '../assets/MontologyTagline.jsx';
-import Login from '../assets/login.jsx';
+import Login from '../assets/Login.jsx';
 
 function Body({loggedIn}) {
   return (
