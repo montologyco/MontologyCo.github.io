@@ -1,15 +1,34 @@
-import React from 'react';
-import taglineConfig from '../assets/montologyTagline.json'; // Import the JSON file
+import React, { useState, useEffect } from 'react';
+import MontologyTaglineFetch from '../fetch/MontologyTaglineFetch.jsx';
 
 function MontologyTagline() {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await MontologyTaglineFetch();
+      setData(result);
+      setLoading(false);
+    };
+
+    fetchData();
+  }, []);
+
   return (
-    <div id="montologyTagline">
-      <h1>{taglineConfig.title}</h1>
-      <p>{taglineConfig.pronunciation}</p>
-      <p><strong>{taglineConfig.partOfSpeech}</strong></p>
-      <p>{taglineConfig.definition}</p>
-      <p><em>example:</em> {taglineConfig.example}</p>
+    loading ? (
+      <p>Loading...</p>
+    ) : data ? (
+      <div id="montologyTagline">
+      <h1>{data.title}</h1>
+      <p>{data.pronunciation}</p>
+      <p><strong>{data.partOfSpeech}</strong></p>
+      <p>{data.definition}</p>
+      <p><em>example:</em> {data.example}</p>
     </div>
+    ) : (
+      <p>Failed to load data.</p>
+    )
   );
 }
 
