@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import MontologyTagline from '../assets/MontologyTagline.jsx';
+import MontologyTagline from '../assets/Brand/MontologyTagline.jsx';
 import Login from './body/Login.jsx';
 
 function Body({loggedIn}) {
