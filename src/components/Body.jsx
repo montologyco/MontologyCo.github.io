@@ -1,7 +1,7 @@
 // Body.jsx
 
 import React from 'react';
-import { BrowserRouter as Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MontologyTagline from '../assets/MontologyTagline.jsx';
 import Login from './Login.jsx';
 
