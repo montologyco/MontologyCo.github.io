@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import header from '../assets/header.json';
 
-function Navigation() {
+function Navigation({ links }) {
 
   return (
     <nav>
-      {header.links.map((link, index) => (
+      {links.map((link, index) => (
         <span key={index}>
           <Link to={link.url}>{link.name}</Link>
         </span>
@@ -14,5 +13,6 @@ function Navigation() {
     </nav>
   );
 }
+
 
 export default Navigation;

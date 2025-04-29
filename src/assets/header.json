@@ -1,6 +1,6 @@
 {
   "links": [
-    { "name": "Solutions", "url": "/solutions" },
-    { "name": "Properties", "url": "/properties" }
+    { "name": "About", "url": "/about" },
+    { "name": "Contact", "url": "/contact" }
   ]
 }
