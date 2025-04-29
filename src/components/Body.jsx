@@ -5,12 +5,13 @@ import MontologyTagline from '../assets/MontologyTagline.jsx';
 
 function Body({loggedIn}) {
   return (
-    <>
-      <div id="body">
-        {!loggedIn && <MontologyTagline />}
-        {loggedIn && <h1>Logged In!</h1>}
-      </div>
-    </>
+    <div id="body">
+      {!loggedIn ? (
+        <MontologyTagline />
+      ) : (
+      <h1>Logged In!</h1>
+      )}
+    </div>
   );
 }
 
