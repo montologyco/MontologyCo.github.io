@@ -15,9 +15,9 @@ function Header({ loggedIn }) {
         <MontologyLogo />
 
         {!loggedIn ? (
-          <NavigationBridge links = {loggedInLinks.links}/>
-        ) : (
           <NavigationBridge links = {loggedOutLinks.links}/>
+        ) : (
+          <NavigationBridge links = {loggedInLinks.links}/>
         )
         }
       </header>
