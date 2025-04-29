@@ -12,7 +12,10 @@ function Header({ loggedIn }) {
     <>
       <header>
         <Link to="/"><img src={logo} alt="Montology Logo" /></Link>
-        <Navigation links = {header.links}/>
+        {!loggedIn
+          &&
+          <Navigation links = {header.links}/>
+        }
         <Login
           loggedIn={loggedIn}
         />

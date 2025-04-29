@@ -1,3 +1,5 @@
+// Body.jsx
+
 import React from 'react';
 import MontologyTagline from '../assets/MontologyTagline.jsx';
 
