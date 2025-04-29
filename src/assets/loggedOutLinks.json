@@ -2,6 +2,6 @@
   "links": [
     { "name": "About", "url": "/about" },
     { "name": "Contact", "url": "/contact" },
-    { "name": "Log In", "url": "/login" }
+    { "name": "Log Out", "url": "/logout" }
   ]
 }
