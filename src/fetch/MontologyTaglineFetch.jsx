@@ -1,8 +1,8 @@
-// helloFetch.jsx
+// MontologyTaglineFetch.jsx
 
 import baseURL from './serverConfig.jsx';
 
-const HelloFetch = async () => {
+const MontologyTaglineFetch = async () => {
   try {
     const response = await fetch(`${baseURL}/hello`);
     if (!response.ok) {
@@ -16,4 +16,4 @@ const HelloFetch = async () => {
   }
 };
 
-export default HelloFetch;
+export default MontologyTaglineFetch;

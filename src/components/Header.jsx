@@ -7,7 +7,6 @@ import header from '../assets/header.json';
 
 
 function Header({ loggedIn }) {
-  const [showInput, setShowInput] = useState(false);
 
   return (
     <>
