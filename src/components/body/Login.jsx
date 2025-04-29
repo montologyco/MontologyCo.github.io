@@ -13,9 +13,7 @@ function Login({ loggedIn }) {
           <h1>Log in:</h1>
           <p>Username: <input type="text" placeholder="Username" /></p>
           <p>Password: <input type="password" placeholder="Password" /></p>
-          <p>To get started, please log in or create an account.</p>
-          <p>Already have an account? <Link to="/login">Log In</Link></p>
-          <p>Don't have an account? <Link to="/register">Register</Link></p>
+          <p>Don't have an account? <Link to="/help">Help</Link></p>
           <p>Need help? <Link to="/help">Help</Link></p>
         </div>
       ) : (
