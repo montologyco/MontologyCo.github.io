@@ -1,3 +1,5 @@
+// Footer.jsx
+
 import React from 'react';
 import config from '../assets/company.json';
 import boilerplate from '../assets/boilerplate.json';

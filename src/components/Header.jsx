@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+// Header.jsx
+
+import React from 'react';
 import MontologyLogo from '../assets/MontologyLogo.jsx';
-import Login from './Login.jsx';
 import NavigationBridge from './NavigationBridge.jsx';
 import loggedInLinks from '../assets/loggedInLinks.json';
 import loggedOutLinks from '../assets/loggedOutLinks.json';

@@ -1,3 +1,5 @@
+// Login.jsx
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -6,7 +8,14 @@ function Login({ loggedIn }) {
 
   return (
     <div id="login">
-      {!loggedIn ? (
+      <h1>Welcome to Montology!</h1>
+      <p>Montology is a platform for sharing and discovering knowledge.</p>
+      <p>To get started, please log in or create an account.</p>
+      <p>Already have an account? <Link to="/login">Log In</Link></p>
+      <p>Don't have an account? <Link to="/register">Register</Link></p>
+      <p>Need help? <Link to="/help">Help</Link></p>
+
+      {/* {!loggedIn ? (
         <div>
           <Link onClick={() => setShowInput(!showInput)}>Log In</Link>
           {showInput && (
@@ -20,7 +29,7 @@ function Login({ loggedIn }) {
         <div>
           <Link>Log Out</Link>
         </div>
-      )}
+      )} */}
     </div>
   );
 }
