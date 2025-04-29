@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MontologyTagline from '../assets/Brand/MontologyTagline.jsx';
 import About from './body/Boilerplate/About.jsx';
 import Contact from './body/Boilerplate/Contact.jsx';
+import FAQ from './body/Boilerplate/FAQ.jsx';
 import Login from './body/Login.jsx';
 
 function Body({loggedIn}) {
