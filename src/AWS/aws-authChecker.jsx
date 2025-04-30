@@ -1,26 +1,19 @@
 // aws-authChecker.jsx
 
-import { useState, useEffect } from 'react';
+import { fetchAuthSession } from '@aws-amplify/core';
 
-const AuthChecker = ({ children }) => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-
-  useEffect(() => {
-    // Check for the token in localStorage (or sessionStorage, cookies)
-    const token = localStorage.getItem('authToken'); // Adjust key based on where your token is stored
-
-    if (token) {
-      setIsAuthenticated(true); // Token exists, so user is authenticated
+const checkSession = async () => {
+  try {
+    const session = await fetchAuthSession();  // Fetch the session info
+    if (session.isValid()) {
+      console.log("User is authenticated");
+      // Proceed with the authenticated flow
     } else {
-      setIsAuthenticated(false); // Token does not exist, so user is not authenticated
+      console.log("No valid session found");
+      // Redirect or prompt user to log in
     }
-  }, []); // Empty array means this runs once when the component mounts
-
-  if (!isAuthenticated) {
-    console.log('User is not authenticated, redirecting to login...');
+  } catch (error) {
+    console.error("Error checking session:", error);
+    // Handle errors (e.g., session expired or not found)
   }
-
-  return children; // Allow access to the children components if authenticated
 };
-
-export default AuthChecker;
