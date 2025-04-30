@@ -36,9 +36,6 @@ const AuthChecker = () => {
 
   return (
     <Routes>
-      <Route path="/about" element={<About />} />
-      <Route path="/contact" element={<Contact />} />
-      <Route path="/FAQ" element={<FAQ />} />
       {isAuthenticated ? (
         <>
           <Route path="/" element={<Dashboard />} />
@@ -50,6 +47,10 @@ const AuthChecker = () => {
           <Route path="/login" element={<Login />} />
         </>
       )}
+
+      <Route path="/about" element={<About />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="/FAQ" element={<FAQ />} />
     </Routes>
   );
 };
