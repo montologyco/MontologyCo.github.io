@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, Navigate } from 'react-router-dom';
-import { Auth } from 'aws-amplify/auth';
+import { signIn } from '@aws-amplify/auth';  // Importing signIn directly
 
 function Login() {
   const [username, setUsername] = useState('');
@@ -19,8 +19,8 @@ function Login() {
     setLoading(true);  // Show loading state
 
     try {
-      // Attempt to log in using AWS Amplify Auth
-      const user = await Auth.signIn(username, password);
+      // Attempt to log in using AWS Amplify signIn
+      const user = await signIn(username, password);
       console.log('Login successful:', user);
       setLoggedIn(true);  // Update the loggedIn state on success
     } catch (err) {
