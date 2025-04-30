@@ -1,38 +1,35 @@
 // aws-authChecker.jsx
 
-import { useEffect, useState } from 'react';
-import { fetchAuthSession } from '@aws-amplify/core';
+// AuthContext.jsx
+import React, { createContext, useState, useContext } from 'react';
 
-const AuthChecker = ({ setAuthState }) => {
+// Create the Auth Context
+const AuthContext = createContext();
+
+// Custom hook to use the Auth Context
+export const useAuth = () => useContext(AuthContext);
+
+// AuthProvider component to wrap the app with the context
+export const AuthProvider = ({ children }) => {
+  const [isAuthenticated, setIsAuthenticated] = useState(null);
+
+  // Session check function
   const checkSession = async () => {
     try {
-      const session = await fetchAuthSession();
-      
+      const session = await fetchAuthSession(); // Ensure this is the correct import
       if (session && session.tokens && session.tokens.idToken) {
-        setAuthState(true); // User is authenticated
+        setIsAuthenticated(true); // User is authenticated
       } else {
-        setAuthState(false); // No valid session
+        setIsAuthenticated(false); // No valid session
       }
     } catch (error) {
-      console.error("Error checking session:", error);
-      setAuthState(false); // Handle session errors as unauthenticated
+      setIsAuthenticated(false); // Handle session errors as unauthenticated
     }
   };
 
-  useEffect(() => {
-    checkSession(); // Check session on mount (for initial load)
-  }, []);
-
-  // Optionally, you can refresh the session every 30 seconds for extra security.
-  useEffect(() => {
-    const sessionChecker = setInterval(() => {
-      checkSession(); // Check session every 30 seconds
-    }, 30000);
-
-    return () => clearInterval(sessionChecker);
-  }, []);
-
-  return null; // No need to render anything
+  return (
+    <AuthContext.Provider value={{ isAuthenticated, setIsAuthenticated, checkSession }}>
+      {children}
+    </AuthContext.Provider>
+  );
 };
-
-export default AuthChecker;
