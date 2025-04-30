@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './styles/index.scss';
-import Header from './components/Header.jsx';
+import HeroSection from './components/HeroSection.jsx';
 import Body from './components/Body.jsx';
 import Footer from './components/Footer.jsx';
 import AuthChecker from './AWS/aws-authChecker';
@@ -14,7 +14,7 @@ function App() {
   return (
     <Router>
       <AuthChecker>
-        <Header />
+        <HeroSection />
         <Body />
         <Footer />
       </AuthChecker>
