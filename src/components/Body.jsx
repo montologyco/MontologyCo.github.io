@@ -15,16 +15,7 @@ import Dashboard from './body/Dashboard.jsx';
 function Body() {
   return (
     <div id="body">
-      <Routes>
-        <Route path="/login" element={<Login />} />
-
-        <AuthChecker>
-        </AuthChecker>
-
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/FAQ" element={<FAQ />} />
-      </Routes>
+      <p>?</p>
     </div>
   );
 }

@@ -36,10 +36,19 @@ const AuthChecker = () => {
 
   return (
     <Routes>
+      <Route path="/about" element={<About />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="/FAQ" element={<FAQ />} />
       {isAuthenticated ? (
-        <Route path="/" element={<Dashboard />} />
+        <>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/logout" element={<Logout />} />
+        </>
       ) : (
-        <Route path="/" element={<MontologyTagline />} />
+        <>
+          <Route path="/" element={<MontologyTagline />} />
+          <Route path="/login" element={<Login />} />
+        </>
       )}
     </Routes>
   );
