@@ -9,9 +9,8 @@ function Login({ setIsAuthenticated }) {
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [redirect, setRedirect] = useState(false); // Track redirect state
 
-  if (loggedIn) return <Navigate to="/dashboard" />;
-  
   const handleLogin = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -20,6 +19,7 @@ function Login({ setIsAuthenticated }) {
       const user = await signIn({ username, password });
       console.log('Login successful:', user);
       setIsAuthenticated(true);
+      setRedirect(true); // Trigger the redirect after successful login
     } catch (err) {
       setError(err.message);
       console.error('Login error:', err);
@@ -27,6 +27,10 @@ function Login({ setIsAuthenticated }) {
       setLoading(false);
     }
   };
+
+  if (redirect) {
+    return <Navigate to="/dashboard" />; // Redirect to dashboard after successful login
+  }
 
   return (
     <>
