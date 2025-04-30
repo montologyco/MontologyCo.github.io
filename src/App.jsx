@@ -13,17 +13,11 @@ function App() {
 
   return (
     <Router>
-
-          <AuthChecker>
-      <Header
-        loggedIn={loggedIn}
-      />
-      <Body
-        loggedIn={loggedIn}
-      />
-      <Footer />
-
-          </AuthChecker>
+      <AuthChecker>
+        <Header />
+        <Body />
+        <Footer />
+      </AuthChecker>
     </Router>
   );
 }
