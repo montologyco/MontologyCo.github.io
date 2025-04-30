@@ -2,12 +2,12 @@
 
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import AuthChecker from '../AWS/aws-authChecker.jsx';
 
 import MontologyTagline from '../assets/Brand/MontologyTagline.jsx';
 import Dashboard from '../components/body/Dashboard.jsx';
 import Login from '../components/body/Login.jsx';
 import Logout from '../components/body/Logout.jsx';
+import AuthChecker from '../AWS/aws-authChecker.jsx';
 
 import About from '../components/body/Boilerplate/About.jsx';
 import Contact from '../components/body/Boilerplate/Contact.jsx';
@@ -20,8 +20,12 @@ function Body({ isAuthenticated, setIsAuthenticated}) {
       <Routes>
         {isAuthenticated ? (
           <>
-            {/* <AuthChecker setAuthState={setIsAuthenticated} /> */}
-            <Route path="/" element={<Dashboard />} />
+            <Route path="/" element={
+              <>
+                <AuthChecker setAuthState={setIsAuthenticated} />
+                <Dashboard />
+              </>
+              } />
               <Route path="/dashboard" element={<Navigate to="/" />} />
               <Route path="/login" element={<Navigate to="/" />} />
             <Route path="/logout" element={<Logout />} />
@@ -29,6 +33,7 @@ function Body({ isAuthenticated, setIsAuthenticated}) {
         ) : (
           <>
             <Route path="/" element={<MontologyTagline />} />
+              <Route path="/logout" element={<Navigate to="/" />} />
             <Route path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} />} />
               <Route path="/dashboard" element={<Navigate to="/login" />} />
           </>
