@@ -1,7 +1,7 @@
 // Login.jsx
 
 import React, { useState } from 'react';
-import { Navigate, redirect } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import { signIn } from '@aws-amplify/auth';
 
 function Login({ setIsAuthenticated }) {
@@ -9,6 +9,7 @@ function Login({ setIsAuthenticated }) {
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [redirect, setRedirect] = useState(false);
   
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -17,17 +18,17 @@ function Login({ setIsAuthenticated }) {
     try {
       const user = await signIn({ username, password });
       setIsAuthenticated(true);
+      setRedirect(true);
     } catch (err) {
       setError(err.message);
       console.error('Login error:', err);
     } finally {
       setLoading(false);
       console.log('Login successful:', user);
-    }
-
-    if (user){
-      // Redirect to the dashboard or home page after successful login
-      return <Navigate to="/dashboard" />;
+      if (redirect){
+        // Redirect to the dashboard or home page after successful login
+        return <Navigate to="/dashboard" />;
+      }
     }
   };
 
