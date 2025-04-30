@@ -1,4 +1,4 @@
-// aws-userpool.js
+// aws-amplifyConfig.js
 
 export default {
   Auth: {
