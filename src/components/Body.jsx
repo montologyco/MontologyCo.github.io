@@ -15,12 +15,6 @@ function Body({loggedIn}) {
   return (
     <div id="body">
       <Routes>
-        {/* <Route path="/" element={<MontologyTagline />} /> */}
-
-        <AuthChecker>
-          <Route path="/" element={<Dashboard />} />
-        </AuthChecker>
-
         <Route path="/login" element={<Login />} />
 
         <Route path="/about" element={<About />} />
