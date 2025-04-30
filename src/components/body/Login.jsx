@@ -26,7 +26,6 @@ function Login({ setIsAuthenticated }) {
       setLoading(false);
       setRedirect(true);
       setIsAuthenticated(true);
-      {<Navigate to="/dashboard" />};
     }
   };
 
