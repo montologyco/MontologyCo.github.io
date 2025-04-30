@@ -20,8 +20,7 @@ function Body({ isAuthenticated, setIsAuthenticated}) {
       <Routes>
         {isAuthenticated ? (
           <>
-            <Route path="/" element={
-              <Dashboard />} />
+            <Route path="/" element={<Dashboard />} />
               <Route path="/dashboard" element={<Navigate to="/" />} />
               <Route path="/login" element={<Navigate to="/" />} />
             <Route path="/logout" element={<Logout setIsAuthenticated={setIsAuthenticated} />} />
@@ -33,6 +32,7 @@ function Body({ isAuthenticated, setIsAuthenticated}) {
               <Route path="/logout" element={<Navigate to="/" />} />
             <Route path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} />} />
               <Route path="/dashboard" element={<Navigate to="/login" />} />
+              <Route path="/settings" element={<Navigate to="/login" />} />
           </>
         )}
 
