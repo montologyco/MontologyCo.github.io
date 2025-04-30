@@ -4,7 +4,7 @@ import React from 'react';
 import config from '../assets/company.json';
 
 import NavigationBridge from './heroSection/NavigationBridge.jsx';
-import boilerplate from '../assets/Navigation/boilerplate.json';
+import boilerplate from '../Navigation/boilerplate.json';
 
 function Footer({ isAuthenticated, setIsAuthenticated}) {
   const currentYear = new Date().getFullYear();
