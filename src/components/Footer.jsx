@@ -3,7 +3,7 @@
 import React from 'react';
 import config from '../assets/company.json';
 
-import NavigationBridge from './heroSection/NavigationBridge.jsx';
+import NavigationBridge from '../Navigation/NavigationBridge.jsx';
 import boilerplate from '../Navigation/boilerplate.json';
 
 function Footer({ isAuthenticated, setIsAuthenticated}) {

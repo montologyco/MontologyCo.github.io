@@ -3,7 +3,7 @@
 import React from 'react';
 import MontologyLogo from '../assets/Brand/MontologyLogo.jsx';
 
-import NavigationBridge from './heroSection/NavigationBridge.jsx';
+import NavigationBridge from '../Navigation/NavigationBridge.jsx';
 
 import loggedInLinks from '../Navigation/loggedInLinks.json';
 import loggedOutLinks from '../Navigation/loggedOutLinks.json';
