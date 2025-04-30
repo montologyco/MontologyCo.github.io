@@ -9,7 +9,7 @@ function Login() {
   const [loading, setLoading] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
 
-  // if (loggedIn) return <Navigate to="/dashboard" />;
+  // if (loggedIn) return <Navigate to="/dashboard" />; // might not do this
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -17,8 +17,9 @@ function Login() {
 
     try {
       console.log('Username:', username);
+      console.log('Password:', password);
       const user = await signIn(username, password);
-      // console.log('Login successful:', user);
+      console.log('Login successful:', user);
       setLoggedIn(true);
     } catch (err) {
       setError(err.message);
