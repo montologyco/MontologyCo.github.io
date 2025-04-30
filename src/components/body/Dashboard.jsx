@@ -11,7 +11,7 @@ function Dashboard({ setIsAuthenticated }) {
       <AuthChecker setAuthState={setIsAuthenticated} />
       
       <h1>Welcome to the Dashboard</h1>
-      <NavigationBridge links = {loggedInLinks.links}/>
+      <NavigationBridge links = {Applications.links}/>
     </div>
   );
 }
