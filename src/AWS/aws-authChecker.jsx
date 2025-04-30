@@ -3,8 +3,17 @@
 import { useEffect, useState } from 'react';
 import { fetchAuthSession } from '@aws-amplify/core';
 import { Routes, Route } from 'react-router-dom';
-import Dashboard from '../components/body/Dashboard.jsx';
+
 import MontologyTagline from '../assets/Brand/MontologyTagline.jsx';
+import Dashboard from '../components/body/Dashboard.jsx';
+
+import About from '../components/body/Boilerplate/About.jsx';
+import Contact from '../components/body/Boilerplate/Contact.jsx';
+import FAQ from '../components/body/Boilerplate/FAQ.jsx';
+
+import Login from '../components/body/Login.jsx';
+import Logout from '../components/body/Logout.jsx';
+
 
 const AuthChecker = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(null);
