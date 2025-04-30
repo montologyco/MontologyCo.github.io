@@ -9,7 +9,7 @@ function Navigation({links}) {
     <nav>
       {links.map((link, index) => (
         <span key={index}>
-          <Link to={link.url}>{link.name}</Link>
+          <Link to={link.url}> {link.name} </Link>
         </span>
       ))}
     </nav>
