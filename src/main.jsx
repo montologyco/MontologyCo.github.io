@@ -4,9 +4,11 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App';
 import { Amplify } from 'aws-amplify';
-import awsconfig from './assets/aws-exports';
+import resourcesConfig from './assets/aws-exports';
+import libraryOptions from './assets/aws-exports';
 
-Amplify.configure(awsconfig);
+Amplify.configure({ ...resourcesConfig }, { ...libraryOptions });
+// Amplify.configure(awsconfig);
 console.log("AWS Config:", awsconfig);
 
 const container = document.getElementById('root');
