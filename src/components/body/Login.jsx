@@ -1,5 +1,3 @@
-// Login.jsx
-
 import React, { useState } from 'react';
 import { Link, Navigate } from 'react-router-dom';
 
@@ -7,16 +5,24 @@ function Login({ loggedIn }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
+  // Redirect to dashboard if logged in
   if (loggedIn) return <Navigate to="/dashboard" />;
 
   const isFilled = username !== '' && password !== '';
+
+  const handleLogin = () => {
+    // Simple log for login success
+    console.log('Login attempt with username:', username);
+    // Simulate successful login
+    console.log('Logged in successfully!');
+  };
 
   return (
     <>
       <div id="login">
         <h1>Log in:</h1>
         <p>
-          Username: 
+          Username:
           <input 
             type="text" 
             placeholder="Username" 
@@ -25,7 +31,7 @@ function Login({ loggedIn }) {
           />
         </p>
         <p>
-          Password: 
+          Password:
           <input 
             type="password" 
             placeholder="Password" 
@@ -36,7 +42,7 @@ function Login({ loggedIn }) {
       </div>
 
       <div>
-        {isFilled && <button>Log In</button>}
+        {isFilled && <button onClick={handleLogin}>Log In</button>}
       </div>
 
       <div id="login-FAQ">
