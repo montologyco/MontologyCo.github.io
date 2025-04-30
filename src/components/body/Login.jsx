@@ -23,7 +23,6 @@ function Login({ setIsAuthenticated }) {
       console.error('Login error:', err);
     } finally {
       setLoading(false);
-
       if (!loading){
         // Redirect to the dashboard or home page after successful login
         console.log('Redirecting to dashboard...');
