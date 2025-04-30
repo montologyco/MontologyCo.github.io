@@ -16,9 +16,9 @@ import FAQ from '../components/body/Boilerplate/FAQ.jsx';
 function Body() {
   const [isAuthenticated, setIsAuthenticated] = useState(null); // Authentication state
 
-  // if (isAuthenticated === null) {
-  //   return <div>Loading...</div>; // Loading state while checking authentication
-  // }
+  if (isAuthenticated === null) {
+    return <div>Loading...</div>; // Loading state while checking authentication
+  }
 
   return (
     <div id="body">
