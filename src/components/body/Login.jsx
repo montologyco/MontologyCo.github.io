@@ -9,7 +9,6 @@ function Login({ setIsAuthenticated }) {
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [redirect, setRedirect] = useState(false);
   
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -18,15 +17,15 @@ function Login({ setIsAuthenticated }) {
     try {
       const user = await signIn({ username, password });
       setIsAuthenticated(true);
-      setRedirect(true);
     } catch (err) {
       setError(err.message);
       console.error('Login error:', err);
     } finally {
       setLoading(false);
       console.log('Login successful:', user);
-      if (redirect){
+      if (!loading){
         // Redirect to the dashboard or home page after successful login
+        console.log('Redirecting to dashboard...');
         return <Navigate to="/dashboard" />;
       }
     }
