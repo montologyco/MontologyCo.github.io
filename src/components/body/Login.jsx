@@ -1,3 +1,5 @@
+// Login.jsx
+
 import React, { useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import { signIn } from '@aws-amplify/auth'; // Import signIn method
@@ -9,7 +11,8 @@ function Login() {
   const [loading, setLoading] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
 
-  // if (loggedIn) return <Navigate to="/dashboard" />; // might not do this
+  // Redirect user to dashboard if logged in
+  if (loggedIn) return <Navigate to="/dashboard" />;
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -18,14 +21,14 @@ function Login() {
     try {
       console.log('Username:', username);
       console.log('Password:', password);
-      const user = await signIn(
-        {
-          username,
-          password,
-        }
-      );
+      const user = await signIn({
+        username,
+        password,
+      });
+
+      // You can handle different next steps based on MFA or other challenges here if needed.
       console.log('Login successful:', user);
-      setLoggedIn(true);
+      setLoggedIn(true); // After a successful login
     } catch (err) {
       setError(err.message);
       console.error('Login error:', err);
@@ -38,9 +41,27 @@ function Login() {
     <>
       <h1>Log in:</h1>
       <form onSubmit={handleLogin}>
-        <p>Username: <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} required /></p>
-        <p>Password: <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required /></p>
-        <button type="submit" disabled={!username || !password || loading}>{loading ? 'Logging In...' : 'Log In'}</button>
+        <p>
+          Username:{' '}
+          <input
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            required
+          />
+        </p>
+        <p>
+          Password:{' '}
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+        </p>
+        <button type="submit" disabled={!username || !password || loading}>
+          {loading ? 'Logging In...' : 'Log In'}
+        </button>
       </form>
       {error && <p style={{ color: 'red' }}>{error}</p>}
     </>
