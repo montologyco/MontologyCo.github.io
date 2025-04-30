@@ -14,11 +14,11 @@ import Contact from '../components/body/Boilerplate/Contact.jsx';
 import FAQ from '../components/body/Boilerplate/FAQ.jsx';
 
 function Body() {
-  const [isAuthenticated, setIsAuthenticated] = useState(null); // Authentication state
+  const [isAuthenticated, setIsAuthenticated] = useState(null);
 
   return (
     <div id="body">
-      <AuthChecker setAuthState={setIsAuthenticated} /> {/* Check authentication */}
+      <AuthChecker setAuthState={setIsAuthenticated} />
       <Routes>
         {isAuthenticated ? (
           <>
@@ -31,6 +31,7 @@ function Body() {
           <>
             <Route path="/" element={<MontologyTagline />} />
             <Route path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} />} />
+              <Route path="/dashboard" element={<Navigate to="/login" />} />
           </>
         )}
 
