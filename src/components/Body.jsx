@@ -1,21 +1,45 @@
 // Body.jsx
 
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom'; // Import Navigate for redirects
+
 import MontologyTagline from '../assets/Brand/MontologyTagline.jsx';
-import About from './body/Boilerplate/About.jsx';
-import Contact from './body/Boilerplate/Contact.jsx';
-import FAQ from './body/Boilerplate/FAQ.jsx';
-import AuthChecker from '../AWS/aws-authChecker.jsx';
-
-import Login from './body/Login.jsx';
-
-import Dashboard from './body/Dashboard.jsx';
+import Dashboard from '../components/body/Dashboard.jsx';
+import About from '../components/body/Boilerplate/About.jsx';
+import Contact from '../components/body/Boilerplate/Contact.jsx';
+import FAQ from '../components/body/Boilerplate/FAQ.jsx';
+import Login from '../components/body/Login.jsx';
+import Logout from '../components/body/Logout.jsx';
 
 function Body() {
+  const [isAuthenticated, setIsAuthenticated] = useState(null); // Authentication state
+
+  if (isAuthenticated === null) {
+    return <div>Loading...</div>; // Loading state while checking authentication
+  }
+
   return (
     <div id="body">
-      <AuthChecker />
+      <AuthChecker setAuthState={setIsAuthenticated} /> {/* Check authentication */}
+      <Routes>
+        {isAuthenticated ? (
+          <>
+            {/* Redirect /dashboard to / */}
+            <Route path="/dashboard" element={<Navigate to="/" />} />
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/logout" element={<Logout />} />
+          </>
+        ) : (
+          <>
+            <Route path="/" element={<MontologyTagline />} />
+            <Route path="/login" element={<Login />} />
+          </>
+        )}
+
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/FAQ" element={<FAQ />} />
+      </Routes>
     </div>
   );
 }
