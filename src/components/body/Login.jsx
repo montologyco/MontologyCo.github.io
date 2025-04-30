@@ -9,23 +9,28 @@ function Login({ setIsAuthenticated }) {
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
-  
+  const [redirect, setRedirect] = useState(false); // Track redirect state
+
   const handleLogin = async (e) => {
     e.preventDefault();
     setLoading(true);
 
     try {
       const user = await signIn({ username, password });
-      setIsAuthenticated(true);
-      setRedirect(true); // Redirect after successful login
     } catch (err) {
       setError(err.message);
       console.error('Login error:', err);
     } finally {
-      setLoading(false); // Ensure loading state is reset
-    }
+      setLoading(false);
+      setRedirect(true);
+      setIsAuthenticated(true);
+      console.log('Login successful:', user);
     }
   };
+
+  if (redirect) {
+    return <Navigate to="/dashboard" />; // Redirect to dashboard after successful login
+  }
 
   return (
     <>
@@ -56,5 +61,6 @@ function Login({ setIsAuthenticated }) {
       {error && <p style={{ color: 'red' }}>{error}</p>}
     </>
   );
+}
 
 export default Login;
