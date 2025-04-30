@@ -7,7 +7,7 @@ import HeroSection from './components/HeroSection.jsx';
 import Body from './components/Body.jsx';
 import Footer from './components/Footer.jsx';
 
-function App({ isAuthenticated, setIsAuthenticated}) {
+function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(null);
 
   return (
