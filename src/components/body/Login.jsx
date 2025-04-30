@@ -18,7 +18,7 @@ function Login() {
     try {
       // const user = await signIn(username, password);
       console.log('User:', username);
-      console.log('Login successful:', user);
+      console.log('Login successful:', username);
       setLoggedIn(true);
     } catch (err) {
       setError(err.message);
