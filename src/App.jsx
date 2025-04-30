@@ -1,6 +1,6 @@
 // App.jsx
 
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import './styles/index.scss';
 import HeroSection from './components/HeroSection.jsx';
