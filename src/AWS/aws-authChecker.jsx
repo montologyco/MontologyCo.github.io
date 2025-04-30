@@ -1,35 +1,57 @@
 // aws-authChecker.jsx
 
-// AuthContext.jsx
-import React, { createContext, useState, useContext } from 'react';
+import { useEffect } from 'react';
+import { fetchAuthSession } from '@aws-amplify/core';
 
-// Create the Auth Context
-const AuthContext = createContext();
-
-// Custom hook to use the Auth Context
-export const useAuth = () => useContext(AuthContext);
-
-// AuthProvider component to wrap the app with the context
-export const AuthProvider = ({ children }) => {
-  const [isAuthenticated, setIsAuthenticated] = useState(null);
-
-  // Session check function
+const AuthChecker = ({ setAuthState }) => {
+  // Check session function
   const checkSession = async () => {
     try {
-      const session = await fetchAuthSession(); // Ensure this is the correct import
+      const session = await fetchAuthSession();
+      
       if (session && session.tokens && session.tokens.idToken) {
-        setIsAuthenticated(true); // User is authenticated
+        setAuthState(true); // User is authenticated
       } else {
-        setIsAuthenticated(false); // No valid session
+        setAuthState(false); // No valid session
       }
     } catch (error) {
-      setIsAuthenticated(false); // Handle session errors as unauthenticated
+      console.error("Error checking session:", error);
+      setAuthState(false); // Handle session errors as unauthenticated
     }
   };
 
-  return (
-    <AuthContext.Provider value={{ isAuthenticated, setIsAuthenticated, checkSession }}>
-      {children}
-    </AuthContext.Provider>
-  );
+  // Check session when the component mounts
+  useEffect(() => {
+    checkSession(); // Check session on initial load
+  }, []);
+
+  // Optionally, you can refresh the session every 30 seconds for extra security.
+  useEffect(() => {
+    const sessionChecker = setInterval(() => {
+      checkSession(); // Check session every 30 seconds
+    }, 30000);
+
+    return () => clearInterval(sessionChecker); // Cleanup interval on component unmount
+  }, []);
+
+  // Add an event listener to check session on every user action (clicks, navigation, etc.)
+  useEffect(() => {
+    const handleUserAction = () => {
+      checkSession(); // Trigger session check on any user interaction
+    };
+
+    // Add event listeners for clicks, touches, or any other action you want to trigger the check
+    document.addEventListener('click', handleUserAction);
+    document.addEventListener('keydown', handleUserAction); // Optional: check on keyboard actions
+
+    // Cleanup listeners when the component unmounts
+    return () => {
+      document.removeEventListener('click', handleUserAction);
+      document.removeEventListener('keydown', handleUserAction);
+    };
+  }, []);
+
+  return null; // This component doesn't render anything
 };
+
+export default AuthChecker;
