@@ -56,6 +56,5 @@ function Login({ setIsAuthenticated }) {
       {error && <p style={{ color: 'red' }}>{error}</p>}
     </>
   );
-}
 
 export default Login;
