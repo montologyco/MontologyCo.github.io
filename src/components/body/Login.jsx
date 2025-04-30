@@ -16,7 +16,7 @@ function Login() {
     setLoading(true);
 
     try {
-      const user = await signIn(username, password); // Use signIn from AWS Amplify
+      // const user = await signIn(username, password);
       console.log('User:', username);
       console.log('Login successful:', user);
       setLoggedIn(true);
