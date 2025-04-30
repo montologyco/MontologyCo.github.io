@@ -9,7 +9,8 @@ import libraryOptions from './assets/aws-exports';
 
 Amplify.configure({ ...resourcesConfig }, { ...libraryOptions });
 // Amplify.configure(awsconfig);
-console.log("AWS Config:", awsconfig);
+console.log("AWS Config:", resourcesConfig);
+console.log("AWS Config:", libraryOptions);
 
 const container = document.getElementById('root');
 const root = createRoot(container);
