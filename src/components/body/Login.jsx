@@ -18,14 +18,19 @@ function Login() {
     try {
       console.log('Username:', username);
       console.log('Password:', password);
-      const user = await signIn(username, password);
+      const user = await signIn(
+        {
+          username,
+          password,
+        }
+      );
       console.log('Login successful:', user);
       setLoggedIn(true);
     } catch (err) {
       setError(err.message);
       console.error('Login error:', err);
     } finally {
-      // setLoading(false);
+      setLoading(false);
     }
   };
 
