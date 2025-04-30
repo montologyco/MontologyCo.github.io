@@ -24,7 +24,7 @@ function Body({ isAuthenticated, setIsAuthenticated}) {
               <Dashboard />} />
               <Route path="/dashboard" element={<Navigate to="/" />} />
               <Route path="/login" element={<Navigate to="/" />} />
-            <Route path="/logout" element={<Logout />} />
+            <Route path="/logout" element={<Logout setIsAuthenticated={setIsAuthenticated} />} />
           </>
         ) : (
           <>
