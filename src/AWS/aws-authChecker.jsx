@@ -6,7 +6,9 @@ import { fetchAuthSession } from '@aws-amplify/core';
 const checkSession = async () => {
   try {
     const session = await fetchAuthSession();  // Fetch the session info
-    if (session.isValid()) {
+
+    // Check if session contains a valid idToken (indicating authentication)
+    if (session && session.idToken) {
       console.log("User is authenticated");
       // Proceed with the authenticated flow
     } else {
