@@ -20,19 +20,19 @@ function Body({ isAuthenticated, setIsAuthenticated}) {
       <Routes>
         {isAuthenticated ? (
           <>
-            <Route path="/" element={<Dashboard />} />
-              <Route path="/dashboard" element={<Navigate to="/" />} />
-              <Route path="/login" element={<Navigate to="/" />} />
-            <Route path="/logout" element={<Logout setIsAuthenticated={setIsAuthenticated} />} />
-            <Route path="/settings" element={<Settings setIsAuthenticated={setIsAuthenticated} />} />
+            <Route path="/" element={<Dashboard setIsAuthenticated={setIsAuthenticated} />} />  {/* Sends status TO Login */}
+              <Route path="/dashboard" element={<Navigate to="/" />} />  {/* Bad URL --> Reroute */}
+              <Route path="/login" element={<Navigate to="/" />} />  {/* No Access --> Reroute */}
+            <Route path="/logout" element={<Logout setIsAuthenticated={setIsAuthenticated} />} />  {/* Sends status TO Login */}
+            <Route path="/settings" element={<Settings setIsAuthenticated={setIsAuthenticated} />} />  {/* Sends status TO Login */}
           </>
         ) : (
           <>
             <Route path="/" element={<MontologyTagline />} />
-              <Route path="/logout" element={<Navigate to="/" />} />
-            <Route path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} />} />
-              <Route path="/dashboard" element={<Navigate to="/login" />} />
-              <Route path="/settings" element={<Navigate to="/login" />} />
+              <Route path="/logout" element={<Navigate to="/" />} />  {/* No Access --> Reroute */}
+            <Route path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} />} />  {/* Receives status FROM Login */}
+              <Route path="/dashboard" element={<Navigate to="/login" />} />  {/* No Access --> Reroute */}
+              <Route path="/settings" element={<Navigate to="/login" />} />  {/* No Access --> Reroute */}
           </>
         )}
 
