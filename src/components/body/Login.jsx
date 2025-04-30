@@ -26,14 +26,8 @@ function Login({ setIsAuthenticated }) {
       setLoading(false);
       setRedirect(true);
       setIsAuthenticated(true);
-      {<Navigate to="/dashboard" />};
     }
   };
-
-  // if (redirect) {
-  //   console.log('Redirecting to dashboard...');
-  //   return <Navigate to="/dashboard" />; // Redirect to dashboard after successful login
-  // }
 
   return (
     <>
