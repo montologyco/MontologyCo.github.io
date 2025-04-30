@@ -15,11 +15,11 @@ function Body({loggedIn}) {
   return (
     <div id="body">
       <Routes>
-        {!loggedIn ? (
-          <Route path="/" element={<MontologyTagline />} />
-        ) : (
+        {/* <Route path="/" element={<MontologyTagline />} /> */}
+
+        <AuthChecker>
           <Route path="/" element={<Dashboard />} />
-        )}
+        </AuthChecker>
 
         <Route path="/login" element={<Login />} />
 
