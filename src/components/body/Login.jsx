@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, Navigate } from 'react-router-dom';
-import { signIn } from '@aws-amplify';  // Importing signIn directly
+import { signIn } from '@aws-amplify/auth';  // Importing signIn directly
 
 function Login() {
   const [username, setUsername] = useState('');
