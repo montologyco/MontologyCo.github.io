@@ -1,7 +1,7 @@
 // Settings.jsx
 
 import React from 'react';
-import AuthChecker from '../AWS/aws-authChecker.jsx';
+import AuthChecker from '../../AWS/aws-authChecker.jsx';
 
 function Settings({ setIsAuthenticated }) {
   return (
