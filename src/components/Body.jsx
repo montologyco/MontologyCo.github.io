@@ -1,7 +1,7 @@
 // Body.jsx
 
 import React, { useState } from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom'; // Import Navigate for redirects
+import { Routes, Route, useNavigate } from 'react-router-dom'; // Import Navigate for redirects
 import AuthChecker from '../AWS/aws-authChecker.jsx';
 
 import MontologyTagline from '../assets/Brand/MontologyTagline.jsx';
@@ -27,7 +27,7 @@ function Body() {
         {isAuthenticated ? (
           <>
             {/* Redirect /dashboard to / */}
-            <Route path="/dashboard" element={<Navigate to="/" />} />
+            <Route path="/dashboard" element={<useNavigate to="/" />} />
             <Route path="/" element={<Dashboard />} />
             <Route path="/logout" element={<Logout />} />
           </>
