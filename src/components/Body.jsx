@@ -10,6 +10,7 @@ import Contact from '../components/body/Boilerplate/Contact.jsx';
 import FAQ from '../components/body/Boilerplate/FAQ.jsx';
 import Login from '../components/body/Login.jsx';
 import Logout from '../components/body/Logout.jsx';
+import AuthChecker from '../AWS/aws-authChecker.jsx'; // Import the authentication checker
 
 function Body() {
   const [isAuthenticated, setIsAuthenticated] = useState(null); // Authentication state
