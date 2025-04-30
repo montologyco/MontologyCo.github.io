@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { Navigate } from 'react-router-dom';
-import { signIn } from '@aws-amplify/auth'; // Import signIn method
+import { signIn } from '@aws-amplify/auth';
 
 function Login() {
   const [username, setUsername] = useState('');
@@ -11,16 +11,13 @@ function Login() {
   const [loading, setLoading] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
 
-  // Redirect user to dashboard if logged in
-  if (loggedIn) return <Navigate to="/dashboard" />;
+  // if (loggedIn) return <Navigate to="/dashboard" />;
 
   const handleLogin = async (e) => {
     e.preventDefault();
     setLoading(true);
 
     try {
-      console.log('Username:', username);
-      console.log('Password:', password);
       const user = await signIn({
         username,
         password,
@@ -28,7 +25,7 @@ function Login() {
 
       // You can handle different next steps based on MFA or other challenges here if needed.
       console.log('Login successful:', user);
-      setLoggedIn(true); // After a successful login
+      setLoggedIn(true);
     } catch (err) {
       setError(err.message);
       console.error('Login error:', err);
