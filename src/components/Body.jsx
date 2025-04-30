@@ -5,13 +5,13 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 
 import MontologyTagline from '../assets/Brand/MontologyTagline.jsx';
 import Dashboard from '../components/body/Dashboard.jsx';
-import Login from '../components/body/Login.jsx';
-import Logout from '../components/body/Logout.jsx';
-import AuthChecker from '../AWS/aws-authChecker.jsx';
+import Login from './auth/Login.jsx';
+import Logout from './auth/Logout.jsx';
+import Settings from './auth/Settings.jsx';
 
-import About from '../components/body/Boilerplate/About.jsx';
-import Contact from '../components/body/Boilerplate/Contact.jsx';
-import FAQ from '../components/body/Boilerplate/FAQ.jsx';
+import About from './boilerplate/About.jsx';
+import Contact from './boilerplate/Contact.jsx';
+import FAQ from './boilerplate/FAQ.jsx';
 
 function Body({ isAuthenticated, setIsAuthenticated}) {
 
@@ -25,6 +25,7 @@ function Body({ isAuthenticated, setIsAuthenticated}) {
               <Route path="/dashboard" element={<Navigate to="/" />} />
               <Route path="/login" element={<Navigate to="/" />} />
             <Route path="/logout" element={<Logout setIsAuthenticated={setIsAuthenticated} />} />
+            <Route path="/settings" element={<Settings setIsAuthenticated={setIsAuthenticated} />} />
           </>
         ) : (
           <>
