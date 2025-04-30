@@ -13,8 +13,7 @@ import About from '../components/body/Boilerplate/About.jsx';
 import Contact from '../components/body/Boilerplate/Contact.jsx';
 import FAQ from '../components/body/Boilerplate/FAQ.jsx';
 
-function Body() {
-  const [isAuthenticated, setIsAuthenticated] = useState(null);
+function Body({ isAuthenticated, setIsAuthenticated}) {
 
   return (
     <div id="body">

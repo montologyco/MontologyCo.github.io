@@ -10,8 +10,7 @@ import loggedInLinks from '../assets/Navigation/loggedInLinks.json';
 import loggedOutLinks from '../assets/Navigation/loggedOutLinks.json';
 
 
-function HeroSection() {
-    const [isAuthenticated, setIsAuthenticated] = useState(null);
+function HeroSection({ isAuthenticated, setIsAuthenticated}) {
 
   return (
     <>

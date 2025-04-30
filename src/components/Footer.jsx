@@ -5,7 +5,7 @@ import config from '../assets/company.json';
 import boilerplate from '../assets/Navigation/boilerplate.json';
 import NavigationBridge from './NavigationBridge.jsx';
 
-function Footer() {
+function Footer({ isAuthenticated, setIsAuthenticated}) {
   const currentYear = new Date().getFullYear();
 
   return (

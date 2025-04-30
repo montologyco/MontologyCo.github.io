@@ -6,13 +6,17 @@ import App from './App';
 import { Amplify } from 'aws-amplify';
 import AWSconfig from './AWS/aws-config';
 
-Amplify.configure(AWSconfig);
-
 const container = document.getElementById('root');
 const root = createRoot(container);
 
+Amplify.configure(AWSconfig);
+const [isAuthenticated, setIsAuthenticated] = useState(null);
+
 root.render(
   <React.StrictMode>
-      <App />
+      <App
+        isAuthenticated={isAuthenticated}
+        setIsAuthenticated={setIsAuthenticated}
+      />
   </React.StrictMode>
 );
