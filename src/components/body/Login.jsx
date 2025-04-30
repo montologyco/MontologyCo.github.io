@@ -1,53 +1,42 @@
-import React, { useState } from 'react';
-import { useAuth } from 'react-oidc-context'; // Import the useAuth hook
-import { Navigate } from 'react-router-dom';
+// App.js
+
+import { useAuth } from "react-oidc-context";
 
 function Login() {
-  const { signinRedirect, isAuthenticated, user, error } = useAuth();
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const auth = useAuth();
 
-  if (isAuthenticated) return <Navigate to="/dashboard" />; // Redirect to dashboard if already authenticated
-
-  const isFilled = username !== '' && password !== '';
-
-  const handleLogin = () => {
-    // Trigger OIDC authentication (redirect to Cognito hosted login page)
-    signinRedirect();
+  const signOutRedirect = () => {
+    const clientId = "pmbfufdc2c5qnf8qjhaj58p7u";
+    const logoutUri = "<logout uri>";
+    const cognitoDomain = "https://<user pool domain>";
+    window.location.href = `${cognitoDomain}/logout?client_id=${clientId}&logout_uri=${encodeURIComponent(logoutUri)}`;
   };
 
-  return (
-    <div id="login">
-      <h1>Log in:</h1>
-      <p>
-        Username:
-        <input 
-          type="text" 
-          placeholder="Username" 
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-      </p>
-      <p>
-        Password:
-        <input 
-          type="password" 
-          placeholder="Password" 
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-      </p>
+  if (auth.isLoading) {
+    return <div>Loading...</div>;
+  }
 
+  if (auth.error) {
+    return <div>Encountering error... {auth.error.message}</div>;
+  }
+
+  if (auth.isAuthenticated) {
+    return (
       <div>
-        {isFilled && <button onClick={handleLogin}>Log In</button>}
-      </div>
+        <pre> Hello: {auth.user?.profile.email} </pre>
+        <pre> ID Token: {auth.user?.id_token} </pre>
+        <pre> Access Token: {auth.user?.access_token} </pre>
+        <pre> Refresh Token: {auth.user?.refresh_token} </pre>
 
-      <div id="login-FAQ">
-        <p>Don't have an account? <a href="/FAQ">FAQ</a></p>
-        <p>Need help? <a href="/contact">Contact</a></p>
+        <button onClick={() => auth.removeUser()}>Sign out</button>
       </div>
+    );
+  }
 
-      {error && <p>{error.message}</p>} {/* Handle error if authentication fails */}
+  return (
+    <div>
+      <button onClick={() => auth.signinRedirect()}>Sign in</button>
+      <button onClick={() => signOutRedirect()}>Sign out</button>
     </div>
   );
 }
