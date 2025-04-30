@@ -1,6 +1,6 @@
 // HeroSection.jsx
 
-import React, { useState } from 'react';
+import React from 'react';
 import MontologyLogo from '../assets/Brand/MontologyLogo.jsx';
 import AuthChecker from '../AWS/aws-authChecker.jsx';
 
