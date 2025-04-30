@@ -9,15 +9,15 @@ function Login() {
   const [loading, setLoading] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
 
-  if (loggedIn) return <Navigate to="/dashboard" />;
+  // if (loggedIn) return <Navigate to="/dashboard" />;
 
   const handleLogin = async (e) => {
     e.preventDefault();
     setLoading(true);
 
     try {
-      console.log('User:', username);
-      // const user = await signIn(username, password);
+      console.log('Username:', username);
+      const user = await signIn(username, password);
       // console.log('Login successful:', user);
       setLoggedIn(true);
     } catch (err) {
