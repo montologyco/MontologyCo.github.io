@@ -3,7 +3,7 @@
 import React from 'react';
 import AuthChecker from '../../AWS/aws-authChecker.jsx';
 import NavigationBridge from '../../Navigation/NavigationBridge.jsx';
-import Applications from '../../Navigation/applications.json';
+import applications from '../../Navigation/applications.json';
 
 function Dashboard({ setIsAuthenticated }) {
   return (
@@ -11,7 +11,7 @@ function Dashboard({ setIsAuthenticated }) {
       <AuthChecker setAuthState={setIsAuthenticated} />
       
       <h1>Welcome to the Dashboard</h1>
-      <NavigationBridge links = {Applications.links}/>
+      <NavigationBridge links = {applications.links}/>
     </div>
   );
 }
