@@ -16,13 +16,14 @@ function Login({ setIsAuthenticated }) {
 
     try {
       const user = await signIn({ username, password });
+      // console.log('Login successful:', user);
       setIsAuthenticated(true);
     } catch (err) {
       setError(err.message);
       console.error('Login error:', err);
     } finally {
       setLoading(false);
-      console.log('Login successful:', user);
+
       if (!loading){
         // Redirect to the dashboard or home page after successful login
         console.log('Redirecting to dashboard...');
