@@ -7,7 +7,7 @@ const AuthChecker = ({ setAuthState }) => {
   const checkSession = async () => {
     try {
       const session = await fetchAuthSession();
-      console.log("Session info:", session);
+      // console.log("Session info:", session);
 
       if (session && session.tokens && session.tokens.idToken) {
         // console.log("User is authenticated");
