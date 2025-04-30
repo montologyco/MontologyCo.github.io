@@ -17,7 +17,6 @@ function Login({ setIsAuthenticated }) {
     try {
       const user = await signIn({ username, password });
       console.log('Login successful:', user);
-      navigate to /Dashboard;
       setIsAuthenticated(true);
     } catch (err) {
       setError(err.message);
