@@ -17,16 +17,13 @@ function Login({ setIsAuthenticated }) {
     try {
       const user = await signIn({ username, password });
       setIsAuthenticated(true);
+      setRedirect(true); // Redirect after successful login
     } catch (err) {
       setError(err.message);
       console.error('Login error:', err);
     } finally {
-      setLoading(false);
-      if (!loading){
-        // Redirect to the dashboard or home page after successful login
-        console.log('Redirecting to dashboard...');
-        return <Navigate to="/dashboard" />;
-      }
+      setLoading(false); // Ensure loading state is reset
+    }
     }
   };
 
