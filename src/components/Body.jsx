@@ -22,9 +22,8 @@ function Body() {
       <Routes>
         {isAuthenticated ? (
           <>
-            {/* Redirect /dashboard to / */}
-            <Route path="/dashboard" element={<Navigate to="/" />} />
             <Route path="/" element={<Dashboard />} />
+              <Route path="/dashboard" element={<Navigate to="/" />} />
             <Route path="/logout" element={<Logout />} />
           </>
         ) : (

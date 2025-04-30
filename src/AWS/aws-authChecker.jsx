@@ -10,10 +10,10 @@ const AuthChecker = ({ setAuthState }) => {
       console.log("Session info:", session);
 
       if (session && session.tokens && session.tokens.idToken) {
-        console.log("User is authenticated");
+        // console.log("User is authenticated");
         setAuthState(true); // Set authenticated state to true
       } else {
-        console.log("No valid session found");
+        // console.log("No valid session found");
         setAuthState(false); // Set authenticated state to false
       }
     } catch (error) {
