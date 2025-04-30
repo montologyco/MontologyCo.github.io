@@ -10,6 +10,8 @@ function Login({ setIsAuthenticated }) {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
+  if (loggedIn) return <Navigate to="/dashboard" />;
+  
   const handleLogin = async (e) => {
     e.preventDefault();
     setLoading(true);
