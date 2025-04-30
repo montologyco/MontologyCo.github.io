@@ -17,3 +17,14 @@ const checkSession = async () => {
     // Handle errors (e.g., session expired or not found)
   }
 };
+
+const AuthChecker = ({ children }) => {
+  // Call checkSession when the component mounts
+  useEffect(() => {
+    checkSession();
+  }, []);
+
+  return children; // Render the children if authenticated
+};
+
+export default AuthChecker;
