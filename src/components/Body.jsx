@@ -15,7 +15,7 @@ import Dashboard from './body/Dashboard.jsx';
 function Body() {
   return (
     <div id="body">
-      <p>?</p>
+      <AuthChecker />
     </div>
   );
 }
