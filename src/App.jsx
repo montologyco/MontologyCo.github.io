@@ -13,8 +13,8 @@ function App() {
 
   return (
     <Router>
+    <HeroSection />
       <AuthChecker>
-        <HeroSection />
         <Body />
         <Footer />
       </AuthChecker>
