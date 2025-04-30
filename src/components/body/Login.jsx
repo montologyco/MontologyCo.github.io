@@ -23,6 +23,7 @@ function Login({ setIsAuthenticated }) {
       console.error('Login error:', err);
     } finally {
       setLoading(false);
+      console.log('Loading finished');
       redirect('/dashboard'); // Redirect to the home page after login
     }
   };
