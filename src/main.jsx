@@ -7,6 +7,7 @@ import { Amplify } from 'aws-amplify';
 import awsconfig from './assets/aws-exports';
 
 Amplify.configure(awsconfig);
+console.log("AWS Config:", awsconfig);
 
 const container = document.getElementById('root');
 const root = createRoot(container);
