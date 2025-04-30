@@ -2,15 +2,16 @@
 
 import React, { useState } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom'; // Import Navigate for redirects
+import AuthChecker from '../AWS/aws-authChecker.jsx';
 
 import MontologyTagline from '../assets/Brand/MontologyTagline.jsx';
 import Dashboard from '../components/body/Dashboard.jsx';
+import Login from '../components/body/Login.jsx';
+import Logout from '../components/body/Logout.jsx';
+
 import About from '../components/body/Boilerplate/About.jsx';
 import Contact from '../components/body/Boilerplate/Contact.jsx';
 import FAQ from '../components/body/Boilerplate/FAQ.jsx';
-import Login from '../components/body/Login.jsx';
-import Logout from '../components/body/Logout.jsx';
-import AuthChecker from '../AWS/aws-authChecker.jsx'; // Import the authentication checker
 
 function Body() {
   const [isAuthenticated, setIsAuthenticated] = useState(null); // Authentication state

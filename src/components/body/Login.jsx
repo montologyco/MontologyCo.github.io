@@ -11,7 +11,7 @@ function Login() {
   const [loading, setLoading] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
 
-  // if (loggedIn) return <Navigate to="/dashboard" />;
+  if (loggedIn) return <Navigate to="/dashboard" />;
 
   const handleLogin = async (e) => {
     e.preventDefault();
