@@ -4,54 +4,48 @@ import { useEffect } from 'react';
 import { fetchAuthSession } from '@aws-amplify/core';
 
 const AuthChecker = ({ setAuthState }) => {
-  // Check session function
   const checkSession = async () => {
     try {
       const session = await fetchAuthSession();
       
       if (session && session.tokens && session.tokens.idToken) {
-        setAuthState(true); // User is authenticated
+        setAuthState(true);
       } else {
-        setAuthState(false); // No valid session
+        setAuthState(false);
       }
     } catch (error) {
       console.error("Error checking session:", error);
-      setAuthState(false); // Handle session errors as unauthenticated
+      setAuthState(false);
     }
   };
 
-  // Check session when the component mounts
   useEffect(() => {
-    checkSession(); // Check session on initial load
+    checkSession();
   }, []);
 
-  // Optionally, you can refresh the session every 30 seconds for extra security.
   useEffect(() => {
     const sessionChecker = setInterval(() => {
-      checkSession(); // Check session every 30 seconds
-    }, 30000);
+      checkSession();
+    }, 30000); // Check session every 30 seconds
 
-    return () => clearInterval(sessionChecker); // Cleanup interval on component unmount
+    return () => clearInterval(sessionChecker);
   }, []);
 
-  // Add an event listener to check session on every user action (clicks, navigation, etc.)
   useEffect(() => {
     const handleUserAction = () => {
-      checkSession(); // Trigger session check on any user interaction
+      checkSession();
     };
 
-    // Add event listeners for clicks, touches, or any other action you want to trigger the check
     document.addEventListener('click', handleUserAction);
-    document.addEventListener('keydown', handleUserAction); // Optional: check on keyboard actions
+    document.addEventListener('keydown', handleUserAction);
 
-    // Cleanup listeners when the component unmounts
     return () => {
       document.removeEventListener('click', handleUserAction);
       document.removeEventListener('keydown', handleUserAction);
     };
   }, []);
 
-  return null; // This component doesn't render anything
+  return null;
 };
 
 export default AuthChecker;

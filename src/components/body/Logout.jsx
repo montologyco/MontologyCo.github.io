@@ -1,13 +1,12 @@
 // Logout.jsx
 
 import React from 'react';
+import { signOut } from '@aws-amplify/auth';
 
 function Logout() {
-  return (
-    <div id="Logout">
-        <h1>Logout</h1>
-    </div>
-  );
+  signOut();
+  console.log("potato");
+  return null;
 }
 
 export default Logout;
