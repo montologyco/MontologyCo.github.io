@@ -24,6 +24,11 @@ function Login({ setIsAuthenticated }) {
       setLoading(false);
       console.log('Login successful:', user);
     }
+
+    if (user){
+      // Redirect to the dashboard or home page after successful login
+      return <Navigate to="/dashboard" />;
+    }
   };
 
   return (
