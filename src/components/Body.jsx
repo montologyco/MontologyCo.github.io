@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-// import AuthChecker from '../AWS/aws-authChecker.jsx';
 
 import MontologyTagline from '../assets/Brand/MontologyTagline.jsx';
 import Dashboard from '../components/body/Dashboard.jsx';
@@ -17,7 +16,6 @@ function Body({ isAuthenticated, setIsAuthenticated}) {
 
   return (
     <div id="body">
-      {/* <AuthChecker setAuthState={setIsAuthenticated} /> */}
       <Routes>
         {isAuthenticated ? (
           <>
