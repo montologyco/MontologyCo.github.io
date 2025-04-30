@@ -7,6 +7,8 @@ const checkSession = async () => {
   try {
     const session = await fetchAuthSession();  // Fetch the session info
 
+    console.log("Session info:", session); // Log the session info for debugging
+
     // Check if session contains a valid idToken (indicating authentication)
     if (session && session.idToken) {
       console.log("User is authenticated");
