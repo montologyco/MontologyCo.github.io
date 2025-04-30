@@ -6,6 +6,7 @@ import MontologyTagline from '../assets/Brand/MontologyTagline.jsx';
 import About from './body/Boilerplate/About.jsx';
 import Contact from './body/Boilerplate/Contact.jsx';
 import FAQ from './body/Boilerplate/FAQ.jsx';
+import AuthChecker from '../AWS/aws-authChecker.jsx';
 
 import Login from './body/Login.jsx';
 
@@ -16,6 +17,9 @@ function Body() {
     <div id="body">
       <Routes>
         <Route path="/login" element={<Login />} />
+
+        <AuthChecker>
+        </AuthChecker>
 
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />

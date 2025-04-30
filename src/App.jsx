@@ -12,11 +12,11 @@ function App() {
 
   return (
     <Router>
-    <HeroSection />
+      <HeroSection />
+      <Body />
       <AuthChecker>
-        <Body />
-        <Footer />
       </AuthChecker>
+      <Footer />
     </Router>
   );
 }
