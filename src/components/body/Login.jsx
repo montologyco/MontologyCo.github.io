@@ -19,7 +19,7 @@ function Login({ setIsAuthenticated }) {
       setLoading(true);
       setRedirect(false);
       const user = await signIn({ username, password });
-      console.log('Login successful:', user);
+      // console.log('Login successful:', user);
     } catch (err) {
       setError(err.message);
       console.error('Login error:', err);
@@ -31,6 +31,7 @@ function Login({ setIsAuthenticated }) {
   };
 
   if (redirect) {
+    console.log('Redirecting to dashboard...');
     return <Navigate to="/dashboard" />; // Redirect to dashboard after successful login
   }
 
