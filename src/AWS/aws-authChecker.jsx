@@ -1,7 +1,7 @@
 // aws-authChecker.jsx
 
 import React, { useState, useEffect } from 'react';
-import { Redirect } from 'react-router-dom'; // Assuming you're using React Router
+import { Navigate } from 'react-router-dom'; // Use Navigate instead of Redirect
 
 const AuthChecker = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -18,7 +18,7 @@ const AuthChecker = ({ children }) => {
   }, []); // Empty array means this runs once when the component mounts
 
   if (!isAuthenticated) {
-    return <Redirect to="/login" />; // Redirect to login page if not authenticated
+    return <Navigate to="/login" />; // Use Navigate for redirection in React Router v6+
   }
 
   return children; // Allow access to the children components if authenticated
