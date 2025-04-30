@@ -16,6 +16,8 @@ function Login({ setIsAuthenticated }) {
     setLoading(true);
 
     try {
+      setLoading(true);
+      setRedirect(false);
       const user = await signIn({ username, password });
       console.log('Login successful:', user);
     } catch (err) {
