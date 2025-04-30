@@ -4,28 +4,20 @@ import React, { useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import { signIn } from '@aws-amplify/auth';
 
-function Login() {
+function Login({ setIsAuthenticated }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [loggedIn, setLoggedIn] = useState(false);
-
-  if (loggedIn) return <Navigate to="/dashboard" />;
 
   const handleLogin = async (e) => {
     e.preventDefault();
     setLoading(true);
 
     try {
-      const user = await signIn({
-        username,
-        password,
-      });
-
-      // You can handle different next steps based on MFA or other challenges here if needed.
+      const user = await signIn({ username, password });
       console.log('Login successful:', user);
-      setLoggedIn(true);
+      setIsAuthenticated(true);
     } catch (err) {
       setError(err.message);
       console.error('Login error:', err);
