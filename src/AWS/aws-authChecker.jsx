@@ -1,5 +1,6 @@
 // aws-authChecker.jsx
 
+import { useEffect } from 'react';
 import { fetchAuthSession } from '@aws-amplify/core';
 
 const checkSession = async () => {
