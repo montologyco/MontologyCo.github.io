@@ -1,37 +1,30 @@
-import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Auth } from 'aws-amplify';
+// aws-authChecker.jsx
 
-function AuthChecker({ children }) {
-  const [loading, setLoading] = useState(true);
-  const [authenticated, setAuthenticated] = useState(false);
-  const navigate = useNavigate();
+import React, { useState, useEffect } from 'react';
+import { SignIn, SignOut } from 'aws-amplify'; // Check if you're using this instead of Auth
+
+const AuthChecker = ({ children }) => {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        await Auth.currentSession(); // Check if there's an active session
-        setAuthenticated(true);
+        // Use SignIn method to check if the user is signed in
+        const user = await SignIn.currentUser();
+        setIsAuthenticated(true); // User is signed in
       } catch (error) {
-        console.error('User not authenticated', error);
-        navigate('/login'); // Redirect to login if not authenticated
-      } finally {
-        setLoading(false);
+        setIsAuthenticated(false); // User is not signed in
       }
     };
 
     checkAuth();
-  }, [navigate]);
+  }, []);
 
-  if (loading) {
-    return <div>Loading...</div>; // Loading state while checking auth
+  if (!isAuthenticated) {
+    return <Redirect to="/login" />; // Redirect to login if not authenticated
   }
 
-  if (!authenticated) {
-    return null; // Optionally show nothing or a loading spinner if not authenticated
-  }
-
-  return <>{children}</>; // Render children if authenticated
-}
+  return children; // Render children if authenticated
+};
 
 export default AuthChecker;
