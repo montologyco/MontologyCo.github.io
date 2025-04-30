@@ -11,7 +11,7 @@ import Login from './body/Login.jsx';
 
 import Dashboard from './body/Dashboard.jsx';
 
-function Body({loggedIn}) {
+function Body() {
   return (
     <div id="body">
       <Routes>

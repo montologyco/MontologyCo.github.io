@@ -7,19 +7,14 @@ import loggedInLinks from '../assets/Navigation/loggedInLinks.json';
 import loggedOutLinks from '../assets/Navigation/loggedOutLinks.json';
 
 
-function Header({ loggedIn }) {
+function Header() {
 
   return (
     <>
       <header>
         <MontologyLogo />
-
-        {!loggedIn ? (
-          <NavigationBridge links = {loggedOutLinks.links}/>
-        ) : (
-          <NavigationBridge links = {loggedInLinks.links}/>
-        )
-        }
+        <NavigationBridge links = {loggedOutLinks.links}/>
+        {/* <NavigationBridge links = {loggedInLinks.links}/> */}
       </header>
     </>
   );

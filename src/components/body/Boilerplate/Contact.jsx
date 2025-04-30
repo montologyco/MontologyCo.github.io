@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-function Contact({ loggedIn }) {
+function Contact() {
   return (
     <div id="contact">
         <h1>Contact Us</h1>
