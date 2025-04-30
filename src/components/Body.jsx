@@ -21,11 +21,7 @@ function Body({ isAuthenticated, setIsAuthenticated}) {
         {isAuthenticated ? (
           <>
             <Route path="/" element={
-              <>
-                <AuthChecker setAuthState={setIsAuthenticated} />
-                <Dashboard setIsAuthenticated={setIsAuthenticated} />
-              </>
-              } />
+              <Dashboard />} />
               <Route path="/dashboard" element={<Navigate to="/" />} />
               <Route path="/login" element={<Navigate to="/" />} />
             <Route path="/logout" element={<Logout />} />
@@ -35,12 +31,7 @@ function Body({ isAuthenticated, setIsAuthenticated}) {
             <Route path="/" element={<MontologyTagline />} />
               <Route path="/logout" element={<Navigate to="/" />} />
             <Route path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} />} />
-              <Route path="/dashboard" element={
-                <>
-                  <AuthChecker setAuthState={setIsAuthenticated} />
-                  <Navigate to="/login" />
-                </>
-            } />
+              <Route path="/dashboard" element={<Navigate to="/login" />} />
           </>
         )}
 
