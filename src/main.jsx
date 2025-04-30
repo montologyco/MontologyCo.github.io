@@ -4,12 +4,12 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App';
 import { Amplify } from 'aws-amplify';
-import AWSconfig from './AWS/aws-config';
+import AWSuserpool from './AWS/aws-userpool';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
 
-Amplify.configure(AWSconfig);
+Amplify.configure(AWSuserpool);
 
 root.render(
   <React.StrictMode>

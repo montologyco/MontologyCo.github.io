@@ -1,4 +1,4 @@
-// aws-exports.js
+// aws-userpool.js
 
 export default {
   Auth: {
