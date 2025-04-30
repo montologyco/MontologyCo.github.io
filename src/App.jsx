@@ -11,8 +11,8 @@ function App() {
 
   return (
     <Router>
-    <HeroSection />
-        <Body />
+      <HeroSection />
+      <Body />
       <Footer />
     </Router>
   );
