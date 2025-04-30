@@ -20,7 +20,7 @@ function Body({ isAuthenticated, setIsAuthenticated}) {
       <Routes>
         {isAuthenticated ? (
           <>
-            <AuthChecker setAuthState={setIsAuthenticated} />
+            {/* <AuthChecker setAuthState={setIsAuthenticated} /> */}
             <Route path="/" element={<Dashboard />} />
               <Route path="/dashboard" element={<Navigate to="/" />} />
               <Route path="/login" element={<Navigate to="/" />} />

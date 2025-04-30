@@ -2,7 +2,6 @@
 
 import React from 'react';
 import MontologyLogo from '../assets/Brand/MontologyLogo.jsx';
-import AuthChecker from '../AWS/aws-authChecker.jsx';
 
 import NavigationBridge from './heroSection/NavigationBridge.jsx';
 
