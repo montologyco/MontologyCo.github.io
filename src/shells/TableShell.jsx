@@ -2,8 +2,7 @@
 
 import React from 'react';
 import Search from './Search/Search.jsx';
-import TableShellDirectory from './TableShell/TableShell-Directory.jsx';
-import TableShellProfile from './TableShell/TableShell-Profile.jsx';
+import TableShellPanes from './TableShell/TableShellPanes.jsx';
 
 const TableShell = () => {
   return (
@@ -11,14 +10,7 @@ const TableShell = () => {
       <div className="searchTopbar">
         <Search />
       </div>
-      <div className="tableShell-panes">
-        <div className="tableShell-directory">
-          <TableShellDirectory />
-        </div>
-        <div className="tableShell-profile">
-          <TableShellProfile />
-        </div>
-      </div>
+      <TableShellPanes />
     </div>
   );
 };
