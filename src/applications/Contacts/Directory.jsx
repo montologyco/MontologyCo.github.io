@@ -10,7 +10,7 @@ function Directory({ setIsAuthenticated }) {
     <div>
       <AuthChecker setAuthState={setIsAuthenticated} />
       <h1>Table</h1>
-      <TableShell rightPanel={<div>Right Panel Content</div>}>
+      <TableShell />
     </div>
   );
 }
