@@ -4,7 +4,7 @@ import getDynamoDB from '../../aws-sdk-config.js';
 import { getParams } from '../aws-dynamoDB-API.jsx';
 
 const getItem = async (PK, SK) => {
-  const DynamoDB = await getDynamoDB(); // wait for AWS client with Amplify credentials
+  const DynamoDB = await getDynamoDB();
   const params = getParams(PK, SK);
 
   try {
