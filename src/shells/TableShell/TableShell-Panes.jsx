@@ -14,7 +14,7 @@ const TableShellPanes = () => {
         <TableShellDirectory />
       </div>
       <TableShellDivider onDrag={delta => setDirectoryWidth(prev => Math.max(200, prev + delta))} />
-      <div className="tableShell-profile">
+      <div>
         <TableShellProfile />
       </div>
     </div>
