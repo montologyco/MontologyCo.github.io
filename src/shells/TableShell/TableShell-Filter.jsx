@@ -4,19 +4,16 @@ import React, { useEffect } from 'react';
 import queryItems from '../../server/aws-sdk/dynamoDB/services/aws-dynamoDB-queryItems-API.jsx';
 import applications from '../../navigation/applications.json';
 
-const TableShellFilter = ({ PK, inputValue, setDirectory }) => {
+const TableShellFilter = ({ PK, query, setDirectory }) => {
   useEffect(() => {
     const fetchData = async () => {
-      const { primarySK } = applications.links.find(link => link.PK === PK) || {};
-
-      if (primarySK) {
-        const filteredData = await queryItems(PK, primarySK, inputValue);
-        setDirectory(filteredData);
-      }
+      const data = await queryItems(PK)
+    //   const filteredData = await queryItems(PK, primarySK, inputValue);
+      setDirectory(data);
     };
 
     fetchData();
-  }, [PK, inputValue, setDirectory]);
+  }, [PK, query, setDirectory]);
 
   return <div className="tableShellFilter" />;
 };
