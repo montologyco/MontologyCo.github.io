@@ -1,8 +1,8 @@
 // TableShell-Panes.jsx
 
 import React from 'react';
-import TableShellDirectory from './TableShell/TableShell-Directory.jsx';
-import TableShellProfile from './TableShell/TableShell-Profile.jsx';
+import TableShellDirectory from './TableShell-Directory.jsx';
+import TableShellProfile from './TableShell-Profile.jsx';
 
 const TableShellPanes = () => {
   return (

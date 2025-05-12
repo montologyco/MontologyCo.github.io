@@ -1,8 +1,8 @@
 // TableShell.jsx
 
 import React from 'react';
-import Search from './Search/Search.jsx';
-import TableShellPanes from './TableShell/TableShell-Panes.jsx';
+import Search from '../Search/Search.jsx';
+import TableShellPanes from './TableShell-Panes.jsx';
 
 const TableShell = () => {
   return (
