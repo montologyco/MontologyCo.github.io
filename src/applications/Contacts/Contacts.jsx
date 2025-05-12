@@ -11,8 +11,8 @@ function Contacts({ setIsAuthenticated }) {
 
   useEffect(() => {
     const fetchData = async () => {
-      const PK = 'contact1234';  // Example PK, replace with actual PK
-      const SK = 'name';  // Example SK, replace with actual SK
+      const PK = 'contact1234';  // Example PK from DynamoDB
+      const SK = 'name';  // Example SK from DynamoDB
 
       try {
         const item = await getItem(PK, SK);  // Fetch the data from DynamoDB
@@ -41,9 +41,10 @@ function Contacts({ setIsAuthenticated }) {
       {error && <p>{error}</p>}
       {contact && (
         <div>
-          <h2>{contact.name}</h2>  {/* Adjust based on your data structure */}
-          <p>Email: {contact.email}</p>
-          <p>Phone: {contact.phone}</p>
+          <h2>{contact.first} {contact.last}</h2> {/* Display first and last name */}
+          <p>Honorific: {contact.honorific}</p>
+          <p>Post-Nom: {contact['post-nom']}</p>
+          <p>Pronouns: {contact.pronouns}</p>
           {/* Render other fields from the contact data */}
         </div>
       )}
