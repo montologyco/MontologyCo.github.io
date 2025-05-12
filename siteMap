@@ -47,6 +47,8 @@ MontologyCo.github.io
 │   │   │   └── aws-apiGateway-config.jsx
 │   │   ├── aws-sdk
 │   │   │   ├── dynamoDB
+│   │   │   │   ├── services
+│   │   │   │   │   ├── aws-dynamoDB-getItem-API.jsx
 │   │   │   │   └── aws-dynamoDB-API.jsx
 │   │   │   ├── aws-sdk-config.js
 │   ├── styles
