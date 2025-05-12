@@ -41,9 +41,7 @@ function TableShellProfile({ setIsAuthenticated }) {
       {error && <p>{error}</p>}
       {contact && (
         <div>
-          <h2>{contact.first} {contact.middle} {contact.last}</h2>
-          <p>Honorific: {contact.honorific}</p>
-          <p>Post-Nom: {contact.pn}</p>
+          <h2>{contact.honorific} {contact.first} {contact.middle} {contact.last} {contact.pn}</h2>
           <p>Pronouns: {contact.pronouns}</p>
         </div>
       )}
