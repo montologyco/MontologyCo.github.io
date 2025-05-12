@@ -1,16 +1,22 @@
 // TableShell-Directory.jsx
-
 import React from 'react';
 
-const TableShellDirectory = ({directoryWidth}) => {
+const TableShellDirectory = ({ directory, directoryWidth }) => {
+  const handleItemClick = (directoryitem) => {
+    console.log(`Selected directoryitem: ${directoryitem.first} ${directoryitem.last}`);
+  };
+
   return (
     <div className="tableShell-directory" style={{ width: `${directoryWidth}px` }}>
-        <ul>
-            <li>Item 1</li>
-            <li>Item 2</li>
-            <li>Item 3</li>
-            <li>Item 4</li>
-        </ul>
+      <ul>
+        {directory.map((directoryitem) => (
+          <li key={directoryitem.PK}>
+            <button onClick={() => handleItemClick(directoryitem)}>
+              {directoryitem}
+            </button>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

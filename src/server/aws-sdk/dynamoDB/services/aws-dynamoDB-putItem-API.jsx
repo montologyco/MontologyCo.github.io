@@ -1,7 +1,7 @@
 // aws-dynamoDB-putItem-API.jsx
 
 import DynamoDB from '../../aws-sdk-config.js';
-import { getParams } from '../aws-dynamoDB-API.jsx';
+import { putParams } from '../aws-dynamoDB-API.jsx';
 
 const putItem = async (item) => {
   const params = putParams(item);

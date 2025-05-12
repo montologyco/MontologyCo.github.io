@@ -5,12 +5,12 @@ import TableShellDirectory from './TableShell-Directory.jsx';
 import TableShellProfile from './TableShell-Profile.jsx';
 import TableShellDivider from './TableShell-Divider.jsx';
 
-const TableShellPanes = () => {
+const TableShellPanes = ({ directory }) => {
   const [directoryWidth, setDirectoryWidth] = useState(400); // initial width in px
 
   return (
     <div className="tableShell-panes">
-      <TableShellDirectory directoryWidth={directoryWidth} />
+      <TableShellDirectory directory={directory} directoryWidth={directoryWidth} />
       <TableShellDivider onDrag={delta => setDirectoryWidth(prev => Math.max(200, prev + delta))} />
       <TableShellProfile />
     </div>
