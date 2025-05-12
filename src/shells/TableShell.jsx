@@ -2,19 +2,21 @@
 
 import React from 'react';
 import Search from './Search/Search.jsx';
+import TableShellDirectory from './TableShell/TableShell-Directory.jsx';
 
 const TableShell = () => {
   return (
-    <div className="flex flex-col h-full">
-      <div className="p-4 border-b flex justify-center">
+    <div className="tableShell">
+      <div className="searchTopbar">
         <Search />
       </div>
-      <div className="flex flex-1">
-        <div className="flex-1 border-r p-4">
-          <p>left</p>
+      <div className="tableShell-panes">
+        <div className="tableShell-directory"> // what to name this class?
+          <p>left/table</p>
+          <TableShellDirectory />
         </div>
-        <div className="flex-1 p-4">
-          <p>right</p>
+        <div className="tableShell-profile">
+          <p>right/profile</p>
         </div>
       </div>
     </div>

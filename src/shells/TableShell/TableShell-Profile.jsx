@@ -1,4 +1,4 @@
-// Profile.jsx
+// TableShell-Profile.jsx
 
 import React, { useEffect, useState } from 'react';
 import AuthChecker from '../../server/amplify/aws-amplify-authChecker-API.jsx';
