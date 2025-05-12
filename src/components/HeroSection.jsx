@@ -3,10 +3,10 @@
 import React from 'react';
 import MontologyLogo from '../assets/Brand/MontologyLogo.jsx';
 
-import NavigationBridge from '../Navigation/NavigationBridge.jsx';
+import NavigationBridge from '../navigation/NavigationBridge.jsx';
 
-import loggedInLinks from '../Navigation/loggedInLinks.json';
-import loggedOutLinks from '../Navigation/loggedOutLinks.json';
+import loggedInLinks from '../navigation/loggedInLinks.json';
+import loggedOutLinks from '../navigation/loggedOutLinks.json';
 
 
 function HeroSection({ isAuthenticated, setIsAuthenticated}) {
