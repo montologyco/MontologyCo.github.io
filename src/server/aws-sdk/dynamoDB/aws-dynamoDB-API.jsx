@@ -12,22 +12,14 @@ export const putParams = (item) => ({
   Item: item,
 });
 
-export const queryParams = (PK) => ({
+export const queryParams = (PK, SK) => ({
   TableName: TABLE_NAME,
-  KeyConditionExpression: 'PK = :pk',
+  KeyConditionExpression: 'begins_with(PK, :pk) AND begins_with(SK, :sk)',
   ExpressionAttributeValues: {
-    ':pk': PK,
-  },
+    ':pk': { S: PKPrefix },
+    ':sk': { S: SKPrefix },
+  }  
 });
-
-// export const queryParams = (PK, SK) => ({
-//   TableName: TABLE_NAME,
-//   KeyConditionExpression: 'PK = :pk AND SK = :sk',
-//   ExpressionAttributeValues: {
-//     ':pk': { S: PK },
-//     ':sk': { S: SK },
-//   },
-// });
 
 export const updateParams = (PK, SK, updateExpression, expressionAttributeValues) => ({
   TableName: TABLE_NAME,

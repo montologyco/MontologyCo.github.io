@@ -4,6 +4,7 @@ import getDynamoDB from '../../aws-sdk-config.js';
 import { queryParams } from '../aws-dynamoDB-API.jsx';
 
 const queryItems = async (PK, primarySK, query) => {
+  //query is a placeholder for the query string, but not used yet. I need to gt the PK and SK working first.
   const DynamoDB = await getDynamoDB();
   const params = queryParams(PK, primarySK);
 
