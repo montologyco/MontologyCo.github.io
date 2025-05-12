@@ -14,7 +14,7 @@ const getDynamoDB = async () => {
   AWS.config.update({
     region: 'us-east-1',
     credentials: new AWS.CognitoIdentityCredentials({
-      IdentityPoolId: 'us-east-1:892afd16-442d-4b97-b627-264de66253e9',
+      IdentityPoolId: 'us-east-1:3fea43bf-0e53-454e-b4a4-d57c51599826',
       Logins: {
         'cognito-idp.us-east-1.amazonaws.com/us-east-1_vwGK8wsAx': idToken,
       },
