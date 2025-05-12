@@ -4,7 +4,7 @@ import React from 'react';
 import Search from '../Search/Search.jsx';
 import TableShellPanes from './TableShell-Panes.jsx';
 
-const TableShell = ({ directory, query, handleSearch }) => {
+const TableShell = ({ PK }) => {
   return (
     <div className="tableShell">
       <div className="searchTopbar">
