@@ -11,8 +11,8 @@ function Contacts({ setIsAuthenticated }) {
 
   useEffect(() => {
     const fetchData = async () => {
-      const PK = 'user123';  // Example PK, replace with actual PK
-      const SK = 'profile';  // Example SK, replace with actual SK
+      const PK = 'contact1234';  // Example PK, replace with actual PK
+      const SK = 'name';  // Example SK, replace with actual SK
 
       try {
         const item = await getItem(PK, SK);  // Fetch the data from DynamoDB
