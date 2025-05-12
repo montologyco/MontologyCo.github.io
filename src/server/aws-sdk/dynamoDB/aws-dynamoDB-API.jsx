@@ -12,25 +12,15 @@ export const putParams = (item) => ({
   Item: item,
 });
 
-export const queryParams = (PK, primarySK = '', inputValue = '') => {
-  const params = {
-    TableName: TABLE_NAME,
-    KeyConditionExpression: 'PK = :pk',
-    ExpressionAttributeValues: {
-      ':pk': PK,
-    },
-  };
+export const queryParams = (PK, SK) => ({
+  TableName: TABLE_NAME,
+  KeyConditionExpression: 'PK = :pk AND SK = :sk',
+  ExpressionAttributeValues: {
+    ':pk': { S: PK },
+    ':sk': { S: SK },
+  },
+});
 
-  if (inputValue && primarySK) {
-    params.FilterExpression = `contains(#primarySK, :input)`;
-    params.ExpressionAttributeNames = {
-      '#primarySK': primarySK,
-    };
-    params.ExpressionAttributeValues[':input'] = inputValue;
-  }
-
-  return params;
-};
 
 export const updateParams = (PK, SK, updateExpression, expressionAttributeValues) => ({
   TableName: TABLE_NAME,
