@@ -7,19 +7,19 @@ const queryItems = async (PK, primarySK = '', inputValue = '') => {
   const DynamoDB = await getDynamoDB();
   const params = queryParams(PK, primarySK);
 
+  if (inputValue) {
+    params.FilterExpression = `contains(#attribute, :inputValue)`;
+    params.ExpressionAttributeNames = {
+      '#attribute': primarySK,
+    };
+    params.ExpressionAttributeValues = {
+      ':inputValue': inputValue,
+    };
+  }
+
   try {
     const result = await DynamoDB.query(params).promise();
-    let items = result.Items || [];
-
-    if (inputValue) {
-      items = items.filter(item => {
-        const matchesPK = item[PK] && item[PK].includes(inputValue);
-        const matchesSK = item[primarySK] && item[primarySK].includes(inputValue);
-        return matchesPK || matchesSK;
-      });
-    }
-
-    return items;
+    return result.Items;
   } catch (error) {
     console.error("Error querying items:", error);
     return [];
