@@ -9,7 +9,7 @@ function Directory({ setIsAuthenticated }) {
   return (
     <div>
       <AuthChecker setAuthState={setIsAuthenticated} />
-      <h1>Table</h1>
+      
       <TableShell />
     </div>
   );
