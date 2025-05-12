@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-const Search = ({ query, onSearch }) => {
+const Search = ({ inputValue, onSearch }) => {
   const handleChange = (event) => {
     onSearch(event.target.value);
   };
@@ -10,7 +10,7 @@ const Search = ({ query, onSearch }) => {
   return (
     <input
       type="text"
-      value={query}
+      value={inputValue}
       onChange={handleChange}
       placeholder="Search..."
       className="searchInput"

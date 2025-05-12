@@ -7,18 +7,18 @@ import TableShellFilter from './TableShell-Filter.jsx';
 
 const TableShell = ({ PK }) => {
   const [directory, setDirectory] = useState([]);
-  const [query, setQuery] = useState('');
+  const [inputValue, setInputValue] = useState('');
 
   const handleSearch = (searchQuery) => {
-    setQuery(searchQuery);
+    setInputValue(searchQuery);
   };
 
   return (
     <div className="tableShell">
       <div className="searchTopbar">
-        <Search query={query} onSearch={handleSearch} />
+        <Search inputValue={inputValue} onSearch={handleSearch} />
       </div>
-      <TableShellFilter query={query} PK={PK} setDirectory={setDirectory} />
+      <TableShellFilter inputValue={inputValue} PK={PK} setDirectory={setDirectory} />
       <TableShellPanes directory={directory} />
     </div>
   );
