@@ -15,9 +15,9 @@ const TableShellDirectory = ({ directory, directoryWidth }) => {
       <ul>
         {directory.map((directoryitem) => (
           <li key={directoryitem.PK}>
-            <link onClick={() => handleItemClick(directoryitem)}>
+            <a onClick={() => handleItemClick(directoryitem)}>
               {stringifyItem(directoryitem)}
-            </link>
+            </a>
           </li>
         ))}
       </ul>
