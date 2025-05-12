@@ -33,7 +33,7 @@ function TableShellProfile({ setIsAuthenticated }) {
   }, []);
 
   return (
-    <div>
+    <div className="tableShell-profile">
       <AuthChecker setAuthState={setIsAuthenticated} />
       <h1>Profile</h1>
 

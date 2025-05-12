@@ -4,7 +4,7 @@ import React from 'react';
 
 const TableShellDirectory = () => {
   return (
-    <div>
+    <div className="tableShell-directory">
         left/table
     </div>
   );
