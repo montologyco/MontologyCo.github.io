@@ -6,8 +6,8 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import MontologyTagline from '../assets/Brand/MontologyTagline.jsx';
 import Dashboard from '../components/body/Dashboard.jsx';
 
-import Contacts from '../components/body/Contacts.jsx';
-import Budget from '../components/body/Budget.jsx';
+import Contacts from '../applications/Contacts/Contacts.jsx';
+import Budget from '../applications/Budget/Budget.jsx';
 
 import Login from './auth/Login.jsx';
 import Logout from './auth/Logout.jsx';
