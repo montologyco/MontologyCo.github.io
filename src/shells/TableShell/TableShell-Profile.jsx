@@ -34,13 +34,14 @@ function Profile({ setIsAuthenticated }) {
 
   return (
     <div>
-      <AuthChecker setAuthState={setIsAuthenticated} />
-      <h1>RIGHT {contact.honorific} {contact.first} {contact.middle} {contact.last}, {contact.pn}
-      {loading && <p>Loading...</p>}
-      {error && <p>{error}</p>}</h1>
-      {contact && (
+        <AuthChecker setAuthState={setIsAuthenticated} />
+        <h1>Profile/RIGHT</h1>
+        <h1>{contact.honorific} {contact.first} {contact.middle} {contact.last} {contact.pn}
+        {loading && <p>Loading...</p>}
+        {error && <p>{error}</p>}</h1>
+        {contact && (
         <div>
-          <h2>Pronouns: {contact.pronouns}</h2>
+            <h2>Pronouns: {contact.pronouns}</h2>
         </div>
       )}
     </div>
