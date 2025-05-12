@@ -8,8 +8,7 @@ const TableShellFilter = ({ PK, query, setDirectory }) => {
     const { primarySK } = applications.links.find(link => link.PK === PK) || {};
     useEffect(() => {
         const fetchData = async () => {
-            const data = await queryItems(PK, primarySK)
-        //   const filteredData = await queryItems(PK, primarySK, inputValue);
+            const data = await queryItems(PK, primarySK, inputValue)
             setDirectory(data);
         };
 
