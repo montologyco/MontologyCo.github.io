@@ -1,15 +1,25 @@
 .tableShell {
-
-}
-
-.tableShell-panes {
-
-}
-
-.tableShell-directory {
-
-}
-
-.tableShell-profile {
-
-}
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+  }
+  
+  .tableShell-panes {
+    display: flex;
+    flex: 1;
+    height: calc(100vh - 100px); /* Adjust the height if necessary */
+  }
+  
+  .tableShell-directory {
+    flex: 1;
+    background-color: #fff;
+    border-right: 1px solid #ddd; /* A subtle divider between panels */
+  }
+  
+  .tableShell-profile {
+    flex: 1;
+    background-color: #f0f0f0;
+    padding: 20px;
+    overflow-y: auto; /* Ensures content is scrollable */
+  }

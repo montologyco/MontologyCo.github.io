@@ -2,7 +2,7 @@
 
 import React from 'react';
 import AuthChecker from '../../server/amplify/aws-amplify-authChecker-API.jsx';
-import TableShell from '../../shells/TableShell.jsx';
+import TableShell from '../../shells/TableShell/TableShell.jsx';
 
 function Contacts({ setIsAuthenticated }) {
 
