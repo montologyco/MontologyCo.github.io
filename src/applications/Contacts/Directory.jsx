@@ -2,6 +2,7 @@
 
 import React from 'react';
 import AuthChecker from '../../server/amplify/aws-amplify-authChecker-API.jsx';
+import TableShell from '../../shells/TableShell.jsx';
 
 function Directory({ setIsAuthenticated }) {
 
@@ -9,6 +10,7 @@ function Directory({ setIsAuthenticated }) {
     <div>
       <AuthChecker setAuthState={setIsAuthenticated} />
       <h1>Table</h1>
+      <TableShell rightPanel={<div>Right Panel Content</div>}>
     </div>
   );
 }
