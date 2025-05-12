@@ -6,7 +6,7 @@ import TableShellProfile from './TableShell-Profile.jsx';
 import TableShellDivider from './TableShell-Divider.jsx';
 
 const TableShellPanes = () => {
-  const [directoryWidth, setDirectoryWidth] = useState(300); // initial width in px
+  const [directoryWidth, setDirectoryWidth] = useState(400); // initial width in px
 
   return (
     <div className="tableShell-panes">
