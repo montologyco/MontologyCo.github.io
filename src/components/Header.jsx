@@ -1,4 +1,4 @@
-// HeroSection.jsx
+// Header.jsx
 
 import React from 'react';
 import MontologyLogo from '../assets/Brand/MontologyLogo.jsx';
@@ -9,7 +9,7 @@ import loggedInLinks from '../navigation/loggedInLinks.json';
 import loggedOutLinks from '../navigation/loggedOutLinks.json';
 
 
-function HeroSection({ isAuthenticated, setIsAuthenticated}) {
+function Header({ isAuthenticated, setIsAuthenticated}) {
 
   return (
     <>
@@ -25,4 +25,4 @@ function HeroSection({ isAuthenticated, setIsAuthenticated}) {
   );
 }
 
-export default HeroSection;
+export default Header;

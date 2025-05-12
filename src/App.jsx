@@ -6,7 +6,7 @@ import './styles/index.scss';
 
 import AuthChecker from './server/amplify/aws-amplify-authChecker-API.jsx';
 
-import HeroSection from './components/HeroSection.jsx';
+import Header from './components/Header.jsx';
 import Body from './components/Body.jsx';
 import Footer from './components/Footer.jsx';
 
@@ -17,7 +17,7 @@ function App() {
     <Router>
       <AuthChecker setAuthState={setIsAuthenticated} />
       
-      <HeroSection isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} />
+      <Header isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} />
       <Body isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} />
       <Footer isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated}/>
     </Router>

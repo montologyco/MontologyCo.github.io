@@ -1,5 +1,10 @@
-@forward "root";
-@forward "montologyTagline";
-@forward "heroSection";
-@forward "body";
-@forward "footer";
+@forward "base/_root";
+@forward "base/_header";
+@forward "base/_footer";
+
+@forward "components/Body";
+
+@forward "assets/montologyTagline";
+
+@forward "shells/search";
+@forward "shells/tableShell";

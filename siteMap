@@ -29,7 +29,7 @@ MontologyCo.github.io
 │   │   │   └── TermsOfService.jsx
 │   │   ├── Body.jsx
 │   │   ├── Footer.jsx
-│   │   └── HeroSection.jsx
+│   │   └── Header.jsx
 │   ├── navigation
 │   │   ├── applications.json
 │   │   ├── boilerplate.json
