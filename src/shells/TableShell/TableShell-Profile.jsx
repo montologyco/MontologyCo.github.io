@@ -35,16 +35,12 @@ function Profile({ setIsAuthenticated }) {
   return (
     <div>
       <AuthChecker setAuthState={setIsAuthenticated} />
-      <h1>Profile</h1>
-
+      <h1>{contact.first} {contact.middle} {contact.last} {contact.honorific} {contact.pn}
       {loading && <p>Loading...</p>}
-      {error && <p>{error}</p>}
+      {error && <p>{error}</p>}</h1>
       {contact && (
         <div>
-          <h2>{contact.first} {contact.middle} {contact.last}</h2>
-          <p>Honorific: {contact.honorific}</p>
-          <p>Post-Nom: {contact.pn}</p>
-          <p>Pronouns: {contact.pronouns}</p>
+          <h2>Pronouns: {contact.pronouns}</h2>
         </div>
       )}
     </div>

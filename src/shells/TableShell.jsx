@@ -16,7 +16,6 @@ const TableShell = () => {
           <TableShellDirectory />
         </div>
         <div className="tableShell-profile">
-          <p>right/profile</p>
           <TableShellProfile />
         </div>
       </div>
