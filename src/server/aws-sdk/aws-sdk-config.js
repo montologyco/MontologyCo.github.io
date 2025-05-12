@@ -1,4 +1,4 @@
-// aws-dynamoDBConfig.js
+// aws-sdk-config.js
 
 import AWS from 'aws-sdk';
 

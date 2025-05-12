@@ -1,4 +1,4 @@
-// aws-amplifyConfig.js
+// aws-amplify-config.js
 
 export default {
   Auth: {

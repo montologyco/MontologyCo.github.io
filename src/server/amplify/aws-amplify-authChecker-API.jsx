@@ -1,4 +1,4 @@
-// aws-amplify-authChecker.jsx
+// aws-amplify-authChecker-API.jsx
 
 import { useEffect } from 'react';
 import { fetchAuthSession } from '@aws-amplify/core';

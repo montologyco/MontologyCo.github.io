@@ -1,9 +1,0 @@
-{
-  "links": [
-    { "name": "FAQ", "url": "/faq" },
-    { "name": "About", "url": "/about" },
-    { "name": "Careers", "url": "/careers" },
-    { "name": "Sitemap", "url": "/sitemap" },
-    { "name": "Contact", "url": "/contact" }
-  ]
-}

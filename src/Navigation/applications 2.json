@@ -1,9 +1,0 @@
-{
-  "links": [
-    { "name": "Solutions", "url": "/solutions" },
-    { "name": "Properties", "url": "/properties" },
-    { "name": "Contacts", "url": "/contacts" },
-    { "name": "Budget", "url": "/budget" },
-    { "name": "Contracts", "url": "/contracts" }
-  ]
-}

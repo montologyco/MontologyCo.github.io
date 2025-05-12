@@ -1,24 +1,65 @@
 MontologyCo.github.io
-├── .github
-│   └── workflows
-│       └── deploy.yml
-├── dist
-├── node_modules
+├── .github ...
+├── .vscode ...
+├── dist ...
+├── node_modules ...
 ├── public
 │   └── favicon.ico
 ├── src
 │   ├── assets
+│   │   ├── Brand
+│   │   │   ├── alps.jpg
+│   │   │   ├── IconicLogo.png
+│   │   │   ├── MontologyLogo.jsx
+│   │   │   └── MontologyTagline.jsx
+│   │   └── company.json
 │   ├── components
-│   │   ├── AppPicker.jsx
+│   │   ├── auth
+│   │   │   ├── Login.jsx
+│   │   │   ├── Logout.jsx
+│   │   │   └── Settings.jsx
+│   │   ├── body
+│   │   │   ├── Budget.jsx
+│   │   │   ├── Contacts.jsx
+│   │   │   └── Dashboard.jsx
+│   │   ├── boilerplate
+│   │   │   ├── About.jsx
+│   │   │   ├── Contact.jsx
+│   │   │   ├── FAQ.jsx
+│   │   │   └── TermsOfService.jsx
+│   │   ├── Body.jsx
 │   │   ├── Footer.jsx
-│   │   └── Header.jsx
+│   │   └── HeroSection.jsx
+│   ├── navigation
+│   │   ├── applications.json
+│   │   ├── boilerplate.json
+│   │   ├── loggedInLinks.json
+│   │   ├── loggedOutLinks.json
+│   │   ├── navigationBridge.jsx
+│   │   └── socialMedia.json
+│   ├── server
+│   │   ├── amplify
+│   │   │   ├── aws-amplify-authChecker-API.jsx
+│   │   │   └── aws-amplify-config.jsx
+│   │   ├── apiGateway
+│   │   │   ├── Lambda
+│   │   │   │   └── aws-Lambda-MontologyTagline-API.jsx
+│   │   │   └── aws-apiGateway-config.jsx
+│   │   ├── aws-sdk
+│   │   │   ├── dynamoDB
+│   │   │   │   └── aws-dynamoDB-API.jsx
+│   │   │   ├── aws-sdk-config.js
 │   ├── styles
 │   │   ├── _root.scss
-│   │   ├── App.scss
-│   │   ├── Footer.scss
-│   │   └── Header.scss
+│   │   ├── body.scss
+│   │   ├── footer.scss
+│   │   ├── heroSection.scss
+│   │   ├── index.scss
+│   │   ├── montologyTagline.scss
 │   ├── App.jsx
 │   └── main.jsx
+├── .gitignore
+├── 404.html
 ├── CNAME
 ├── eslint.config.js
 ├── index.html
