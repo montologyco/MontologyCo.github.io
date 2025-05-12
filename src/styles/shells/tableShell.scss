@@ -8,18 +8,29 @@
   .tableShell-panes {
     display: flex;
     flex: 1;
-    height: calc(100vh - 100px); /* Adjust the height if necessary */
+    height: calc(100vh - 100px);
   }
   
   .tableShell-directory {
     flex: 1;
     background-color: var(--white);
-    border-right: 1px solid var(--gray); /* A subtle divider between panels */
+  }
+
+  .tableShell-divider {
+    width: 2px;
+    background-color: var(--gray);
+    cursor: ew-resize;
+    user-select: none;
+    transition: background-color 0.2s ease;
+  
+    &:hover {
+        background-color: var(--primary);
+    }
   }
   
   .tableShell-profile {
     flex: 1;
     background-color: var(--white);
     padding: 20px;
-    overflow-y: auto; /* Ensures content is scrollable */
+    overflow-y: auto;
   }
