@@ -12,6 +12,8 @@ function Contacts({ setIsAuthenticated }) {
       <AuthChecker setAuthState={setIsAuthenticated} />
       <h1>Contacts</h1>
       <Directory setIsAuthenticated={setIsAuthenticated} />
+
+      
       <Profile />
     </div>
   );
