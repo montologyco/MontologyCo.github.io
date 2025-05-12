@@ -20,7 +20,7 @@ import FAQ from './boilerplate/FAQ.jsx';
 function Body({ isAuthenticated, setIsAuthenticated}) {
 
   return (
-    <div id="body">
+    <div id="Body">
       <Routes>
         {isAuthenticated ? (
           <>
