@@ -12,8 +12,7 @@ const TableShell = () => {
         <Search />
       </div>
       <div className="tableShell-panes">
-        <div className="tableShell-directory"> // what to name this class?
-          <p>left/table</p>
+        <div className="tableShell-directory">
           <TableShellDirectory />
         </div>
         <div className="tableShell-profile">
