@@ -12,7 +12,7 @@ const TableShellPanes = ({ directory }) => {
     <div className="tableShell-panes">
       <TableShellDirectory directory={directory} directoryWidth={directoryWidth} />
       <TableShellDivider onDrag={delta => setDirectoryWidth(prev => Math.max(200, prev + delta))} />
-      <TableShellProfile />
+      {/* <TableShellProfile /> */}
     </div>
   );
 };
