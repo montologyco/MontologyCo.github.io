@@ -3,8 +3,8 @@
 import React from 'react';
 import config from '../assets/company.json';
 
-import NavigationBridge from '../Navigation/NavigationBridge.jsx';
-import boilerplate from '../Navigation/boilerplate.json';
+import NavigationBridge from '../navigation/NavigationBridge.jsx';
+import boilerplate from '../navigation/boilerplate.json';
 
 function Footer({ isAuthenticated, setIsAuthenticated}) {
   const currentYear = new Date().getFullYear();
