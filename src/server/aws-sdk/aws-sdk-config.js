@@ -2,6 +2,7 @@
 
 import AWS from 'aws-sdk';
 
+// Configure AWS SDK directly with Cognito Identity Pool
 AWS.config.update({
   region: 'us-east-1',
   credentials: new AWS.CognitoIdentityCredentials({
@@ -9,6 +10,7 @@ AWS.config.update({
   }),
 });
 
+// Create and export the DocumentClient instance
 const dynamoDB = new AWS.DynamoDB.DocumentClient();
 
 export default dynamoDB;
