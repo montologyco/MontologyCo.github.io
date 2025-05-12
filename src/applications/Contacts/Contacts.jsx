@@ -9,7 +9,7 @@ function Contacts({ setIsAuthenticated }) {
     <div>
       <AuthChecker setAuthState={setIsAuthenticated} />
       <h1>Contacts</h1>
-      <TableShell PK="Contacts" />
+      <TableShell PK="Contact" />
     </div>
   );
 }
