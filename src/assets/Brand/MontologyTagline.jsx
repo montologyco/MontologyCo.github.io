@@ -1,7 +1,7 @@
 // MontologyTagline.jsx
 
 import React, { useState, useEffect } from 'react';
-import MontologyTaglineFetch from '../../server/MontologyTaglineFetch.jsx';
+import MontologyTaglineAPI from '../../server/apiGateway/Lambda/aws-Lambda-MontologyTagline-API.jsx';
 
 function MontologyTagline() {
   const [data, setData] = useState(null);
@@ -9,7 +9,7 @@ function MontologyTagline() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await MontologyTaglineFetch();
+      const result = await MontologyTaglineAPI();
       setData(result);
       setLoading(false);
     };

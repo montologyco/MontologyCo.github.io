@@ -1,7 +1,7 @@
 // Budget.jsx
 
 import React from 'react';
-import AuthChecker from '../../AWS/aws-authChecker.jsx';
+import AuthChecker from '../../server/amplify/aws-amplify-authChecker-API.jsx';
 
 function Budget({ setIsAuthenticated }) {
   return (

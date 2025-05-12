@@ -1,7 +1,7 @@
 // Dashboard.jsx
 
 import React from 'react';
-import AuthChecker from '../../AWS/aws-authChecker.jsx';
+import AuthChecker from '../../server/amplify/aws-amplify-authChecker-API.jsx';
 import NavigationBridge from '../../Navigation/NavigationBridge.jsx';
 import applications from '../../Navigation/applications.json';
 

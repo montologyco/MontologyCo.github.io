@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import './styles/index.scss';
 
-import AuthChecker from './AWS/aws-authChecker.jsx';
+import AuthChecker from './server/amplify/aws-amplify-authChecker-API.jsx';
 
 import HeroSection from './components/HeroSection.jsx';
 import Body from './components/Body.jsx';
