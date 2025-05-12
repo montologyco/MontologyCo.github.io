@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Search from './Search/Search.jsx';
-import TableShellPanes from './TableShell/TableShellPanes.jsx';
+import TableShellPanes from './TableShell/TableShell-Panes.jsx';
 
 const TableShell = () => {
   return (
