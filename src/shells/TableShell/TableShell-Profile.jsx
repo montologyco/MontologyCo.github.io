@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import AuthChecker from '../../server/amplify/aws-amplify-authChecker-API.jsx';
 import getItem from '../../server/aws-sdk/dynamoDB/services/aws-dynamoDB-getItem-API.jsx'; // Adjust path if necessary
 
-function Profile({ setIsAuthenticated }) {
+function TableShellProfile({ setIsAuthenticated }) {
   const [contact, setContact] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -34,18 +34,21 @@ function Profile({ setIsAuthenticated }) {
 
   return (
     <div>
-        <AuthChecker setAuthState={setIsAuthenticated} />
-        <h1>Profile/RIGHT</h1>
-        <h1>{contact.honorific} {contact.first} {contact.middle} {contact.last} {contact.pn}
-        {loading && <p>Loading...</p>}
-        {error && <p>{error}</p>}</h1>
-        {contact && (
+      <AuthChecker setAuthState={setIsAuthenticated} />
+      <h1>Profile</h1>
+
+      {loading && <p>Loading...</p>}
+      {error && <p>{error}</p>}
+      {contact && (
         <div>
-            <h2>Pronouns: {contact.pronouns}</h2>
+          <h2>{contact.first} {contact.middle} {contact.last}</h2>
+          <p>Honorific: {contact.honorific}</p>
+          <p>Post-Nom: {contact.pn}</p>
+          <p>Pronouns: {contact.pronouns}</p>
         </div>
       )}
     </div>
   );
 }
 
-export default Profile;
+export default TableShellProfile;
