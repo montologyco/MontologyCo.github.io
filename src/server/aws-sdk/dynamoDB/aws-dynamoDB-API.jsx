@@ -16,8 +16,8 @@ export const queryParams = (PK, SK) => ({
   TableName: TABLE_NAME,
   KeyConditionExpression: 'begins_with(PK, :pk) AND begins_with(SK, :sk)',
   ExpressionAttributeValues: {
-    ':pk': { S: PKPrefix },
-    ':sk': { S: SKPrefix },
+    ':pk': { S: PK },
+    ':sk': { S: SK },
   }  
 });
 
