@@ -12,7 +12,7 @@ export const putParams = (item) => ({
   Item: item,
 });
 
-export const queryParams = (PK) => ({
+export const queryParams = (PK, SK) => ({
   TableName: TABLE_NAME,
   KeyConditionExpression: 'PK = :pk',
   ExpressionAttributeValues: {
