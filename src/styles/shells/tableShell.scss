@@ -1,6 +1,7 @@
 .tableShell {
     display: flex;
     flex-direction: column;
+    border-radius: 15px;
     width: 100%;
     min-height: 100vh;
   }
@@ -13,13 +14,13 @@
   
   .tableShell-directory {
     flex: 1;
-    background-color: #fff;
-    border-right: 1px solid #ddd; /* A subtle divider between panels */
+    background-color: var(--white);
+    border-right: 1px solid var(--gray); /* A subtle divider between panels */
   }
   
   .tableShell-profile {
     flex: 1;
-    background-color: #f0f0f0;
+    background-color: var(--white);
     padding: 20px;
     overflow-y: auto; /* Ensures content is scrollable */
   }
