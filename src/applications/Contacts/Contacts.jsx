@@ -2,6 +2,7 @@
 
 import React from 'react';
 import AuthChecker from '../../server/amplify/aws-amplify-authChecker-API.jsx';
+import Directory from './Directory.jsx';
 import Profile from './Profile.jsx';
 
 function Contacts({ setIsAuthenticated }) {
@@ -10,6 +11,7 @@ function Contacts({ setIsAuthenticated }) {
     <div>
       <AuthChecker setAuthState={setIsAuthenticated} />
       <h1>Contacts</h1>
+      <Directory setIsAuthenticated={setIsAuthenticated} />
       <Profile />
     </div>
   );

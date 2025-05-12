@@ -7,7 +7,7 @@ import applications from '../../navigation/applications.json';
 
 function Dashboard({ setIsAuthenticated }) {
   return (
-    <div>
+    <div id="dashboard">
       <AuthChecker setAuthState={setIsAuthenticated} />
       
       <NavigationBridge links = {applications.links}/>
