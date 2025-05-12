@@ -18,7 +18,6 @@
 
   .tableShell-divider {
     width: 4px;
-    background-color: var(--gray);
     cursor: col-resize;
     user-select: none;
     transition: background-color 0.2s ease;
@@ -30,7 +29,6 @@
   
   .tableShell-profile {
     flex: 1;
-    background-color: var(--white);
     padding: 20px;
     overflow-y: auto;
   }

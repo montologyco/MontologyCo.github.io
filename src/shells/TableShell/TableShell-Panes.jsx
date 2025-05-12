@@ -10,7 +10,7 @@ const TableShellPanes = () => {
 
   return (
     <div className="tableShell-panes">
-      <div className="tableShell-directory" style={{ width: `${directoryWidth}px` }}>
+      <div directoryWidth={directoryWidth}>
         <TableShellDirectory />
       </div>
       <TableShellDivider onDrag={delta => setDirectoryWidth(prev => Math.max(200, prev + delta))} />

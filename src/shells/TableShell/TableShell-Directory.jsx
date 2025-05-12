@@ -2,14 +2,16 @@
 
 import React from 'react';
 
-const TableShellDirectory = () => {
+const TableShellDirectory = ({directoryWidth}) => {
   return (
-    <ul>
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
-        <li>Item 4</li>
-    </ul>
+    <div className="tableShell-directory" style={{ width: `${directoryWidth}px` }}>
+        <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+        </ul>
+    </div>
   );
 };
 
