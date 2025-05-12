@@ -35,7 +35,7 @@ function Profile({ setIsAuthenticated }) {
   return (
     <div>
       <AuthChecker setAuthState={setIsAuthenticated} />
-      <h1>{contact.honorific} {contact.first} {contact.middle} {contact.last}, {contact.pn}
+      <h1>RIGHT {contact.honorific} {contact.first} {contact.middle} {contact.last}, {contact.pn}
       {loading && <p>Loading...</p>}
       {error && <p>{error}</p>}</h1>
       {contact && (

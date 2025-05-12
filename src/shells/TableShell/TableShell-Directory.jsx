@@ -5,7 +5,7 @@ import React from 'react';
 const TableShellDirectory = () => {
   return (
     <div>
-        right/table
+        left/table
     </div>
   );
 };
