@@ -1,6 +1,6 @@
 // aws-Lambda-MontologyTagline-API.jsx
 
-import baseURL from '../aws-APIgateway-config.jsx';
+import baseURL from '../aws-apiGateway-config.jsx';
 
 const MontologyTaglineAPI = async () => {
   try {
