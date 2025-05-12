@@ -6,8 +6,8 @@ import TableShell from '../../shells/TableShell/TableShell.jsx';
 
 function Contacts({ setIsAuthenticated }) {
   const directory = [
-    { PK: 'contact1234', SK: 'name', first: 'John', last: 'Doe', middle: 'A', pn: 'Mr.', pronouns: 'he/him' },
-    { PK: 'contact5678', SK: 'name', first: 'Jane', last: 'Smith', middle: 'B', pn: 'Ms.', pronouns: 'she/her' }
+    { PK: 'contact1234', SK: 'name', honorific: 'Mr.', first: 'John', last: 'Doe', middle: 'A', pn: 'M.D.' },
+    { PK: 'contact5678', SK: 'name', honorific: 'Ms.', first: 'Jane', last: 'Smith', middle: 'B', pn: '' }
   ];
 
   return (
