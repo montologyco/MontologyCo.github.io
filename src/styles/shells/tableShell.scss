@@ -12,14 +12,14 @@
   }
   
   .tableShell-directory {
-    flex: 1;
     background-color: var(--white);
-  }
+    height: 100%;
+  }  
 
   .tableShell-divider {
-    width: 3px;
+    width: 4px;
     background-color: var(--gray);
-    cursor: ew-resize;
+    cursor: col-resize;
     user-select: none;
     transition: background-color 0.2s ease;
   
