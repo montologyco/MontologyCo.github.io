@@ -1,8 +1,6 @@
 // TableShell-Directory.jsx
 import React from 'react';
 
-import React from 'react';
-
 const TableShellDirectory = ({ directory, directoryWidth }) => {
   const handleItemClick = (directoryitem) => {
     console.log('Selected directoryitem:', directoryitem);

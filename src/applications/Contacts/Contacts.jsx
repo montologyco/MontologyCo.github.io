@@ -14,7 +14,7 @@ function Contacts({ setIsAuthenticated }) {
     <div>
       <AuthChecker setAuthState={setIsAuthenticated} />
       <h1>Contacts</h1>
-      <TableShell directory={ directory } />
+      <TableShell directory={directory} />
     </div>
   );
 }

@@ -10,7 +10,7 @@ const TableShell = ({ directory }) => {
       <div className="searchTopbar">
         <Search />
       </div>
-      <TableShellPanes directory={ directory } />
+      <TableShellPanes directory={directory} />
     </div>
   );
 };
