@@ -1,16 +1,44 @@
 // aws-sdk-config.js
 
 import AWS from 'aws-sdk';
+import { signIn } from '@aws-amplify/auth';
 
-// Configure AWS SDK directly with Cognito Identity Pool
-AWS.config.update({
-  region: 'us-east-1',
-  credentials: new AWS.CognitoIdentityCredentials({
-    IdentityPoolId: 'us-east-1:892afd16-442d-4b97-b627-264de66253e9',
-  }),
-});
+const configureAWS = async () => {
+  try {
+    // Get the current session from signIn
+    const session = await signIn.currentSession(); // Fetch the authenticated session
 
-// Create and export the DocumentClient instance
-const dynamoDB = new AWS.DynamoDB.DocumentClient();
+    // Get the ID token from the session
+    const idToken = session?.idToken?.getJwtToken();
+    if (!idToken) {
+      throw new Error('User is not authenticated');
+    }
 
-export default dynamoDB;
+    // Use Cognito Identity Credentials with the ID token for authenticated access
+    AWS.config.update({
+      region: 'us-east-1', // Replace with your region
+      credentials: new AWS.CognitoIdentityCredentials({
+        IdentityPoolId: 'us-east-1:YOUR_IDENTITY_POOL_ID', // Replace with your Cognito Identity Pool ID
+        Logins: {
+          'cognito-idp.us-east-1.amazonaws.com/YOUR_USER_POOL_ID': idToken, // Replace with your User Pool ID
+        },
+      }),
+    });
+
+    // Ensure credentials are refreshed (necessary if it's the first time using them)
+    await new Promise((resolve, reject) => {
+      AWS.config.credentials.refresh((err) => {
+        if (err) reject(err);
+        else resolve();
+      });
+    });
+
+    // Return the DynamoDB DocumentClient with the authenticated credentials
+    return new AWS.DynamoDB.DocumentClient();
+  } catch (error) {
+    console.error('Error configuring AWS:', error);
+    throw error;
+  }
+};
+
+export default configureAWS;
