@@ -1,4 +1,5 @@
 // TableShell-Directory.jsx
+
 import React from 'react';
 
 const TableShellDirectory = ({ directory, directoryWidth }) => {
@@ -7,7 +8,13 @@ const TableShellDirectory = ({ directory, directoryWidth }) => {
   };
 
   const stringifyItem = (item) => {
-    return Object.values(item).filter(Boolean).join(' ');
+    // Exclude PK and SK from the item before joining the remaining values
+    const filteredItem = Object.entries(item)
+      .filter(([key]) => key !== 'PK' && key !== 'SK')  // Exclude 'PK' and 'SK'
+      .map(([key, value]) => value)  // Get the value for each key
+      .filter(Boolean);  // Remove any falsy values (e.g., empty strings)
+      
+    return filteredItem.join(' ');  // Join the remaining values with a space
   };
 
   return (
@@ -15,7 +22,7 @@ const TableShellDirectory = ({ directory, directoryWidth }) => {
       <ul>
         {directory.map((directoryitem) => (
           <li key={directoryitem.PK}>
-            <a onClick={() => handleItemClick(directoryitem)}>
+            <a href="#" onClick={() => handleItemClick(directoryitem)}>
               {stringifyItem(directoryitem)}
             </a>
           </li>
