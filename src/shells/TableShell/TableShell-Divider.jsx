@@ -1,6 +1,6 @@
-// TableShell-Directory.jsx
+// TableShell-Divider.jsx
 
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 
 const TableShellDivider = ({ onDrag }) => {
   const isDragging = useRef(false);
@@ -14,13 +14,15 @@ const TableShellDivider = ({ onDrag }) => {
     const handleMouseUp = () => {
       isDragging.current = false;
     };
+
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('mouseup', handleMouseUp);
+
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('mouseup', handleMouseUp);
     };
-  }, []);
+  }, [onDrag]);
 
   return (
     <div
@@ -29,4 +31,5 @@ const TableShellDivider = ({ onDrag }) => {
     />
   );
 };
+
 export default TableShellDivider;
