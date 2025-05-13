@@ -19,7 +19,7 @@ const TableShell = ({ name }) => {
       <div className="searchTopbar">
         <Search inputValue={inputValue} onSearch={handleSearch} />
         <div>
-          <select>individual</select><select>business</select><select>campaign</select>
+          <input type="checkbox">individual</input> <input type="checkbox">business</input> <input type="checkbox">campaign</input> 
         </div>
       </div>
       <TableShellFilter inputValue={inputValue} name={name} SK={SK} setDirectory={setDirectory} />
