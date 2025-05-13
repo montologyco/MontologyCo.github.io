@@ -8,13 +8,15 @@ const Search = ({ inputValue, onSearch }) => {
   };
 
   return (
-    <input
-      type="text"
-      value={inputValue}
-      onChange={handleChange}
-      placeholder="Search..."
-      className="searchInput"
-    />
+    <div>
+      <input
+        type="text"
+        value={inputValue}
+        onChange={handleChange}
+        placeholder="Search..."
+        className="searchInput"
+      />
+    </div>
   );
 };
 
