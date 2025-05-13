@@ -12,7 +12,7 @@ export const putParams = (item) => ({
   Item: item,
 });
 
-export const queryWithSortBegins = (PK, SK) => ({
+export const queryParams = (PK, SK) => ({
   TableName: TABLE_NAME,
   KeyConditionExpression: 'PK = :pk AND begins_with(SK, :sk)',
   ExpressionAttributeValues: {
