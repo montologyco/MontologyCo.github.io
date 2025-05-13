@@ -2,8 +2,10 @@
 
 import React from 'react';
 
-const TableShellTypeSK = ({ SKs = [], SK, setSK }) => {
-  if (!SKs.length) return null;
+const TableShellTypeSK = ({ SKs = [], SK, onSearch }) => {
+  const handleChange = (event) => {
+    onSearch(event.target.value);
+  };
 
   return (
     <div className="skSelector">
@@ -12,9 +14,9 @@ const TableShellTypeSK = ({ SKs = [], SK, setSK }) => {
           <input
             type="radio"
             name="skType"
-            value={sk}
+            value={SK}
             checked={SK === sk}
-            onChange={() => setSK(sk)}
+            onChange={handleChange}
           />
           {sk.charAt(0).toUpperCase() + sk.slice(1)}
         </label>

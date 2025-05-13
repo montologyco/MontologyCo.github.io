@@ -12,7 +12,7 @@ const TableShell = ({ name }) => {
   const [inputValue, setInputValue] = useState('');
   
   const { PK, SKs = [] } = applications.links.find(link => link.name === name) || {};
-  const [SK, setSK] = useState(SKs[0] || ''); // Initialize from first SK, if available
+  const [SK, setSK] = useState(SKs[0] || '');
 
   const handleSearch = (searchQuery) => {
     setInputValue(searchQuery);
@@ -22,7 +22,7 @@ const TableShell = ({ name }) => {
     <div className="tableShell">
       <div className="searchTopbar">
         <Search inputValue={inputValue} onSearch={handleSearch} />
-        <TableShellTypeSK SKs={SKs} SK={SK} setSK={setSK} />
+        <TableShellTypeSK SKs={SKs} SK={SK} onSearch={handleSearch} />
       </div>
       <TableShellFilter inputValue={inputValue} PK={PK} SK={SK} setDirectory={setDirectory} />
       <TableShellPanes directory={directory} />
