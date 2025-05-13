@@ -15,23 +15,14 @@ const TableShell = ({ name }) => {
   const [SK, setSK] = useState(SKs[0] || '');
 
   const handleSearch = (value) => {
-    // if (SKs.includes(value)) {
-    //   setSK(value);
-    //   console.log('SK changed to:', value);
-    //   console.log('Input Value:', value);
-    // } else {
-    //   setInputValue(value);
-    //   console.log('SK:', value);
-    //   console.log('Input Value changed to:', value);
-    // }
-    if (!SKs.includes(value)) {
-      setInputValue(value);
-      console.log('SK:', value);
-      console.log('Input Value changed to:', value);
-    } else {
+    if (SKs.includes(value)) {
       setSK(value);
-      console.log('SK changed to:', value);
-      console.log('Input Value:', value);
+      console.log('SK:', SK);
+      console.log('Input Value changed to:', inputValue);
+    } else {
+      setInputValue(value);
+      console.log('SK:', SK);
+      console.log('Input Value changed to:', inputValue);
     }
   };
 
