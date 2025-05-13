@@ -11,7 +11,7 @@ const queryItems = async (PK, SK, query) => {
   try {
     const result = await DynamoDB.query(params).promise();
                   console.log("Query result:", result);
-                  console.log("PK, SK", PK, SK);
+                  console.log("PK, SK", PK, SK, query);
     return result.Items;
   } catch (error) {
     console.error("Error querying items:", error);
