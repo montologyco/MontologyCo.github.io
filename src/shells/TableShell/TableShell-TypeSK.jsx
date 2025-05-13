@@ -1,38 +1,26 @@
 // TableShell-TypeSK.jsx
 
-import React, { useState } from 'react';
+import React from 'react';
 
-const TableShellTypeSK = ({ SKs }) => {
-    const [SK, setSK] = useState('individual');
+const TableShellTypeSK = ({ SKs = [], SK, setSK }) => {
+  if (!SKs.length) return null;
 
-    return (
-        <div>
-            <label>
-            <input
-                type="checkbox"
-                checked={SK === 'individual'}
-                onChange={() => setSK('individual')}
-            />
-            Individual
-            </label>
-            <label>
-            <input
-                type="checkbox"
-                checked={SK === 'business'}
-                onChange={() => setSK('business')}
-            />
-            Business
-            </label>
-            <label>
-            <input
-                type="checkbox"
-                checked={SK === 'campaign'}
-                onChange={() => setSK('campaign')}
-            />
-            Campaign
-            </label>
-        </div>
-    );
+  return (
+    <div className="skSelector">
+      {SKs.map((sk) => (
+        <label key={sk}>
+          <input
+            type="radio"
+            name="skType"
+            value={sk}
+            checked={SK === sk}
+            onChange={() => setSK(sk)}
+          />
+          {sk.charAt(0).toUpperCase() + sk.slice(1)}
+        </label>
+      ))}
+    </div>
+  );
 };
 
 export default TableShellTypeSK;

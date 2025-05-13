@@ -10,8 +10,9 @@ import applications from '../../navigation/applications.json';
 const TableShell = ({ name }) => {
   const [directory, setDirectory] = useState([]);
   const [inputValue, setInputValue] = useState('');
-  const [SK, setSK] = useState('individual');
-  const { PK, SKs } = applications.links.find(link => link.name === name) || {};
+  
+  const { PK, SKs = [] } = applications.links.find(link => link.name === name) || {};
+  const [SK, setSK] = useState(SKs[0] || ''); // Initialize from first SK, if available
 
   const handleSearch = (searchQuery) => {
     setInputValue(searchQuery);
@@ -21,7 +22,7 @@ const TableShell = ({ name }) => {
     <div className="tableShell">
       <div className="searchTopbar">
         <Search inputValue={inputValue} onSearch={handleSearch} />
-        <TableShellTypeSK SKs={SKs} />
+        <TableShellTypeSK SKs={SKs} SK={SK} setSK={setSK} />
       </div>
       <TableShellFilter inputValue={inputValue} PK={PK} SK={SK} setDirectory={setDirectory} />
       <TableShellPanes directory={directory} />
