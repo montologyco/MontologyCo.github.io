@@ -1,15 +1,11 @@
 // aws-dynamoDB-queryItems-API.jsx
 
 import getDynamoDB from '../../aws-sdk-config.js';
-import { queryParamsPK, queryParamsPKSK } from '../aws-dynamoDB-API.jsx';
+import { queryParams } from '../aws-dynamoDB-API.jsx';
 
 const queryItems = async (PK, SK, query) => {
   const DynamoDB = await getDynamoDB();
-  if (!SK) {
-    const params = queryParamsPK(PK);
-  } else {
-    const params = queryParamsPKSK(PK, SK, query);
-  }
+  const params = queryParams(PK, SK, query);
 
   try {
     const result = await DynamoDB.query(params).promise();
