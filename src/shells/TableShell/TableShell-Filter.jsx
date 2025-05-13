@@ -6,7 +6,7 @@ import applications from '../../navigation/applications.json';
 
 const TableShellFilter = ({ name, inputValue, setDirectory }) => {
     const { PK, primarySK } = applications.links.find(link => link.name === name) || {};
-    console.log("TableShellFilter", name, PK, primarySK);
+    console.log(name,":", PK, primarySK);
     useEffect(() => {
         const fetchData = async () => {
             const data = await queryItems(PK, primarySK, inputValue)
