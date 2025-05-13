@@ -14,7 +14,7 @@ const TableShellTypeSK = ({ SKs = [], SK, onSearch }) => {
           <input
             type="radio"
             name="skType"
-            value={sK}
+            value={sk}
             checked={SK === sk}
             onChange={handleChange}
           />
