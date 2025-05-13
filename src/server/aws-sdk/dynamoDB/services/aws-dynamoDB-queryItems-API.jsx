@@ -3,7 +3,7 @@
 import getDynamoDB from '../../aws-sdk-config.js';
 import { queryParams } from '../aws-dynamoDB-API.jsx';
 
-const queryItems = async (PK) => {
+const queryItems = async (PK, primarySK) => {
   const DynamoDB = await getDynamoDB();
   const params = queryParams(PK, primarySK);
 
