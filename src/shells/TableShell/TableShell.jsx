@@ -5,7 +5,7 @@ import Search from '../Search/Search.jsx';
 import TableShellPanes from './TableShell-Panes.jsx';
 import TableShellFilter from './TableShell-Filter.jsx';
 
-const TableShell = ({ PK }) => {
+const TableShell = ({ name }) => {
   const [directory, setDirectory] = useState([]);
   const [inputValue, setInputValue] = useState('');
 
@@ -18,7 +18,7 @@ const TableShell = ({ PK }) => {
       <div className="searchTopbar">
         <Search inputValue={inputValue} onSearch={handleSearch} />
       </div>
-      <TableShellFilter inputValue={inputValue} PK={PK} setDirectory={setDirectory} />
+      <TableShellFilter inputValue={inputValue} name={name} setDirectory={setDirectory} />
       <TableShellPanes directory={directory} />
     </div>
   );
