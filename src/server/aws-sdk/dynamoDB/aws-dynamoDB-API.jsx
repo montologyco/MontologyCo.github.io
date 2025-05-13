@@ -12,31 +12,23 @@ export const putParams = (item) => ({
   Item: item,
 });
 
-export const queryParams = (PK, SK, query) => ({
-  TableName: TABLE_NAME,
-  KeyConditionExpression: 'PK = :pk AND begins_with(SK, :sk)',
-  ExpressionAttributeValues: {
-    ':pk': PK,
-    ':sk': SK,
-  },
-});
+export const queryParams = (PK, SK) => {
+  const params = {
+    TableName: TABLE_NAME,
+    KeyConditionExpression: 'PK = :pk',  // We always query by PK
+    ExpressionAttributeValues: {
+      ':pk': PK,
+    },
+  };
 
-export const queryParamsPK = (PK) => ({
-  TableName: TABLE_NAME,
-  KeyConditionExpression: 'PK = :pk',
-  ExpressionAttributeValues: {
-    ':pk': PK,
-  },
-});
+  // If SK is provided, add it to the query
+  if (SK) {
+    params.KeyConditionExpression += ' AND begins_with(SK, :sk)';
+    params.ExpressionAttributeValues[':sk'] = SK;
+  }
 
-export const queryParamsPKSK = (PK, SK, query) => ({
-  TableName: TABLE_NAME,
-  KeyConditionExpression: 'PK = :pk AND begins_with(SK, :sk)',
-  ExpressionAttributeValues: {
-    ':pk': PK,
-    ':sk': SK,
-  },
-});
+  return params;
+};
 
 export const updateParams = (PK, SK, updateExpression, expressionAttributeValues) => ({
   TableName: TABLE_NAME,

@@ -12,7 +12,7 @@ const TableShell = ({ name }) => {
   const [inputValue, setInputValue] = useState('');
   
   const { PK, SKs = [] } = applications.links.find(link => link.name === name) || {};
-  const [SK, setSK] = useState(SKs[0] || '');
+  const [SK, setSK] = useState('');
 
   const handleSearch = (value) => {
     if (SKs.includes(value)) {
