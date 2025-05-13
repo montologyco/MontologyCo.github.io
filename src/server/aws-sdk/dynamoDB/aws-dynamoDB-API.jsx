@@ -12,27 +12,25 @@ export const putParams = (item) => ({
   Item: item,
 });
 
-export const queryParams = (PK, SKs = [], query) => {
+export const queryParams = (PK, SKs = [], queryPrefix = '') => {
   const params = {
     TableName: TABLE_NAME,
-    KeyConditionExpression: 'PK = :pk',  // Always query by PK
+    KeyConditionExpression: 'PK = :pk',
     ExpressionAttributeValues: {
       ':pk': PK,
     },
   };
 
   if (SKs.length > 0) {
-    // If there are multiple SKs, we will use FilterExpression with 'IN' logic
-    params.FilterExpression = SKs.map((_, index) => `SK = :sk${index}`).join(' OR ');
-
-    // Add values for each SK in the filter
-    SKs.forEach((sk, index) => {
-      params.ExpressionAttributeValues[`:sk${index}`] = sk;
+    // Multiple SKs -> use FilterExpression with OR
+    params.FilterExpression = SKs.map((_, i) => `SK = :sk${i}`).join(' OR ');
+    SKs.forEach((sk, i) => {
+      params.ExpressionAttributeValues[`:sk${i}`] = sk;
     });
-  } else if (query) {
-    // If query is provided but no SKs, handle this case as well
+  } else if (queryPrefix) {
+    // Prefix-based SK query
     params.KeyConditionExpression += ' AND begins_with(SK, :sk)';
-    params.ExpressionAttributeValues[':sk'] = query;
+    params.ExpressionAttributeValues[':sk'] = queryPrefix;
   }
 
   return params;
