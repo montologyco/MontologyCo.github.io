@@ -21,7 +21,30 @@ const TableShell = ({ name }) => {
       <div className="searchTopbar">
         <Search inputValue={inputValue} onSearch={handleSearch} />
         <div>
-          <input type="checkbox">individual</input> <input type="checkbox">business</input> 
+          <label>
+            <input
+              type="checkbox"
+              checked={SK === 'individual'}
+              onChange={() => setSK('individual')}
+            />
+            Individual
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              checked={SK === 'business'}
+              onChange={() => setSK('business')}
+            />
+            Business
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              checked={SK === 'campaign'}
+              onChange={() => setSK('campaign')}
+            />
+            Campaign
+          </label>
         </div>
       </div>
       <TableShellFilter inputValue={inputValue} PK={PK} SK={SK} setDirectory={setDirectory} />
