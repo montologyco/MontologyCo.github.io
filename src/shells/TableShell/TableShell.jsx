@@ -16,10 +16,10 @@ const TableShell = ({ name }) => {
 
   const handleSearch = (value) => {
     if (SKs.includes(value)) {
-      setSK(SK);
+      setSK(value);
       console.log('SK changed to:', value);
     } else {
-      setInputValue(inputValue);
+      setInputValue(value);
       console.log('Input Value:', value);
     }
   };
