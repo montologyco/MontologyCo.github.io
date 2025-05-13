@@ -22,8 +22,10 @@ export const queryParams = (PK, SKs = [], query) => {
   };
 
   if (SKs.length > 0) {
-    // If there are selected SKs, use the IN operator for multiple SKs
-    params.KeyConditionExpression += ' AND SK IN (' + SKs.map((_, index) => `:sk${index}`).join(', ') + ')';
+    // If there are multiple SKs, we will use FilterExpression with 'IN' logic
+    params.FilterExpression = SKs.map((_, index) => `SK = :sk${index}`).join(' OR ');
+
+    // Add values for each SK in the filter
     SKs.forEach((sk, index) => {
       params.ExpressionAttributeValues[`:sk${index}`] = sk;
     });
