@@ -12,19 +12,25 @@ export const putParams = (item) => ({
   Item: item,
 });
 
-export const queryParams = (PK, SK) => {
+export const queryParams = (PK, SKs = [], query) => {
   const params = {
     TableName: TABLE_NAME,
-    KeyConditionExpression: 'PK = :pk',  // We always query by PK
+    KeyConditionExpression: 'PK = :pk',  // Always query by PK
     ExpressionAttributeValues: {
       ':pk': PK,
     },
   };
 
-  // If SK is provided, add it to the query
-  if (SK) {
+  if (SKs.length > 0) {
+    // If there are selected SKs, use the IN operator for multiple SKs
+    params.KeyConditionExpression += ' AND SK IN (' + SKs.map((_, index) => `:sk${index}`).join(', ') + ')';
+    SKs.forEach((sk, index) => {
+      params.ExpressionAttributeValues[`:sk${index}`] = sk;
+    });
+  } else if (query) {
+    // If query is provided but no SKs, handle this case as well
     params.KeyConditionExpression += ' AND begins_with(SK, :sk)';
-    params.ExpressionAttributeValues[':sk'] = SK;
+    params.ExpressionAttributeValues[':sk'] = query;
   }
 
   return params;

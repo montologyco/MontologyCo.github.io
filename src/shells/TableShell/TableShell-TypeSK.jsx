@@ -2,9 +2,16 @@
 
 import React from 'react';
 
-const TableShellTypeSK = ({ SKs = [], SK, onSearch }) => {
+const TableShellTypeSK = ({ SKs = [], selectedSKs = [], onSKChange }) => {
   const handleChange = (event) => {
-    onSearch(event.target.value);
+    const value = event.target.value;
+    const isChecked = event.target.checked;
+
+    if (isChecked) {
+      onSKChange([...selectedSKs, value]);
+    } else {
+      onSKChange(selectedSKs.filter(sk => sk !== value));
+    }
   };
 
   return (
@@ -13,9 +20,8 @@ const TableShellTypeSK = ({ SKs = [], SK, onSearch }) => {
         <label key={sk}>
           <input
             type="checkbox"
-            name="skType"
             value={sk}
-            checked={SK === sk}
+            checked={selectedSKs.includes(sk)}
             onChange={handleChange}
           />
           {sk.charAt(0).toUpperCase() + sk.slice(1)}
