@@ -8,7 +8,7 @@ import TableShellFilter from './TableShell-Filter.jsx';
 const TableShell = ({ name }) => {
   const [directory, setDirectory] = useState([]);
   const [inputValue, setInputValue] = useState('');
-  const [SK, setSK] = useState('');
+  const [SK, setSK] = useState('individual');
 
   const handleSearch = (searchQuery) => {
     setInputValue(searchQuery);
