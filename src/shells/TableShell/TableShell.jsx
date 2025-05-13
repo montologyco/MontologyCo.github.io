@@ -1,6 +1,6 @@
 // TableShell.jsx
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Search from '../Search/Search.jsx';
 import TableShellTypeSK from './TableShell-TypeSK.jsx';
 import TableShellPanes from './TableShell-Panes.jsx';
@@ -14,8 +14,12 @@ const TableShell = ({ name }) => {
   const { PK, SKs = [] } = applications.links.find(link => link.name === name) || {};
   const [SK, setSK] = useState(SKs[0] || '');
 
-  const handleSearch = (searchQuery) => {
-    setInputValue(searchQuery);
+  const handleSearch = (value) => {
+    if (SKs.includes(value)) {
+      setSK(value);
+    } else {
+      setInputValue(value);
+    }
   };
 
   return (
