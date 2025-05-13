@@ -14,11 +14,13 @@ const TableShell = ({ name }) => {
   const { PK, SKs = [] } = applications.links.find(link => link.name === name) || {};
   const [SK, setSK] = useState(SKs[0] || '');
 
-  const handleSearch = (value) => {
-    if (SKs.includes(value)) {
-      setSK(value);
+  const handleSearch = (inputValue, SK) => {
+    if (SKs.includes(SK)) {
+      setSK(SK);
+      console.log('SK changed to:', SK);
     } else {
-      setInputValue(value);
+      setInputValue(inputValue);
+      console.log('SK changed to:', inputValue);
     }
   };
 

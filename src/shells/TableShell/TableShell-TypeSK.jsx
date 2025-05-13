@@ -5,6 +5,7 @@ import React from 'react';
 const TableShellTypeSK = ({ SKs = [], SK, onSearch }) => {
   const handleChange = (event) => {
     onSearch(event.target.value);
+    console.log('SK changed to:', event.target.value);
   };
 
   return (
