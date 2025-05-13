@@ -5,7 +5,11 @@ import { queryParams } from '../aws-dynamoDB-API.jsx';
 
 const queryItems = async (PK, SK, query) => {
   const DynamoDB = await getDynamoDB();
-  const params = queryParams(PK, SK, query);
+  if (!SK) {
+    const params = queryParamsPK(PK);
+  } else {
+    const params = queryParamsPKSK(PK, SK, query);
+  }
 
   try {
     const result = await DynamoDB.query(params).promise();
