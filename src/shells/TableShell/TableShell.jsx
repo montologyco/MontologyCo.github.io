@@ -18,9 +18,11 @@ const TableShell = ({ name }) => {
     if (SKs.includes(value)) {
       setSK(value);
       console.log('SK changed to:', value);
+      console.log('Input Value:', value);
     } else {
       setInputValue(value);
-      console.log('Input Value:', value);
+      console.log('SK:', value);
+      console.log('Input Value changed to:', value);
     }
   };
 
