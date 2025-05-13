@@ -12,7 +12,7 @@ const TableShellFilter = ({ PK, SK, inputValue, setDirectory }) => {
         };
 
         fetchData();
-    }, [PK, inputValue, setDirectory]);
+    }, [PK, SK, inputValue, setDirectory]);
 
     return <div className="tableShellFilter" />;
 };
