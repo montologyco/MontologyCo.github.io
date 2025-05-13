@@ -3,13 +3,12 @@
 import getDynamoDB from '../../aws-sdk-config.js';
 import { queryParams } from '../aws-dynamoDB-API.jsx';
 
-const queryItems = async (PK, SK, query) => {
+const queryItems = async (PK) => {
   const DynamoDB = await getDynamoDB();
-  const params = queryParams(PK, SK);
+  const params = queryParams(PK, primarySK);
+
   try {
-    console.log("PK, SK:", PK, typeof PK, SK, typeof SK, query); //query = placeholder
     const result = await DynamoDB.query(params).promise();
-    console.log("Query result:", result);
     return result.Items;
   } catch (error) {
     console.error("Error querying items:", error);
