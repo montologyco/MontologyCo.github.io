@@ -14,7 +14,7 @@ export const putParams = (item) => ({
 
 export const queryParams = (PK, SK) => ({
   TableName: TABLE_NAME,
-  KeyConditionExpression: 'PK = :pk',
+  KeyConditionExpression: "begins_with(PK, :pk)",
   ExpressionAttributeValues: {
     ':pk': PK,
   },
