@@ -8,6 +8,7 @@ import TableShellFilter from './TableShell-Filter.jsx';
 const TableShell = ({ name }) => {
   const [directory, setDirectory] = useState([]);
   const [inputValue, setInputValue] = useState('');
+  const { SK } = "individual";
 
   const handleSearch = (searchQuery) => {
     setInputValue(searchQuery);
@@ -21,7 +22,7 @@ const TableShell = ({ name }) => {
           <p>types</p>
         </div>
       </div>
-      <TableShellFilter inputValue={inputValue} name={name} setDirectory={setDirectory} />
+      <TableShellFilter inputValue={inputValue} name={name} SK={SK} setDirectory={setDirectory} />
       <TableShellPanes directory={directory} />
     </div>
   );
