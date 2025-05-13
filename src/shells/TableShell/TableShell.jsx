@@ -17,6 +17,7 @@ const TableShell = ({ name }) => {
     <div className="tableShell">
       <div className="searchTopbar">
         <Search inputValue={inputValue} onSearch={handleSearch} />
+        <p>types</p>
       </div>
       <TableShellFilter inputValue={inputValue} name={name} setDirectory={setDirectory} />
       <TableShellPanes directory={directory} />
