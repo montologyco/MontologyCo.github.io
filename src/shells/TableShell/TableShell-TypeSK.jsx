@@ -12,7 +12,7 @@ const TableShellTypeSK = ({ SKs = [], SK, onSearch }) => {
       {SKs.map((sk) => (
         <label key={sk}>
           <input
-            type="radio"
+            type="checkbox"
             name="skType"
             value={sk}
             checked={SK === sk}
