@@ -3,11 +3,7 @@
     { "name": "Solutions", "url": "/solutions"},
     { "name": "Properties", "url": "/properties", "PK":"property"},
     { "name": "Contacts", "url": "/contacts", "PK":"contact", "SKs": ["individual", "business", "campaign"]},
-    { "name": "Leads", "url": "/leads", "PK":"lead"},
-    { "name": "Opportunities", "url": "/opportunities", "PK":"opportunity"},
-    { "name": "Projects", "url": "/projects", "PK":"project"},
     { "name": "Tasks", "url": "/tasks", "PK":"task"},
-    { "name": "Invoices", "url": "/invoices", "PK":"invoice"},
     { "name": "Budget", "url": "/budget", "PK":"budget"},
     { "name": "Contracts", "url": "/contracts", "PK":"contract"}
   ]
