@@ -1,10 +1,6 @@
-// TableShell.jsx
+// TableShell-TypeSK.jsx
 
 import React, { useState } from 'react';
-import Search from '../Search/Search.jsx';
-import TableShellPanes from './TableShell-Panes.jsx';
-import TableShellFilter from './TableShell-Filter.jsx';
-import applications from '../../navigation/applications.json';
 
 const TableShellTypeSK = ({ SKs }) => {
     const [SK, setSK] = useState('individual');
