@@ -2,7 +2,6 @@
 
 import React, { useEffect } from 'react';
 import queryItems from '../../server/aws-sdk/dynamoDB/services/aws-dynamoDB-queryItems-API.jsx';
-import applications from '../../navigation/applications.json';
 
 const TableShellFilter = ({ PK, SK, inputValue, setDirectory }) => {
     useEffect(() => {
