@@ -1,9 +1,9 @@
 {
   "links": [
     { "name": "Solutions", "url": "/solutions"},
-    { "name": "Properties", "url": "/properties", "PK":"property#", "primarySK": "" },
-    { "name": "Contacts", "url": "/contacts", "PK":"contact#", "primarySK": "name" },
-    { "name": "Budget", "url": "/budget", "PK":"budget#", "primarySK": "" },
-    { "name": "Contracts", "url": "/contracts", "PK":"contract#", "primarySK": "" }
+    { "name": "Properties", "url": "/properties", "PK":"property", "primarySK": "" },
+    { "name": "Contacts", "url": "/contacts", "PK":"contact", "primarySK": "name" },
+    { "name": "Budget", "url": "/budget", "PK":"budget", "primarySK": "" },
+    { "name": "Contracts", "url": "/contracts", "PK":"contract", "primarySK": "" }
   ]
 }
