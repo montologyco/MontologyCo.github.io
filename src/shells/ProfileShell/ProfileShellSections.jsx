@@ -6,8 +6,7 @@ import ProfileShellPhones from './sections/ProfileShellPhones.jsx';
 
 const sectionMap = {
   Addresses: ProfileShellAddresses,
-  Phones: ProfileShellPhones,
-  // ...
+  Phones: ProfileShellPhones
 };
 
 function ProfileShellSections({ contact, sections = [] }) {
@@ -27,6 +26,5 @@ function ProfileShellSections({ contact, sections = [] }) {
     </div>
   );
 }
-
 
 export default ProfileShellSections;
