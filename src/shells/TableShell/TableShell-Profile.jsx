@@ -57,7 +57,7 @@ function TableShellProfile({ directoryitem, SKs = [], setIsAuthenticated = () =>
       {contact && (
         <div>
           <h2>
-            {[contact.honorific, ...getHeaderFields().map(f => contact[f]), contact.pn]
+            {[...getHeaderFields().map(f => contact[f]), contact.pn]
               .filter(Boolean)
               .join(' ')}
           </h2>
