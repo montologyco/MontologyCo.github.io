@@ -1,8 +1,9 @@
 // ProfileShell-Phones.jsx
 
-const ProfileShellPhones = ({item}) => (
+const ProfileShellPhones = ({ item }) => (
   <div className="profile-phones">
-    <p>(Phone section content)</p>
+    <h3>Phones</h3>
+    <pre>{JSON.stringify(item, null, 2)}</pre>
   </div>
 );
 

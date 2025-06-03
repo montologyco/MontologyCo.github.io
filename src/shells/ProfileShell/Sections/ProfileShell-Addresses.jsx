@@ -1,8 +1,9 @@
 // ProfileShell-Addresses.jsx
 
-const ProfileShellAddresses = ({item}) => (
+const ProfileShellAddresses = ({ item }) => (
   <div className="profile-addresses">
-    <p>(Address section content)</p>
+    <h3>Addresses</h3>
+    <pre>{JSON.stringify(item, null, 2)}</pre>
   </div>
 );
 
