@@ -18,7 +18,7 @@ const TableShellPanes = ({ directory, SKs }) => {
         SKs={SKs}
       />
       <TableShellDivider onDrag={delta => setDirectoryWidth(prev => Math.max(200, prev + delta))} />
-      <TableShellProfile directoryitem={directoryitem} />
+      <TableShellProfile directoryitem={directoryitem} SKs={SKs}/>
     </div>
   );
 };
