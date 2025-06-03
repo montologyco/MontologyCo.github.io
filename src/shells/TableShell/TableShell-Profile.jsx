@@ -11,8 +11,8 @@ function TableShellProfile({ setIsAuthenticated }) {
 
   useEffect(() => {
     const fetchData = async () => {
-      const PK = 'contact1234';
-      const SK = 'name';
+      const PK = 'contact';
+      const SK = 'individual0001';
 
       try {
         const item = await getItem(PK, SK);
