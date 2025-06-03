@@ -40,7 +40,7 @@ function TableShellProfile({ directoryitem, setIsAuthenticated }) {
 
   return (
     <div className="tableShell-profile">
-      <AuthChecker setAuthState={setIsAuthenticated} />
+      <AuthChecker setAuthState={setIsAuthenticated || (() => {})} />
       <h1>Profile</h1>
 
       {!directoryitem && <p>Select a contact to view their profile.</p>}
