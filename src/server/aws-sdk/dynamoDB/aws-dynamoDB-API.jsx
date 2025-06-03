@@ -12,43 +12,21 @@ export const putParams = (item) => ({
   Item: item,
 });
 
-export const queryParams = (PK, SKs = [], query) => {
-  const base = {
+export const queryParams = (PK, SK = null) => {
+  const params = {
     TableName: TABLE_NAME,
-  };
-
-  // If you're querying multiple SKs (like ['individual#', 'business#'])
-  if (Array.isArray(SKs) && SKs.length > 0) {
-    return SKs.map((sk) => ({
-      ...base,
-      KeyConditionExpression: 'PK = :pk AND begins_with(SK, :sk)',
-      ExpressionAttributeValues: {
-        ':pk': PK,
-        ':sk': sk,
-      },
-    }));
-  }
-
-  // If you only provided one query prefix
-  if (query) {
-    return [{
-      ...base,
-      KeyConditionExpression: 'PK = :pk AND begins_with(SK, :sk)',
-      ExpressionAttributeValues: {
-        ':pk': PK,
-        ':sk': query,
-      },
-    }];
-  }
-
-  // Just query by PK if no SKs
-  return [{
-    ...base,
     KeyConditionExpression: 'PK = :pk',
     ExpressionAttributeValues: {
       ':pk': PK,
     },
-  }];
+  };
+
+  if (SK) {
+    params.KeyConditionExpression += ' AND begins_with(SK, :skPrefix)';
+    params.ExpressionAttributeValues[':skPrefix'] = SK;
+  }
+
+  return params;
 };
 
 
