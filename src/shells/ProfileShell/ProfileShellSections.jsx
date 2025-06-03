@@ -8,15 +8,15 @@ const sectionMap = {
   Phones: ProfileShellPhones
 };
 
-function ProfileShellSections({ contact, sections = [] }) {
+function ProfileShellSections({ item, sections = [] }) {
   return (
     <div className="tableShell-sections">
       {sections.map(section => {
         const SectionComponent = sectionMap[section];
         return SectionComponent ? (
-          <SectionComponent key={section} contact={contact} />
+          <SectionComponent item={item} />
         ) : (
-          <div key={section} className="profile-section-placeholder">
+          <div className="profile-section-placeholder">
             <h4>{section}</h4>
             <p>(Section placeholder)</p>
           </div>

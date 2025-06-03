@@ -6,7 +6,7 @@ import getItem from '../../server/aws-sdk/dynamoDB/services/aws-dynamoDB-getItem
 import ProfileShellSections from './ProfileShellSections.jsx';
 
 function ProfileShell({ directoryitem, SKs = [], setIsAuthenticated = () => {} }) {
-  const [contact, setContact] = useState(null);
+  const [item, setItem] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -20,12 +20,12 @@ function ProfileShell({ directoryitem, SKs = [], setIsAuthenticated = () => {} }
 
       try {
         const item = await getItem(PK, SK);
-        setContact(item || null);
+        setItem(item || null);
         if (!item) setError('No item found for the given PK and SK');
       } catch (err) {
         console.error(err);
         setError('Error fetching data');
-        setContact(null);
+        setItem(null);
       } finally {
         setLoading(false);
       }
@@ -52,18 +52,18 @@ function ProfileShell({ directoryitem, SKs = [], setIsAuthenticated = () => {} }
   return (
     <div className="tableShell-profile">
       <AuthChecker setAuthState={setIsAuthenticated} />
-      {!directoryitem && <p>Select a contact to view their profile.</p>}
+      {!directoryitem && <p>Select a item to view their profile.</p>}
       {loading && <p>Loading...</p>}
       {error && <p>{error}</p>}
-      {contact && (
+      {item && (
         <div>
           <h2>
-            {getSKheadings().map(f => contact[f]).filter(Boolean).join(' ')}
+            {getSKheadings().map(f => item[f]).filter(Boolean).join(' ')}
           </h2>
           <h3>
-            {getSKsubheadings().map(f => contact[f]).filter(Boolean).join(' ')}
+            {getSKsubheadings().map(f => item[f]).filter(Boolean).join(' ')}
           </h3>
-          <ProfileShellSections contact={contact} sections={getSKsections()} />
+          <ProfileShellSections item={item} sections={getSKsections()} />
         </div>
       )}
     </div>

@@ -1,6 +1,6 @@
 // ProfileShellAddresses.jsx
 
-const ProfileShellAddresses = () => (
+const ProfileShellAddresses = ({contact}) => (
   <div className="profile-addresses">
     <p>(Address section content)</p>
   </div>
