@@ -10,15 +10,12 @@ const TableShellDirectory = ({ directory, directoryWidth, onSelectItem, SKs = []
   };
 
   const stringifyItem = (item) => {
-    const skPrefix = item.SK.match(/^[a-zA-Z]+/)?.[0]; // Extract type from SK like "individual0001" → "individual"
-    const skConfig = SKs.find(sk => sk.SK === skPrefix);
-    const fields = skConfig?.fields || [];
-
-    const values = fields
-      .map(field => item[field])
+    const filteredItem = Object.entries(item)
+      .filter(([key]) => key !== 'PK' && key !== 'SK' && key !== 'owner')
+      .map(([_, value]) => value)
       .filter(Boolean);
 
-    return values.join(' ');
+    return filteredItem.join(' ');
   };
 
   return (
