@@ -15,7 +15,7 @@ const TableShellDirectory = ({ directory, directoryWidth, onSelectItem, SKs = []
     const SKheader = skConfig?.SKheader || [];
 
     const values = SKheader
-      .map(field => item[field])
+      .map(SKheader => item[SKheader])
       .filter(Boolean);
 
     return values.join(' ');

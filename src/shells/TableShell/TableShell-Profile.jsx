@@ -42,7 +42,7 @@ function TableShellProfile({ directoryitem, SKs = [], setIsAuthenticated = () =>
     if (!directoryitem?.SK || !SKs.length) return [];
     const skPrefix = directoryitem.SK.match(/^[a-zA-Z]+/)?.[0];
     const skEntry = SKs.find(entry => entry.SK === skPrefix);
-    return skEntry?.header || [];
+    return skEntry?.SKheader || [];
   };
 
   return (

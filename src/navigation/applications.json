@@ -5,9 +5,9 @@
     {
       "name": "Contacts", "url": "/contacts", "PK": "contact",
       "SKs": [
-        { "SK": "individual", "header": ["honorific", "first", "middle", "last", "pn"] },
-        { "SK": "business", "header": ["name"] },
-        { "SK": "campaign", "header": ["name"] }
+        { "SK": "individual", "SKheader": ["honorific", "first", "middle", "last", "pn"] },
+        { "SK": "business", "SKheader": ["name"] },
+        { "SK": "campaign", "SKheader": ["name"] }
       ]
     },
     { "name": "Tasks", "url": "/tasks", "PK": "task" },
