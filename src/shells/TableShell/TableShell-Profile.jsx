@@ -48,8 +48,6 @@ function TableShellProfile({ directoryitem, SKs = [], setIsAuthenticated = () =>
   return (
     <div className="tableShell-profile">
       <AuthChecker setAuthState={setIsAuthenticated} />
-      <h1>Profile</h1>
-
       {!directoryitem && <p>Select a contact to view their profile.</p>}
       {loading && <p>Loading...</p>}
       {error && <p>{error}</p>}
