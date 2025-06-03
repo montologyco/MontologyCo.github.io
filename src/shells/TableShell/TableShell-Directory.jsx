@@ -5,7 +5,7 @@ import React from 'react';
 const TableShellDirectory = ({ directory, directoryWidth, onSelectItem, SKs = [] }) => {
   const handleItemClick = (directoryitem) => {
     if (onSelectItem) {
-      onSelectItem({ PK: directoryitem.PK, SK: directoryitem.SK }); // send only what's needed
+      onSelectItem({ PK: directoryitem.PK, SK: directoryitem.SK });
     }
   };
 

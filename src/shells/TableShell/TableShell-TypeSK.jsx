@@ -13,16 +13,21 @@ const TableShellTypeSK = ({ SKs = [], selectedSKs = [], onSKChange }) => {
 
   return (
     <div className="tableShell-typeSK">
-      {SKs.map(({ SK }) => (
-        <label key={SK} style={{ marginRight: '1rem' }}>
-          <input
-            type="checkbox"
-            checked={selectedSKs.includes(SK)}
-            onChange={() => handleCheckboxChange(SK)}
-          />
-          {SK.charAt(0).toUpperCase() + SK.slice(1)}
-        </label>
-      ))}
+      {SKs.map((entry, index) => {
+        const skString = entry?.SK;
+        if (!skString) return null;
+
+        return (
+          <label key={skString || index} style={{ marginRight: '1rem' }}>
+            <input
+              type="checkbox"
+              checked={selectedSKs.includes(skString)}
+              onChange={() => handleCheckboxChange(skString)}
+            />
+            {skString.charAt(0).toUpperCase() + skString.slice(1)}
+          </label>
+        );
+      })}
     </div>
   );
 };
