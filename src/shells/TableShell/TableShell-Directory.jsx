@@ -11,7 +11,7 @@ const TableShellDirectory = ({ directory, directoryWidth, onSelectItem }) => {
 
   const stringifyItem = (item) => {
     const filteredItem = Object.entries(item)
-      .filter(([key]) => key !== 'PK' && key !== 'SK')
+      .filter(([key]) => key !== 'PK' && key !== 'SK' && key !== 'owner')
       .map(([_, value]) => value)
       .filter(Boolean);
 
