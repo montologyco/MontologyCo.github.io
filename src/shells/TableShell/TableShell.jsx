@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Search from '../Search/Search.jsx';
 import TableShellTypeSK from './TableShell-TypeSK.jsx';
-import TableShellPanes from './TableShell-Panes.jsx';
+import TableShellPanes from './TableShell-Panes/TableShell-Panes.jsx';
 import TableShellFilter from './TableShell-Filter.jsx';
 import applications from '../../navigation/applications.json';
 
