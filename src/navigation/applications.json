@@ -5,7 +5,7 @@
     {
       "name": "Contacts", "url": "/contacts", "PK": "contact",
       "SKs": [
-        { "SK": "individual", "fields": ["first", "middle", "last"] },
+        { "SK": "individual", "fields": ["honorific", "first", "middle", "last", "PN"] },
         { "SK": "business", "fields": ["name"] },
         { "SK": "campaign", "fields": ["name"] }
       ]
