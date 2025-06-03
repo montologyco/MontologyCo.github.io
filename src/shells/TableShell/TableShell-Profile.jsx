@@ -10,7 +10,6 @@ function TableShellProfile({ directoryitem, setIsAuthenticated }) {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Don’t run if no item selected yet
     if (!directoryitem) return;
 
     const fetchData = async () => {

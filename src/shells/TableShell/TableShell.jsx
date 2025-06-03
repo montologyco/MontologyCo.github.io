@@ -25,7 +25,7 @@ const TableShell = ({ name }) => {
         <TableShellTypeSK SKs={SKs} selectedSKs={selectedSKs} onSKChange={setSelectedSKs} />
       </div>
       <TableShellFilter inputValue={inputValue} PK={PK} selectedSKs={selectedSKs} setDirectory={setDirectory} />
-      <TableShellPanes directory={directory} />
+      <TableShellPanes directory={directory} SKs={SKs} />
     </div>
   );
 };

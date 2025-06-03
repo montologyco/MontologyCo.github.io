@@ -5,7 +5,7 @@ import TableShellDirectory from './TableShell-Directory.jsx';
 import TableShellProfile from './TableShell-Profile.jsx';
 import TableShellDivider from './TableShell-Divider.jsx';
 
-const TableShellPanes = ({ directory }) => {
+const TableShellPanes = ({ directory, SKs }) => {
   const [directoryWidth, setDirectoryWidth] = useState(400);
   const [directoryitem, setDirectoryitem] = useState(null);
 
@@ -15,6 +15,7 @@ const TableShellPanes = ({ directory }) => {
         directory={directory}
         directoryWidth={directoryWidth}
         onSelectItem={setDirectoryitem}
+        SKs={SKs} // pass SKs here
       />
       <TableShellDivider onDrag={delta => setDirectoryWidth(prev => Math.max(200, prev + delta))} />
       <TableShellProfile directoryitem={directoryitem} />

@@ -1,10 +1,19 @@
 {
   "links": [
-    { "name": "Solutions", "url": "/solutions"},
-    { "name": "Properties", "url": "/properties", "PK":"property"},
-    { "name": "Contacts", "url": "/contacts", "PK":"contact", "SKs": ["individual", "business", "campaign"]},
-    { "name": "Tasks", "url": "/tasks", "PK":"task"},
-    { "name": "Budget", "url": "/budget", "PK":"budget"},
-    { "name": "Contracts", "url": "/contracts", "PK":"contract"}
+    { "name": "Solutions", "url": "/solutions" },
+    { "name": "Properties", "url": "/properties", "PK": "property" },
+    {
+      "name": "Contacts",
+      "url": "/contacts",
+      "PK": "contact",
+      "SKs": [
+        { "type": "individual", "fields": ["first", "middle", "last"] },
+        { "type": "business", "fields": ["name"] },
+        { "type": "campaign", "fields": ["name"] }
+      ]
+    },
+    { "name": "Tasks", "url": "/tasks", "PK": "task" },
+    { "name": "Budget", "url": "/budget", "PK": "budget" },
+    { "name": "Contracts", "url": "/contracts", "PK": "contract" }
   ]
 }
