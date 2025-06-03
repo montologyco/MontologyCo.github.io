@@ -38,14 +38,21 @@ function ProfileShell({ directoryitem, SKs = [], setIsAuthenticated = () => {} }
     fetchData();
   }, [directoryitem]);
 
-  const getHeaderFields = () => {
+  const getSKheadings = () => {
     if (!directoryitem?.SK || !SKs.length) return [];
     const skPrefix = directoryitem.SK.match(/^[a-zA-Z]+/)?.[0];
     const skEntry = SKs.find(entry => entry.SK === skPrefix);
     return skEntry?.SKheading || [];
   };
 
-  const getSections = () => {
+    const getSKsubheadings = () => {
+    if (!directoryitem?.SK || !SKs.length) return [];
+    const skPrefix = directoryitem.SK.match(/^[a-zA-Z]+/)?.[0];
+    const skEntry = SKs.find(entry => entry.SK === skPrefix);
+    return skEntry?.SKsubheading || [];
+  };
+
+  const getSKsections = () => {
     if (!directoryitem?.SK || !SKs.length) return [];
     const skPrefix = directoryitem.SK.match(/^[a-zA-Z]+/)?.[0];
     const skEntry = SKs.find(entry => entry.SK === skPrefix);
@@ -62,15 +69,18 @@ function ProfileShell({ directoryitem, SKs = [], setIsAuthenticated = () => {} }
       {contact && (
         <div>
           <h2>
-            {[...getHeaderFields().map(f => contact[f])]
+            {[...getSKheadings().map(f => contact[f])]
               .filter(Boolean)
               .join(' ')}
           </h2>
-
-          {contact.pronouns && <p>Pronouns: {contact.pronouns}</p>}
+          <h1>
+            {[...getSKsubheadings().map(f => contact[f])]
+              .filter(Boolean)
+              .join(' ')}
+          </h1>
 
           <div className="profile-sections">
-            {getSections().map(section => (
+            {getSKsections().map(section => (
               <div key={section} className="profile-section-placeholder">
                 <h3>{section}</h3>
                 <p>(Section placeholder)</p>
