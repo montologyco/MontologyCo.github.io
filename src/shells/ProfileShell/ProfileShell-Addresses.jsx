@@ -1,11 +1,10 @@
-// TableShell-Profile-Addresses.jsx
+// ProfileShell-Addresses.jsx
 
-import { useEffect } from 'react';
+const ProfileShellAddresses = () => (
+  <div className="profile-address">
+    <h3>Addresses</h3>
+    <p>(Address section content)</p>
+  </div>
+);
 
-const ProfileAddresses = () => {
-
-
-  return ;
-};
-
-export default ProfileAddresses;
+export default ProfileShellAddresses;

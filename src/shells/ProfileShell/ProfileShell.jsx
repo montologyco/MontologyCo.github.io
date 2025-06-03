@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import AuthChecker from '../../server/amplify/aws-amplify-authChecker-API.jsx';
 import getItem from '../../server/aws-sdk/dynamoDB/services/aws-dynamoDB-getItem-API.jsx';
+import ProfileShellSections from './ProfileShell-Sections.jsx';
 
 function ProfileShell({ directoryitem, SKs = [], setIsAuthenticated = () => {} }) {
   const [contact, setContact] = useState(null);
@@ -14,22 +15,17 @@ function ProfileShell({ directoryitem, SKs = [], setIsAuthenticated = () => {} }
 
     const fetchData = async () => {
       const { PK, SK } = directoryitem;
-
       setLoading(true);
       setError(null);
 
       try {
         const item = await getItem(PK, SK);
-        if (item) {
-          setContact(item);
-        } else {
-          setContact(null);
-          setError('No item found for the given PK and SK');
-        }
+        setContact(item || null);
+        if (!item) setError('No item found for the given PK and SK');
       } catch (err) {
-        setContact(null);
-        setError('Error fetching data');
         console.error(err);
+        setError('Error fetching data');
+        setContact(null);
       } finally {
         setLoading(false);
       }
@@ -39,24 +35,18 @@ function ProfileShell({ directoryitem, SKs = [], setIsAuthenticated = () => {} }
   }, [directoryitem]);
 
   const getSKheadings = () => {
-    if (!directoryitem?.SK || !SKs.length) return [];
-    const skPrefix = directoryitem.SK.match(/^[a-zA-Z]+/)?.[0];
-    const skEntry = SKs.find(entry => entry.SK === skPrefix);
-    return skEntry?.SKheading || [];
+    const skPrefix = directoryitem?.SK?.match(/^[a-zA-Z]+/)?.[0];
+    return SKs.find(entry => entry.SK === skPrefix)?.SKheading || [];
   };
 
-    const getSKsubheadings = () => {
-    if (!directoryitem?.SK || !SKs.length) return [];
-    const skPrefix = directoryitem.SK.match(/^[a-zA-Z]+/)?.[0];
-    const skEntry = SKs.find(entry => entry.SK === skPrefix);
-    return skEntry?.SKsubheading || [];
+  const getSKsubheadings = () => {
+    const skPrefix = directoryitem?.SK?.match(/^[a-zA-Z]+/)?.[0];
+    return SKs.find(entry => entry.SK === skPrefix)?.SKsubheading || [];
   };
 
   const getSKsections = () => {
-    if (!directoryitem?.SK || !SKs.length) return [];
-    const skPrefix = directoryitem.SK.match(/^[a-zA-Z]+/)?.[0];
-    const skEntry = SKs.find(entry => entry.SK === skPrefix);
-    return skEntry?.SKsections || [];
+    const skPrefix = directoryitem?.SK?.match(/^[a-zA-Z]+/)?.[0];
+    return SKs.find(entry => entry.SK === skPrefix)?.SKsections || [];
   };
 
   return (
@@ -65,28 +55,15 @@ function ProfileShell({ directoryitem, SKs = [], setIsAuthenticated = () => {} }
       {!directoryitem && <p>Select a contact to view their profile.</p>}
       {loading && <p>Loading...</p>}
       {error && <p>{error}</p>}
-
       {contact && (
         <div>
           <h2>
-            {[...getSKheadings().map(f => contact[f])]
-              .filter(Boolean)
-              .join(' ')}
+            {getSKheadings().map(f => contact[f]).filter(Boolean).join(' ')}
           </h2>
           <h3>
-            {[...getSKsubheadings().map(f => contact[f])]
-              .filter(Boolean)
-              .join(' ')}
+            {getSKsubheadings().map(f => contact[f]).filter(Boolean).join(' ')}
           </h3>
-
-          <div className="profile-sections">
-            {getSKsections().map(section => (
-              <div key={section} className="profile-section-placeholder">
-                <h4>{section}</h4>
-                <p>(Section placeholder)</p>
-              </div>
-            ))}
-          </div>
+          <ProfileShellSections contact={contact} sections={getSKsections()} />
         </div>
       )}
     </div>
