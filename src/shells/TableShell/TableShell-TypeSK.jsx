@@ -3,28 +3,24 @@
 import React from 'react';
 
 const TableShellTypeSK = ({ SKs = [], selectedSKs = [], onSKChange }) => {
-  const handleChange = (event) => {
-    const value = event.target.value;
-    const isChecked = event.target.checked;
-
-    if (isChecked) {
-      onSKChange([...selectedSKs, value]);
+  const handleCheckboxChange = (skValue) => {
+    if (selectedSKs.includes(skValue)) {
+      onSKChange(selectedSKs.filter(s => s !== skValue));
     } else {
-      onSKChange(selectedSKs.filter(sk => sk !== value));
+      onSKChange([...selectedSKs, skValue]);
     }
   };
 
   return (
-    <div className="skSelector">
-      {SKs.map((sk) => (
-        <label key={sk}>
+    <div className="tableShell-typeSK">
+      {SKs.map(({ SK }) => (
+        <label key={SK} style={{ marginRight: '1rem' }}>
           <input
             type="checkbox"
-            value={sk}
-            checked={selectedSKs.includes(sk)}
-            onChange={handleChange}
+            checked={selectedSKs.includes(SK)}
+            onChange={() => handleCheckboxChange(SK)}
           />
-          {sk.charAt(0).toUpperCase() + sk.slice(1)}
+          {SK.charAt(0).toUpperCase() + SK.slice(1)}
         </label>
       ))}
     </div>

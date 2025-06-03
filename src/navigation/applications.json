@@ -3,9 +3,7 @@
     { "name": "Solutions", "url": "/solutions" },
     { "name": "Properties", "url": "/properties", "PK": "property" },
     {
-      "name": "Contacts",
-      "url": "/contacts",
-      "PK": "contact",
+      "name": "Contacts", "url": "/contacts", "PK": "contact",
       "SKs": [
         { "type": "individual", "fields": ["first", "middle", "last"] },
         { "type": "business", "fields": ["name"] },
