@@ -2,26 +2,33 @@
 
 import React, { useEffect, useState } from 'react';
 import AuthChecker from '../../server/amplify/aws-amplify-authChecker-API.jsx';
-import getItem from '../../server/aws-sdk/dynamoDB/services/aws-dynamoDB-getItem-API.jsx'; // Adjust path if necessary
+import getItem from '../../server/aws-sdk/dynamoDB/services/aws-dynamoDB-getItem-API.jsx';
 
-function TableShellProfile({ setIsAuthenticated }) {
+function TableShellProfile({ directoryitem, setIsAuthenticated }) {
   const [contact, setContact] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    // Don’t run if no item selected yet
+    if (!directoryitem) return;
+
     const fetchData = async () => {
-      const PK = 'contact';
-      const SK = 'individual0001';
+      const { PK, SK } = directoryitem;
+
+      setLoading(true);
+      setError(null);
 
       try {
         const item = await getItem(PK, SK);
         if (item) {
           setContact(item);
         } else {
+          setContact(null);
           setError('No item found for the given PK and SK');
         }
       } catch (err) {
+        setContact(null);
         setError('Error fetching data');
         console.error(err);
       } finally {
@@ -30,19 +37,22 @@ function TableShellProfile({ setIsAuthenticated }) {
     };
 
     fetchData();
-  }, []);
+  }, [directoryitem]);
 
   return (
     <div className="tableShell-profile">
       <AuthChecker setAuthState={setIsAuthenticated} />
       <h1>Profile</h1>
 
+      {!directoryitem && <p>Select a contact to view their profile.</p>}
       {loading && <p>Loading...</p>}
       {error && <p>{error}</p>}
       {contact && (
         <div>
-          <h2>{contact.honorific} {contact.first} {contact.middle} {contact.last} {contact.pn}</h2>
-          <p>Pronouns: {contact.pronouns}</p>
+          <h2>
+            {contact.honorific} {contact.first} {contact.middle} {contact.last} {contact.pn}
+          </h2>
+          {contact.pronouns && <p>Pronouns: {contact.pronouns}</p>}
         </div>
       )}
     </div>

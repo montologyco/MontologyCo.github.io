@@ -6,13 +6,18 @@ import TableShellProfile from './TableShell-Profile.jsx';
 import TableShellDivider from './TableShell-Divider.jsx';
 
 const TableShellPanes = ({ directory }) => {
-  const [directoryWidth, setDirectoryWidth] = useState(400); // initial width in px
+  const [directoryWidth, setDirectoryWidth] = useState(400);
+  const [directoryitem, setDirectoryitem] = useState(null);
 
   return (
-    <div className="tableShell-panes">
-      <TableShellDirectory directory={directory} directoryWidth={directoryWidth} />
+    <div className="tableShell-panes" style={{ display: 'flex' }}>
+      <TableShellDirectory
+        directory={directory}
+        directoryWidth={directoryWidth}
+        onSelectItem={setDirectoryitem}
+      />
       <TableShellDivider onDrag={delta => setDirectoryWidth(prev => Math.max(200, prev + delta))} />
-      <TableShellProfile />
+      <TableShellProfile directoryitem={directoryitem} />
     </div>
   );
 };
