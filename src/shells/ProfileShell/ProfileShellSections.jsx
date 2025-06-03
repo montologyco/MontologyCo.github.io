@@ -1,4 +1,4 @@
-// ProfileShell-Sections.jsx
+// ProfileShellSections.jsx
 
 import ProfileShellAddresses from './Sections/ProfileShellAddresses.jsx';
 import ProfileShellPhones from './Sections/ProfileShellPhones.jsx';
