@@ -5,11 +5,17 @@ import { queryParams } from '../aws-dynamoDB-API.jsx';
 
 const queryItems = async (PK, SKs, query) => {
   const DynamoDB = await getDynamoDB();
-  const params = queryParams(PK, SKs, query);
+  const paramList = queryParams(PK, SKs, query); // this is always an array now
 
   try {
-    const result = await DynamoDB.query(params).promise();
-    return result.Items;
+    const results = await Promise.all(
+      paramList.map(params => DynamoDB.query(params).promise())
+    );
+
+    // Flatten the results
+    const allItems = results.flatMap(res => res.Items || []);
+
+    return allItems;
   } catch (error) {
     console.error("Error querying items:", error);
     return [];
