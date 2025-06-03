@@ -1,6 +1,7 @@
 // TableShell-Profile.jsx
 
-import ProfileShell from '../../ProfileShell/ProfileShell.jsx';
+import React from 'react';
+import ProfileShell from './ProfileShell.jsx';
 
 function TableShellProfile({ directoryitem, SKs = [], setIsAuthenticated = () => {} }) {
   return (
