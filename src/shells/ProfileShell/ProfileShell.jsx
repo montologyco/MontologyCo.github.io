@@ -73,16 +73,16 @@ function ProfileShell({ directoryitem, SKs = [], setIsAuthenticated = () => {} }
               .filter(Boolean)
               .join(' ')}
           </h2>
-          <h1>
+          <h3>
             {[...getSKsubheadings().map(f => contact[f])]
               .filter(Boolean)
               .join(' ')}
-          </h1>
+          </h3>
 
           <div className="profile-sections">
             {getSKsections().map(section => (
               <div key={section} className="profile-section-placeholder">
-                <h3>{section}</h3>
+                <h4>{section}</h4>
                 <p>(Section placeholder)</p>
               </div>
             ))}
