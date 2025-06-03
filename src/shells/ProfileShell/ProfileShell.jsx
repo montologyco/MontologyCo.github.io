@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import AuthChecker from '../../server/amplify/aws-amplify-authChecker-API.jsx';
 import getItem from '../../server/aws-sdk/dynamoDB/services/aws-dynamoDB-getItem-API.jsx';
-import ProfileShellSections from './ProfileShell-Sections.jsx';
+import ProfileShellSections from './ProfileShellSections.jsx';
 
 function ProfileShell({ directoryitem, SKs = [], setIsAuthenticated = () => {} }) {
   const [contact, setContact] = useState(null);
