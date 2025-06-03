@@ -6,6 +6,11 @@ MontologyCo.github.io
 ├── public
 │   └── favicon.ico
 ├── src
+│   ├── applications
+│   │   ├── Budget
+│   │   │   └── Budget.jsx
+│   │   ├── Contacts
+│   │   │   └── Contacts.jsx
 │   ├── assets
 │   │   ├── Brand
 │   │   │   ├── alps.jpg
@@ -19,8 +24,6 @@ MontologyCo.github.io
 │   │   │   ├── Logout.jsx
 │   │   │   └── Settings.jsx
 │   │   ├── body
-│   │   │   ├── Budget.jsx
-│   │   │   ├── Contacts.jsx
 │   │   │   └── Dashboard.jsx
 │   │   ├── boilerplate
 │   │   │   ├── About.jsx
@@ -49,15 +52,34 @@ MontologyCo.github.io
 │   │   │   ├── dynamoDB
 │   │   │   │   ├── services
 │   │   │   │   │   ├── aws-dynamoDB-getItem-API.jsx
+│   │   │   │   │   ├── aws-dynamoDB-putItem-API.jsx
+│   │   │   │   │   ├── aws-dynamoDB-queryItem-API.jsx
+│   │   │   │   │   └── aws-dynamoDB-updateItem-API.jsx
 │   │   │   │   └── aws-dynamoDB-API.jsx
 │   │   │   ├── aws-sdk-config.js
+│   ├── shells
+│   │   ├── Search
+│   │   │   └── Search.jsx
+│   │   ├── TableShell
+│   │   │   ├── TableShell-Panes.jsx
+│   │   │   ├── TableShell-Filter.jsx
+│   │   │   ├── TableShell-TypeSK.jsx
+│   │   │   └── TableShell.jsx
 │   ├── styles
-│   │   ├── _root.scss
-│   │   ├── body.scss
-│   │   ├── footer.scss
-│   │   ├── heroSection.scss
-│   │   ├── index.scss
-│   │   ├── montologyTagline.scss
+│   │   ├── assets
+│   │   │   └── montologyTagline.scss
+│   │   ├── base
+│   │   │   ├── _a.scss
+│   │   │   ├── _body.scss
+│   │   │   ├── _footer.scss
+│   │   │   ├── _header.scss
+│   │   │   └── _root.scss
+│   │   ├── components
+│   │   │   └── Body.scss
+│   │   ├── shells
+│   │   │   ├── search.scss
+│   │   │   └── TableShell.scss
+│   │   └── index.scss
 │   ├── App.jsx
 │   └── main.jsx
 ├── .gitignore

@@ -1,4 +1,4 @@
-// TableShellFilter.jsx
+// TableShell-Filter.jsx
 
 import { useEffect } from 'react';
 import queryItems from '../../server/aws-sdk/dynamoDB/services/aws-dynamoDB-queryItems-API.jsx';
