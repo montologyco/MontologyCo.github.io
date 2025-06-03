@@ -12,23 +12,32 @@ export const putParams = (item) => ({
   Item: item,
 });
 
-export const queryParams = (PK, SK = null) => {
-  const params = {
+export const queryParams = (PK, SKs = []) => {
+  const base = {
     TableName: TABLE_NAME,
+  };
+
+  // Multiple SK filters: one query per SK
+  if (Array.isArray(SKs) && SKs.length > 0) {
+    return SKs.map((sk) => ({
+      ...base,
+      KeyConditionExpression: 'PK = :pk AND begins_with(SK, :sk)',
+      ExpressionAttributeValues: {
+        ':pk': PK,
+        ':sk': sk,
+      },
+    }));
+  }
+
+  // No SKs selected: return query for just PK
+  return [{
+    ...base,
     KeyConditionExpression: 'PK = :pk',
     ExpressionAttributeValues: {
       ':pk': PK,
     },
-  };
-
-  if (SK) {
-    params.KeyConditionExpression += ' AND begins_with(SK, :skPrefix)';
-    params.ExpressionAttributeValues[':skPrefix'] = SK;
-  }
-
-  return params;
+  }];
 };
-
 
 export const updateParams = (PK, SK, updateExpression, expressionAttributeValues) => ({
   TableName: TABLE_NAME,
