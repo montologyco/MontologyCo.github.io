@@ -1,8 +1,7 @@
 // ProfileShell-Sections.jsx
 
-import React from 'react';
-import ProfileShellAddresses from './sections/ProfileShellAddresses.jsx';
-import ProfileShellPhones from './sections/ProfileShellPhones.jsx';
+import ProfileShellAddresses from './Sections/ProfileShellAddresses.jsx';
+import ProfileShellPhones from './Sections/ProfileShellPhones.jsx';
 
 const sectionMap = {
   Addresses: ProfileShellAddresses,
