@@ -6,15 +6,16 @@
       "name": "Contacts", "url": "/contacts", "PK": "contact",
       "SKs": [
         { "SK": "individual",
-          "SKheader": ["honorific", "first", "middle", "last", "pn"],
+          "SKheading": ["honorific", "first", "middle", "last", "pn"],
+          "SKsubheading": ["pronouns"],
           "SKsections": ["Addresses", "Phones", "Employment", "Social Media", "Associates", "Notes"]
         },
         { "SK": "business",
-          "SKheader": ["name"],
-          "SKsections": ["Addresses", "Phones", "Social Media", "Notes"]
+          "SKheading": ["name"],
+          "SKsections": ["Addresses", "Phones", "Social Media", "Employees", "Notes"]
         },
         { "SK": "campaign",
-          "SKheader": ["name"],
+          "SKheading": ["name"],
           "SKsections": ["Addresses", "Phones", "Social Media", "Cycles", "Notes"]
         }
       ]

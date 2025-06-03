@@ -1,8 +1,8 @@
 // TableShell-Profile.jsx
 
 import React, { useEffect, useState } from 'react';
-import AuthChecker from '../../server/amplify/aws-amplify-authChecker-API.jsx';
-import getItem from '../../server/aws-sdk/dynamoDB/services/aws-dynamoDB-getItem-API.jsx';
+import AuthChecker from '../../../server/amplify/aws-amplify-authChecker-API.jsx';
+import getItem from '../../../server/aws-sdk/dynamoDB/services/aws-dynamoDB-getItem-API.jsx';
 
 function TableShellProfile({ directoryitem, SKs = [], setIsAuthenticated = () => {} }) {
   const [contact, setContact] = useState(null);
@@ -42,7 +42,7 @@ function TableShellProfile({ directoryitem, SKs = [], setIsAuthenticated = () =>
     if (!directoryitem?.SK || !SKs.length) return [];
     const skPrefix = directoryitem.SK.match(/^[a-zA-Z]+/)?.[0];
     const skEntry = SKs.find(entry => entry.SK === skPrefix);
-    return skEntry?.SKheader || [];
+    return skEntry?.SKheading || [];
   };
 
   const getSections = () => {
