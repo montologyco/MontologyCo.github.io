@@ -45,6 +45,13 @@ function TableShellProfile({ directoryitem, SKs = [], setIsAuthenticated = () =>
     return skEntry?.SKheader || [];
   };
 
+  const getSections = () => {
+    if (!directoryitem?.SK || !SKs.length) return [];
+    const skPrefix = directoryitem.SK.match(/^[a-zA-Z]+/)?.[0];
+    const skEntry = SKs.find(entry => entry.SK === skPrefix);
+    return skEntry?.SKsections || [];
+  };
+
   return (
     <div className="tableShell-profile">
       <AuthChecker setAuthState={setIsAuthenticated} />
@@ -59,7 +66,17 @@ function TableShellProfile({ directoryitem, SKs = [], setIsAuthenticated = () =>
               .filter(Boolean)
               .join(' ')}
           </h2>
+
           {contact.pronouns && <p>Pronouns: {contact.pronouns}</p>}
+
+          <div className="profile-sections">
+            {getSections().map(section => (
+              <div key={section} className="profile-section-placeholder">
+                <h3>{section}</h3>
+                <p>(Section placeholder)</p>
+              </div>
+            ))}
+          </div>
         </div>
       )}
     </div>

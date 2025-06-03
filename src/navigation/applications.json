@@ -5,9 +5,18 @@
     {
       "name": "Contacts", "url": "/contacts", "PK": "contact",
       "SKs": [
-        { "SK": "individual", "SKheader": ["honorific", "first", "middle", "last", "pn"] },
-        { "SK": "business", "SKheader": ["name"] },
-        { "SK": "campaign", "SKheader": ["name"] }
+        { "SK": "individual",
+          "SKheader": ["honorific", "first", "middle", "last", "pn"],
+          "SKsections": ["Addresses", "Phones", "Employment", "Social Media", "Associates", "Notes"]
+        },
+        { "SK": "business",
+          "SKheader": ["name"],
+          "SKsections": ["Addresses", "Phones", "Social Media", "Notes"]
+        },
+        { "SK": "campaign",
+          "SKheader": ["name"],
+          "SKsections": ["Addresses", "Phones", "Social Media", "Cycles", "Notes"]
+        }
       ]
     },
     { "name": "Tasks", "url": "/tasks", "PK": "task" },
