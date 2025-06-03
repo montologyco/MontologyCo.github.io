@@ -12,9 +12,9 @@ const TableShellDirectory = ({ directory, directoryWidth, onSelectItem, SKs = []
   const stringifyItem = (item) => {
     const skPrefix = item.SK.match(/^[a-zA-Z]+/)?.[0]; // Extract type from SK like "individual0001" → "individual"
     const skConfig = SKs.find(sk => sk.SK === skPrefix);
-    const fields = skConfig?.fields || [];
+    const header = skConfig?.header || [];
 
-    const values = fields
+    const values = header
       .map(field => item[field])
       .filter(Boolean);
 
