@@ -12,29 +12,41 @@ export const putParams = (item) => ({
   Item: item,
 });
 
-export const queryParams = (PK, SKs = [], queryPrefix = '') => {
-  const params = {
+export const queryParams = (PK, SKs = [], query) => {
+  // If SKs array is provided and non-empty, return multiple query params (one per SK)
+  if (SKs.length > 0) {
+    return SKs.map((sk, i) => ({
+      TableName: TABLE_NAME,
+      KeyConditionExpression: 'PK = :pk AND SK = :sk',
+      ExpressionAttributeValues: {
+        ':pk': PK,
+        ':sk': sk,
+      },
+    }));
+  }
+
+  // Otherwise if query prefix provided, return a single query param
+  if (query) {
+    return [{
+      TableName: TABLE_NAME,
+      KeyConditionExpression: 'PK = :pk AND begins_with(SK, :sk)',
+      ExpressionAttributeValues: {
+        ':pk': PK,
+        ':sk': query,
+      },
+    }];
+  }
+
+  // If no SKs or query, return a single query param for just PK
+  return [{
     TableName: TABLE_NAME,
     KeyConditionExpression: 'PK = :pk',
     ExpressionAttributeValues: {
       ':pk': PK,
     },
-  };
-
-  if (SKs.length > 0) {
-    // Multiple SKs -> use FilterExpression with OR
-    params.FilterExpression = SKs.map((_, i) => `SK = :sk${i}`).join(' OR ');
-    SKs.forEach((sk, i) => {
-      params.ExpressionAttributeValues[`:sk${i}`] = sk;
-    });
-  } else if (queryPrefix) {
-    // Prefix-based SK query
-    params.KeyConditionExpression += ' AND begins_with(SK, :sk)';
-    params.ExpressionAttributeValues[':sk'] = queryPrefix;
-  }
-
-  return params;
+  }];
 };
+
 
 export const updateParams = (PK, SK, updateExpression, expressionAttributeValues) => ({
   TableName: TABLE_NAME,
