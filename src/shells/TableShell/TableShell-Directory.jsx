@@ -1,34 +1,21 @@
 // TableShell-Directory.jsx
 
+import React from 'react';
+
 const TableShellDirectory = ({ directory, directoryWidth, onSelectItem, SKs = [] }) => {
   const handleItemClick = (directoryitem) => {
     if (onSelectItem) {
-      onSelectItem({ PK: directoryitem.PK, SK: directoryitem.SK });
+      onSelectItem({ PK: directoryitem.PK, SK: directoryitem.SK }); // send only what's needed
     }
-  };
-
-  const getTypeFromSK = (sk) => sk?.split('#')[0]?.toLowerCase();
-
-  const getFieldListForType = (type) => {
-    return SKs.find(skObj => skObj.type === type)?.fields || [];
   };
 
   const stringifyItem = (item) => {
-    const type = getTypeFromSK(item.SK);
-    const fields = getFieldListForType(type);
-
-    // If field config exists, use it
-    if (fields.length) {
-      return fields.map(field => item[field]).filter(Boolean).join(' ');
-    }
-
-    // fallback: show everything except internal keys
-    const fallback = Object.entries(item)
+    const filteredItem = Object.entries(item)
       .filter(([key]) => key !== 'PK' && key !== 'SK' && key !== 'owner')
       .map(([_, value]) => value)
       .filter(Boolean);
 
-    return fallback.join(' ');
+    return filteredItem.join(' ');
   };
 
   return (
