@@ -1,14 +1,14 @@
 // ProfileShell-Phones.jsx
 
 import { useEffect, useState } from 'react';
-import queryByPK from '../../server/aws-sdk/dynamoDB/services/aws-dynamoDB-queryItem-API';
+import getItem from '../../../server/aws-sdk/dynamoDB/services/aws-dynamoDB-getItem-API.jsx';
 
 const ProfileShellPhones = ({ SK }) => {
   const [phones, setPhones] = useState([]);
 
   useEffect(() => {
     const fetchPhones = async () => {
-      const allPhones = await queryByPK('phone');
+      const allPhones = await getItem('phone');
       const filtered = allPhones.filter(p =>
         p.owners?.split(',').includes(SK)
       );

@@ -39,6 +39,18 @@ export const queryParams = (PK, SKs = []) => {
   }];
 };
 
+// 🔹 NEW: For querying all items under PK to be filtered by `owners` outside Dynamo
+export const ownedItemsParams = (PK) => ({
+  TableName: TABLE_NAME,
+  KeyConditionExpression: '#pk = :pkVal',
+  ExpressionAttributeNames: {
+    '#pk': 'PK'
+  },
+  ExpressionAttributeValues: {
+    ':pkVal': PK
+  }
+});
+
 export const updateParams = (PK, SK, updateExpression, expressionAttributeValues) => ({
   TableName: TABLE_NAME,
   Key: { PK, SK },
@@ -46,4 +58,10 @@ export const updateParams = (PK, SK, updateExpression, expressionAttributeValues
   ExpressionAttributeValues: expressionAttributeValues,
 });
 
-export default { getParams, putParams, queryParams, updateParams };
+export default {
+  getParams,
+  putParams,
+  queryParams,
+  ownedItemsParams,
+  updateParams
+};
