@@ -1,4 +1,4 @@
-// aws-dynamoDB-getOwnedItem-API.jsx
+// aws-dynamoDB-getOwnedItems-API.jsx
 
 import getDynamoDB from '../../aws-sdk-config.js';
 import { ownedItemsParams } from '../aws-dynamoDB-API.jsx';
