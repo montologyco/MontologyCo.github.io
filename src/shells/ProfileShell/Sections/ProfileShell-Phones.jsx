@@ -9,9 +9,9 @@ const ProfileShellPhones = ({ SK }) => {
   useEffect(() => {
     const fetchPhones = async () => {
       const results = await getOwnedItems('phone', SK);
+      console.log('Phones fetched:', results); // <–– add this
       setPhones(results);
     };
-
     fetchPhones();
   }, [SK]);
 
