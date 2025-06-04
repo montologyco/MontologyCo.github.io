@@ -15,6 +15,7 @@ const getOwnedItems = async (PK, SKowner) => {
 
     return allItems.filter(item => {
       const owners = item.owners; // DocumentClient auto-converts sets to arrays
+      console.log('Filtered items:', result);
       return Array.isArray(owners) && owners.includes(SKowner);
     });
   } catch (error) {
