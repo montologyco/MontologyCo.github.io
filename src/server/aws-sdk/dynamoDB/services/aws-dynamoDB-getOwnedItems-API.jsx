@@ -13,9 +13,10 @@ const getOwnedItems = async (PK, SKowner) => {
     const result = await DynamoDB.query(params).promise();
     const allItems = result.Items || [];
 
-    return allItems.filter(item =>
-      Array.isArray(item.owners) && item.owners.includes(SKowner)
-    );
+    return allItems.filter(item => {
+      const owners = item.owners?.SS; // correct way to access the String Set
+      return Array.isArray(owners) && owners.includes(SKowner);
+    });
   } catch (error) {
     console.error('Error retrieving owned items:', error);
     return [];
