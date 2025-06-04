@@ -12,11 +12,15 @@ const getOwnedItems = async (PK, SKowner) => {
   try {
     const result = await DynamoDB.scan(params).promise();
     const allItems = result.Items || [];
-      console.log('Items:', result);
 
     return allItems.filter(item => {
-      const owners = item.owners; // DocumentClient auto-converts sets to arrays
-      console.log('Filtered items:', result);
+      let owners = item.owners;
+
+      // Handle if owners is a Set object (not auto-parsed)
+      if (owners?.values) {
+        owners = owners.values;
+      }
+
       return Array.isArray(owners) && owners.includes(SKowner);
     });
   } catch (error) {
