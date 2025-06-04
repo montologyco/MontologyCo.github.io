@@ -3,7 +3,7 @@
 import getDynamoDB from '../../aws-sdk-config.js';
 import { ownedItemsParams } from '../aws-dynamoDB-API.jsx';
 
-const getOwnedItems = async (PK, ownerSK) => {
+const getOwnedItems = async (PK, SKowner) => {
   const DynamoDB = await getDynamoDB();
   const params = ownedItemsParams(PK);
 
@@ -12,7 +12,7 @@ const getOwnedItems = async (PK, ownerSK) => {
     const allItems = result.Items || [];
 
     return allItems.filter(item =>
-      Array.isArray(item.owners) && item.owners.includes(ownerSK)
+      Array.isArray(item.owners) && item.owners.includes(SKowner)
     );
   } catch (error) {
     console.error('Error retrieving owned items:', error);
