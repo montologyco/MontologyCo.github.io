@@ -17,9 +17,8 @@ export const queryParams = (PK, SKs = []) => {
     TableName: TABLE_NAME,
   };
 
-  // Multiple SK filters: one query per SK
   if (Array.isArray(SKs) && SKs.length > 0) {
-    return SKs.map((sk) => ({
+    return SKs.map(sk => ({
       ...base,
       KeyConditionExpression: 'PK = :pk AND begins_with(SK, :sk)',
       ExpressionAttributeValues: {
@@ -29,7 +28,6 @@ export const queryParams = (PK, SKs = []) => {
     }));
   }
 
-  // No SKs selected: return query for just PK
   return [{
     ...base,
     KeyConditionExpression: 'PK = :pk',
@@ -39,16 +37,13 @@ export const queryParams = (PK, SKs = []) => {
   }];
 };
 
-// 🔹 NEW: For querying all items under PK to be filtered by `owners` outside Dynamo
+// ✅ You were right to define this here:
 export const ownedItemsParams = (PK) => ({
   TableName: TABLE_NAME,
-  KeyConditionExpression: '#pk = :pkVal',
-  ExpressionAttributeNames: {
-    '#pk': 'PK'
-  },
+  FilterExpression: 'PK = :pk',
   ExpressionAttributeValues: {
-    ':pkVal': PK
-  }
+    ':pk': PK,
+  },
 });
 
 export const updateParams = (PK, SK, updateExpression, expressionAttributeValues) => ({
