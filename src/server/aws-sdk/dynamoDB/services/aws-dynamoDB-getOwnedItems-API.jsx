@@ -7,6 +7,8 @@ const getOwnedItems = async (PK, SKowner) => {
   const DynamoDB = await getDynamoDB();
   const params = ownedItemsParams(PK);
 
+  console.log('Retrieving owned items for PK:', PK, 'with owner:', SKowner);
+
   try {
     const result = await DynamoDB.query(params).promise();
     const allItems = result.Items || [];
