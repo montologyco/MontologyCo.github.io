@@ -14,9 +14,9 @@ function ProfileShellSections({ SK, sections = [] }) {
       {sections.map(section => {
         const SectionComponent = sectionMap[section];
         return SectionComponent ? (
-          <SectionComponent SK={SK} />
+          <SectionComponent key={section} SK={SK} />
         ) : (
-          <div className="profile-section-placeholder">
+          <div key={section} className="profile-section-placeholder">
             <h4>{section}</h4>
             <p>(Section placeholder)</p>
           </div>
