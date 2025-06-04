@@ -63,7 +63,7 @@ function ProfileShell({ directoryitem, SKs = [], setIsAuthenticated = () => {} }
           <h3>
             {getSKsubheadings().map(f => item[f]).filter(Boolean).join(' ')}
           </h3>
-          <ProfileShellSections SK={SK} sections={getSKsections()} />
+          <ProfileShellSections SK={directoryitem?.SK} sections={getSKsections()} />
         </div>
       )}
     </div>
