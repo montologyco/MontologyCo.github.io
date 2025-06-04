@@ -16,6 +16,7 @@ const getOwnedItems = async (PK, SKowner) => {
     return allItems.filter(item => {
       const owners = item.owners?.SS; // correct way to access the String Set
       return Array.isArray(owners) && owners.includes(SKowner);
+      console.log('Filtered item:', item.SK, 'Owners:', owners);
     });
   } catch (error) {
     console.error('Error retrieving owned items:', error);
