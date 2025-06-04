@@ -1,10 +1,34 @@
 // ProfileShell-Phones.jsx
 
-const ProfileShellPhones = ({ SK }) => (
-  <div className="profile-phones">
-    <h3>Phones</h3>
-    <pre>{JSON.stringify(SK, null, 2)}</pre>
-  </div>
-);
+import { useEffect, useState } from 'react';
+import queryByPK from '../../server/aws-sdk/dynamoDB/services/aws-dynamoDB-queryItem-API';
+
+const ProfileShellPhones = ({ SK }) => {
+  const [phones, setPhones] = useState([]);
+
+  useEffect(() => {
+    const fetchPhones = async () => {
+      const allPhones = await queryByPK('phone');
+      const filtered = allPhones.filter(p =>
+        p.owners?.split(',').includes(SK)
+      );
+      setPhones(filtered);
+    };
+
+    fetchPhones();
+  }, [SK]);
+
+  return (
+    <div className="profile-phones">
+      <h3>Phones</h3>
+      {phones.map(phone => (
+        <div key={phone.SK}>
+          <p>{phone.SK} ({phone.type})</p>
+        </div>
+      ))}
+      {phones.length === 0 && <p>No phones linked.</p>}
+    </div>
+  );
+};
 
 export default ProfileShellPhones;
