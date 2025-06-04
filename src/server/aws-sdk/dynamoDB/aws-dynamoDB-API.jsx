@@ -37,7 +37,6 @@ export const queryParams = (PK, SKs = []) => {
   }];
 };
 
-// ✅ You were right to define this here:
 export const ownedItemsParams = (PK) => ({
   TableName: TABLE_NAME,
   FilterExpression: 'PK = :pk',
@@ -58,5 +57,5 @@ export default {
   putParams,
   queryParams,
   ownedItemsParams,
-  updateParams
+  updateParams,
 };
