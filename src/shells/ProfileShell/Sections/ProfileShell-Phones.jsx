@@ -1,7 +1,7 @@
 // ProfileShell-Phones.jsx
 
 import { useEffect, useState } from 'react';
-import getOwnedItems from '../../../server/aws-sdk/dynamoDB/services/aws-dynamoDB-getOwnedItems-API.jsx';
+import getOwnedItems from '../../../server/aws-sdk/dynamoDB/services/aws-dynamoDB-getOwnedItem-API.jsx';
 
 const ProfileShellPhones = ({ SK }) => {
   const [phones, setPhones] = useState([]);
