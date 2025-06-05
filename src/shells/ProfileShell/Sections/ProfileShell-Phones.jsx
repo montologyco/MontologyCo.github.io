@@ -1,7 +1,7 @@
 // ProfileShell-Phones.jsx
 
 const ProfileShellPhones = ({ item }) => {
-  const phoneSKs = Array.isArray(item.phones) ? item.phones : [];
+  const phoneSKs = Array.isArray(item.SK) ? item.SK : [];
   console.log('ProfileShellPhones', phoneSKs);
   console.log('ProfileShellPhones item', item);
   return (
