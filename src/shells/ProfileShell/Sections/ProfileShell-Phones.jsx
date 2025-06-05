@@ -4,9 +4,6 @@ const ProfileShellPhones = ({ item }) => {
   const phoneSet = item.phones;
   const phoneSKs = Array.isArray(item.phones?.values) ? phoneSet.values : [];
 
-  console.log('ProfileShellPhones', phoneSKs);
-  console.log('ProfileShellPhones item', item);
-
   return (
     <div className="profile-phones">
       <h3>Phones</h3>
