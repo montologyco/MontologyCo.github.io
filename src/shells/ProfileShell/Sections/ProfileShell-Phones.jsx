@@ -3,7 +3,7 @@
 const ProfileShellPhones = ({ item }) => {
   const phoneSKs = Array.isArray(item.phones) ? item.phones : [];
   console.log('ProfileShellPhones', phoneSKs);
-
+  console.log('ProfileShellPhones item', item);
   return (
     <div className="profile-phones">
       <h3>Phones</h3>
