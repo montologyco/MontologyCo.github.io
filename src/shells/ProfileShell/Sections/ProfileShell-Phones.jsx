@@ -2,6 +2,7 @@
 
 const ProfileShellPhones = ({ item }) => {
   const phoneSKs = Array.isArray(item.phones) ? item.phones : [];
+  console.log('ProfileShellPhones', phoneSKs);
 
   return (
     <div className="profile-phones">
