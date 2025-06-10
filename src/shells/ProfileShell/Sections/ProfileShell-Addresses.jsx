@@ -11,9 +11,18 @@ const ProfileShellAddresses = ({ item }) => {
   useEffect(() => {
     const fetchAddresses = async () => {
       const results = await Promise.all(
-        addressSKs.map(sk => getItem('address', sk))
+        addressSKs.map(async (sk) => {
+          const address = await getItem('address', sk); // First: home0001
+          if (!address || !address.street) return null;
+
+          const streetDetails = await getItem('address', address.street); // Second: street0001
+          return {
+            ...address,
+            ...streetDetails // merge in city, zip, street name
+          };
+        })
       );
-      setAddressData(results.filter(Boolean)); // remove nulls if any lookup fails
+      setAddressData(results.filter(Boolean));
     };
 
     if (addressSKs.length > 0) {
@@ -26,7 +35,7 @@ const ProfileShellAddresses = ({ item }) => {
       <h3>Addresses</h3>
       {addressData.map(address => (
         <div key={address.SK}>
-          <p>{address.number} {address.street}</p>
+          <p>{address.number} {address.street} {address.city}, {address.zip}</p>
         </div>
       ))}
       {addressData.length === 0 && <p>No addresses linked.</p>}
