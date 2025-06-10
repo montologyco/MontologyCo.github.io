@@ -7,18 +7,15 @@ const ProfileShellPhones = ({ item }) => {
   return (
     <div className="profile-phones">
       <h3>Phones</h3>
-      {phoneSKs.map(phone => {
-        const formatted =
-          typeof phone === 'string' && phone.length === 10
-            ? `(${phone.slice(0, 3)}) ${phone.slice(3, 6)}-${phone.slice(6)}`
-            : phone;
-
-        return (
-          <div key={phone}>
-            <p>{formatted}</p>
-          </div>
-        );
-      })}
+      {phoneSKs.map(phone => (
+        <div key={phone}>
+          <p>
+            {typeof phone === 'string' && phone.length === 10
+              ? `(${phone.slice(0, 3)}) ${phone.slice(3, 6)}-${phone.slice(6)}`
+              : phone}
+          </p>
+        </div>
+      ))}
       {phoneSKs.length === 0 && <p>No phones linked.</p>}
     </div>
   );
