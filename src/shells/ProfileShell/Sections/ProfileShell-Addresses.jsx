@@ -12,12 +12,13 @@ const ProfileShellAddresses = ({ item }) => {
     const fetchAddresses = async () => {
       const results = await Promise.all(
         addressSKs.map(async (homeSK) => {
-          const address = await getItem('address', homeSK); // e.g., home0001
-          if (!address || !address.street) return null;
+          const address = await getItem('address', homeSK); // SK home0001
+          if (!address || !address.street) return null; //empty test
 
-          const streetDetails = await getItem('address', address.street); // e.g., street0001
-          const stateDetails = await getItem('address', address.state);   // e.g., state0040
+          const streetDetails = await getItem('address', address.street); // SK street0001, GET street, city, zip, state0040
+          const stateDetails = await getItem('address', address.state);   // SK state0040, GET state/st
 
+          console.log('State:', stateDetails);
           return {
             ...address,
             ...streetDetails,
