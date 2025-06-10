@@ -16,7 +16,7 @@ const ProfileShellAddresses = ({ item }) => {
           if (!address || !address.street) return null; //empty test
 
           const streetDetails = await getItem('address', address.street); // SK street0001, GET street, city, zip, state0040
-          const stateDetails = await getItem('address', address.state);   // SK state0040, GET state/st
+          const stateDetails = await getItem('address', streetDetails.state);   // SK state0040, GET state/st
 
           console.log('State:', stateDetails);
           return {
@@ -40,7 +40,7 @@ const ProfileShellAddresses = ({ item }) => {
       <h3>Addresses</h3>
       {addressData.map(address => (
         <div key={address.SK}>
-          <p>{address.number} {address.street} {address.city}, {address.state} {address.zip}</p>
+          <p>{address.number} {address.street} {address.city}, {address.st} {address.zip}</p>
         </div>
       ))}
       {addressData.length === 0 && <p>No addresses linked.</p>}
