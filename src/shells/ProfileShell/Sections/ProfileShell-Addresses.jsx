@@ -39,7 +39,7 @@ const ProfileShellAddresses = ({ item }) => {
       <h3>Addresses</h3>
       {addressData.map(address => (
         <div key={address.SK}>
-          <p>{address.number} {address.street} {address.city}, {address.st} {address.zip}</p>
+          <p>{address.number} {address.street} {address.city}, {address.state} {address.zip}</p>
         </div>
       ))}
       {addressData.length === 0 && <p>No addresses linked.</p>}
