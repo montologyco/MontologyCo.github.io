@@ -2,10 +2,12 @@
 
 import ProfileShellAddresses from './Sections/ProfileShell-Addresses.jsx';
 import ProfileShellPhones from './Sections/ProfileShell-Phones.jsx';
+import ProfileShellEmployment from './Sections/ProfileShell-Employment.jsx';
 
 const sectionMap = {
   Addresses: ProfileShellAddresses,
-  Phones: ProfileShellPhones
+  Phones: ProfileShellPhones,
+  Employment: ProfileShellEmployment
 };
 
 function ProfileShellSections({ item, sections = [] }) {
