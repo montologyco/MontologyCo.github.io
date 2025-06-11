@@ -1,7 +1,11 @@
 // ProfileShell-Phones.jsx
 
 const ProfileShellPhones = ({ item }) => {
-  const phoneSKs = Array.isArray(item.phones) ? item.phones : [];
+  const phoneSet = item.phones;
+  const phoneSKs = Array.isArray(phoneSet?.values) ? phoneSet.values : [];
+
+  console.log('ProfileShellPhones', phoneSKs);
+  console.log('ProfileShellPhones item', item);
 
   return (
     <div className="profile-phones">
