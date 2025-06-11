@@ -9,11 +9,7 @@ const ProfileShellPhones = ({ item }) => {
       <h3>Phones</h3>
       {phoneSKs.map(phone => (
         <div key={phone}>
-          <p>
-            {phone.length === 10
-              ? `(${phone.slice(0, 3)}) ${phone.slice(3, 6)}-${phone.slice(6)}`
-              : phone}
-          </p>
+          <p>`(${phone.slice(0, 3)}) ${phone.slice(3, 6)}-${phone.slice(6)}`</p>
         </div>
       ))}
       {phoneSKs.length === 0 && <p>No phones linked.</p>}
