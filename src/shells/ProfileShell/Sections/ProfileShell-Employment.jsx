@@ -7,23 +7,12 @@ const ProfileShellEmployment = ({ item }) => {
   return (
     <div className="profile-employment">
       <h3>Employment</h3>
-      {employmentSKs.length > 0 ? (
-        employmentSKs.map((employment) => {
-          const employmentStr = String(employment); // ensure string from SK number
-          const formatted =
-            employmentStr.length === 10
-              ? `(${employmentStr.slice(0, 3)}) ${employmentStr.slice(3, 6)}-${employmentStr.slice(6)}`
-              : employmentStr;
-
-          return (
-            <div key={employmentStr}>
-              <p>{formatted}</p>
-            </div>
-          );
-        })
-      ) : (
-        <p>No employment linked.</p>
-      )}
+      {employmentSKs.map(employment => (
+        <div key={employment}>
+          <p>{employment}</p>
+        </div>
+      ))}
+      {employmentSKs.length === 0 && <p>No employment linked.</p>}
     </div>
   );
 };
