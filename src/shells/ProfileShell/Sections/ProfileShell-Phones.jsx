@@ -1,25 +1,28 @@
 // ProfileShell-Phones.jsx
 
 const ProfileShellPhones = ({ item }) => {
-  const phoneSet = item.phones;
-  const phoneSKs = Array.isArray(item.phones?.values) ? phoneSet.values : [];
+  const phoneSKs = Array.isArray(item.phones) ? item.phones : [];
 
   return (
     <div className="profile-phones">
       <h3>Phones</h3>
-      {phoneSKs.map(phone => {
-        const formatted =
-          typeof phone === 'string' && phone.length === 10
-            ? `(${phone.slice(0, 3)}) ${phone.slice(3, 6)}-${phone.slice(6)}`
-            : phone;
+      {phoneSKs.length > 0 ? (
+        phoneSKs.map(phone => {
+          const clean = phone.replace(/\D/g, ''); // remove non-digits
+          const formatted =
+            clean.length === 10
+              ? `(${clean.slice(0, 3)}) ${clean.slice(3, 6)}-${clean.slice(6)}`
+              : phone;
 
-        return (
-          <div key={phone}>
-            <p>{formatted}</p>
-          </div>
-        );
-      })}
-      {phoneSKs.length === 0 && <p>No phones linked.</p>}
+          return (
+            <div key={phone}>
+              <p>{formatted}</p>
+            </div>
+          );
+        })
+      ) : (
+        <p>No phones linked.</p>
+      )}
     </div>
   );
 };
