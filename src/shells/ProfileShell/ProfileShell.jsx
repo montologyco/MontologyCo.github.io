@@ -11,6 +11,7 @@ function ProfileShell({ directoryitem, SKs = [], setIsAuthenticated = () => {} }
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    setItem([]);
     if (!directoryitem) return;
 
     const fetchData = async () => {
