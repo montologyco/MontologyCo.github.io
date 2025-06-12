@@ -10,6 +10,7 @@ const ProfileShellPhones = ({ item }) => {
   const [phones, setPhones] = useState([]);
 
   useEffect(() => {
+
     const fetchPhones = async () => {
       const results = await Promise.all(
         phoneSKs.map(async (phoneSK) => {
