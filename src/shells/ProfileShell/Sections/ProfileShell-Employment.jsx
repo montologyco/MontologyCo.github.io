@@ -42,7 +42,7 @@ const ProfileShellEmployment = ({ item }) => {
       );
 
       console.log("→ Final employment results:", results);
-      setEmploymentData(results); // Leave unfiltered for debugging — change to .filter(Boolean) later
+      setEmploymentData(results);
     };
 
     if (employmentSKs.length > 0) {
