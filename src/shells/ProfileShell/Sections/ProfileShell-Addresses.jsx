@@ -16,7 +16,7 @@ const ProfileShellAddresses = ({ item }) => {
           if (!address || !address.street) return null; //empty test
 
           const streetDetails = await getItem('address', address.street); // SK street0001, GET street, city, zip, state0040
-          if (!streetDetails || !streetDetails.state) return null; //empty test
+          if (!streetDetails || !streetDetails.state) return "PO Box"; //empty test
           const stateDetails = await getItem('address', streetDetails.state);   // SK state0040, GET state/st
           if (!stateDetails || !stateDetails.state) return null; //empty test
           return {
