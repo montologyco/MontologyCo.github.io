@@ -8,6 +8,8 @@ const ProfileShellEmployment = ({ item }) => {
   const employmentSKs = Array.isArray(employmentSet?.values) ? employmentSet.values : [];
   const [employmentData, setEmploymentData] = useState([]);
 
+  console.log('employmentSKs', employmentSKs);
+
   useEffect(() => {
     const fetchEmployment = async () => {
       const results = await Promise.all(

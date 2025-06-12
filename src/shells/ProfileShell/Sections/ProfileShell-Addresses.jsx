@@ -19,7 +19,6 @@ const ProfileShellAddresses = ({ item }) => {
           if (!streetDetails || !streetDetails.state) return null; //empty test
           const stateDetails = await getItem('address', streetDetails.state);   // SK state0040, GET state/st
           if (!stateDetails || !stateDetails.state) return null; //empty test
-          console.log('State:', stateDetails);
           return {
             ...address,
             ...streetDetails,
