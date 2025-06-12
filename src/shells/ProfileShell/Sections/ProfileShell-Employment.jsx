@@ -40,6 +40,9 @@ const ProfileShellEmployment = ({ item }) => {
           <div key={job.SK}>
             <p>
               {job.position} at {job.companyName}
+              {job.startmonth && job.startyear
+                ? ` (ended ${job.startmonth} ${job.startyear})`
+                : ''}
               {job.endmonth && job.endyear
                 ? ` (ended ${job.endmonth} ${job.endyear})`
                 : ''}
