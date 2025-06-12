@@ -7,12 +7,12 @@ const ProfileShellEmployment = ({ item }) => {
   return (
     <div className="profile-employment">
       <h3>Employment</h3>
-      {employmentSKs.map(employment => (
-        <div key={employment}>
-          <p>{employment}</p>
+      {employmentSKs.map(employmentSK => (
+        <div key={employmentSK}>
+          <p>{employmentSK}</p>
         </div>
       ))}
-      {employmentSKs.length === 0 && <p>No employment linked.</p>}
+      {employmentSKs.length === 0 && <p>No employmentSK linked.</p>}
     </div>
   );
 };

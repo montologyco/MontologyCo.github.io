@@ -9,7 +9,7 @@ const ProfileShellPhones = ({ item }) => {
       <h3>Phones</h3>
       {phoneSKs.length > 0 ? (
         phoneSKs.map((phone) => {
-          const phoneStr = String(phone); // ensure string from SK number
+          const phoneStr = String(phone);
           const formatted =
             phoneStr.length === 10
               ? `(${phoneStr.slice(0, 3)}) ${phoneStr.slice(3, 6)}-${phoneStr.slice(6)}`
