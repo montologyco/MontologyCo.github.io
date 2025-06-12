@@ -8,15 +8,15 @@
         { "SK": "individual",
           "SKheading": ["honorific", "first", "middle", "last", "pn"],
           "SKsubheading": ["pronouns"],
-          "SKsections": ["Addresses", "Phones","Emails", "Employment", "Social Media", "Associates", "Notes"]
+          "SKsections": ["Addresses","Phones","Emails","Employment","Social Media","Associates","Notes"]
         },
         { "SK": "business",
           "SKheading": ["name"],
-          "SKsections": ["Addresses", "Phones", "Social Media", "Employees", "Notes"]
+          "SKsections": ["Addresses","Phones","Emails","Social Media","Employees","Notes"]
         },
         { "SK": "campaign",
           "SKheading": ["name"],
-          "SKsections": ["Addresses", "Phones", "Social Media", "Cycles", "Notes"]
+          "SKsections": ["Addresses","Phones","Emails","Social Media","Cycles","Notes"]
         }
       ]
     },
