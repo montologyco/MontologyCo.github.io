@@ -27,7 +27,7 @@ const ProfileShellEmployment = ({ item }) => {
   return (
     <div className="profile-employment">
       <h3>Employment</h3>
-      {employmentData.map(emp => (
+      {employmentData.map(employment => (
         <div key={employment.SK}>
           <p>{employment.company}</p>
         </div>
