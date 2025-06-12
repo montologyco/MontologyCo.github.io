@@ -5,7 +5,7 @@ import getItem from '../../../server/aws-sdk/dynamoDB/services/aws-dynamoDB-getI
 
 const ProfileShellAddresses = ({ item }) => {
   const addressSet = item.addresses;
-  const addressSKs = Array.isArray(item.addresses?.values) ? addressSet.values : [];
+  const addressSKs = Array.isArray(addressSet?.values) ? addressSet.values : [];
   const [addressData, setAddressData] = useState([]);
 
   useEffect(() => {

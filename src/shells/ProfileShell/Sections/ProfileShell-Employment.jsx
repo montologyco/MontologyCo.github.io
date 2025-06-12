@@ -12,8 +12,8 @@ const ProfileShellEmployment = ({ item }) => {
     const fetchEmployment = async () => {
       const results = await Promise.all(
         employmentSKs.map(async (employmentSK) => {
-          const employment = await getItem('employment', employmentSK);
-          return employment || null;
+          const employment = await getItem('employment', employmentSK); // SK job0001
+          if (!employment || !employment.company) return null; //empty test
         })
       );
       setEmploymentData(results.filter(Boolean));
@@ -28,8 +28,8 @@ const ProfileShellEmployment = ({ item }) => {
     <div className="profile-employment">
       <h3>Employment</h3>
       {employmentData.map(emp => (
-        <div key={emp.SK}>
-          <p>{emp.name || emp.SK}</p>
+        <div key={employment.SK}>
+          <p>{employment.company}</p>
         </div>
       ))}
       {employmentData.length === 0 && <p>No employment linked.</p>}
