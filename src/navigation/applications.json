@@ -14,6 +14,10 @@
           "SKheading": ["name"],
           "SKsections": ["Addresses","Phones","Emails","Social Media","Employees","Notes"]
         },
+        { "SK": "government",
+          "SKheading": ["name"],
+          "SKsections": ["Addresses","Phones","Emails","Social Media","Employees","Notes"]
+        },
         { "SK": "campaign",
           "SKheading": ["name"],
           "SKsections": ["Addresses","Phones","Emails","Social Media","Cycles","Notes"]
