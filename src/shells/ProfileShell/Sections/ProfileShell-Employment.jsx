@@ -12,6 +12,7 @@ const ProfileShellEmployment = ({ item }) => {
   const [employmentData, setEmploymentData] = useState([]);
 
   useEffect(() => {
+    setEmploymentData([]);
     const fetchEmployment = async () => {
       console.log("All employment SKs:", employmentSKs);
 
