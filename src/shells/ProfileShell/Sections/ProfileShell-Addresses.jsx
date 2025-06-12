@@ -9,6 +9,8 @@ const ProfileShellAddresses = ({ item }) => {
   const [addressData, setAddressData] = useState([]);
 
   useEffect(() => {
+    setAddressData([]);
+
     const fetchAddresses = async () => {
       const results = await Promise.all(
         addressSKs.map(async (homeSK) => {
