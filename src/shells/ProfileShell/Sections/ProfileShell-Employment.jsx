@@ -15,6 +15,7 @@ const ProfileShellEmployment = ({ item }) => {
       const results = await Promise.all(
         employmentSKs.map(async (employmentSK) => {
           const employment = await getItem('employment', employmentSK); // SK job0001
+          console.log('employment', employment);
           if (!employment || !employment.company) return null; //empty test
         })
       );
