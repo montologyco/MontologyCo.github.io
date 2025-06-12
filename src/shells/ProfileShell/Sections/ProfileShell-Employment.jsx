@@ -48,7 +48,7 @@ const ProfileShellEmployment = ({ item }) => {
     if (employmentSKs.length > 0) {
       fetchEmployment();
     }
-  }, [employmentSKs]);
+  }, [employmentSKs, item]);
 
   return (
     <div className="profile-employment">

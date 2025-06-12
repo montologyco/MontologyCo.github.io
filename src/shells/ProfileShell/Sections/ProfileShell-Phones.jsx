@@ -46,7 +46,7 @@ const ProfileShellPhones = ({ item }) => {
     if (phoneSKs.length > 0) {
       fetchPhones();
     }
-  }, [phoneSKs]);
+  }, [phoneSKs, item]);
 
   return (
     <div className="profile-phones">
