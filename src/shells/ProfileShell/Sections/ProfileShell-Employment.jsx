@@ -5,17 +5,20 @@ import getItem from '../../../server/aws-sdk/dynamoDB/services/aws-dynamoDB-getI
 
 const ProfileShellEmployment = ({ item }) => {
   const employmentSet = item.employment;
-  const employmentSKs = Array.isArray(employmentSet?.values) ? employmentSet.values : [];
+  const employmentSKs = Array.isArray(employmentSet?.values)
+    ? employmentSet.values
+    : [];
+
   const [employmentData, setEmploymentData] = useState([]);
 
   useEffect(() => {
     const fetchEmployment = async () => {
       const results = await Promise.all(
         employmentSKs.map(async (employmentSK) => {
-          const employment = await getItem('employment', employmentSK); // SK = job0001
+          const employment = await getItem('employment', employmentSK); // PK = 'employment'
           if (!employment || !employment.company) return null;
 
-          const companyDetails = await getItem('contact', employment.company); // PK = contact
+          const companyDetails = await getItem('contact', employment.company); // PK = 'contact'
           const companyName = companyDetails?.name || employment.company;
 
           return {
@@ -24,6 +27,7 @@ const ProfileShellEmployment = ({ item }) => {
           };
         })
       );
+
       setEmploymentData(results.filter(Boolean));
     };
 
@@ -40,12 +44,16 @@ const ProfileShellEmployment = ({ item }) => {
           <div key={job.SK}>
             <p>
               {job.position} at {job.companyName}
-              {job.startmonth && job.startyear
-                ? ` (ended ${job.startmonth} ${job.startyear})`
-                : ''}
-              {job.endmonth && job.endyear
-                ? ` (ended ${job.endmonth} ${job.endyear})`
-                : ''}
+              {job.startmonth && job.startyear && (
+                <> (started {job.startmonth} {job.startyear})</>
+              )}
+              {job.endday == null && job.endmonth == null && job.endyear == null ? (
+                <> — currently employed</>
+              ) : (
+                job.endmonth && job.endyear && (
+                  <> (ended {job.endmonth} {job.endyear})</>
+                )
+              )}
             </p>
           </div>
         ))
