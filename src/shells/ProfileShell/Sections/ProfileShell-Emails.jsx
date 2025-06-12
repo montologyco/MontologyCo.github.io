@@ -20,7 +20,10 @@ const ProfileShellEmails = ({ item }) => {
             const emailData = await getItem('email', emailStr);
             return {
               raw: emailStr,
-              formatted: emailStr,
+              formatted:
+                emailStr.length === 10
+                  ? `(${emailStr.slice(0, 3)}) ${emailStr.slice(3, 6)}-${emailStr.slice(6)}`
+                  : emailStr,
               type: emailData?.type || 'Unknown',
               error: false,
             };
@@ -28,7 +31,10 @@ const ProfileShellEmails = ({ item }) => {
             console.warn("Email lookup failed for:", emailStr, err);
             return {
               raw: emailStr,
-              formatted: emailStr,
+              formatted:
+                emailStr.length === 10
+                  ? `(${emailStr.slice(0, 3)}) ${emailStr.slice(3, 6)}-${emailStr.slice(6)}`
+                  : emailStr,
               type: 'Error fetching email details',
               error: true,
             };
