@@ -8,15 +8,20 @@ const ProfileShellEmployment = ({ item }) => {
   const employmentSKs = Array.isArray(employmentSet?.values) ? employmentSet.values : [];
   const [employmentData, setEmploymentData] = useState([]);
 
-  console.log('employmentSKs', employmentSKs);
-
   useEffect(() => {
     const fetchEmployment = async () => {
       const results = await Promise.all(
         employmentSKs.map(async (employmentSK) => {
-          const employment = await getItem('employment', employmentSK); // SK job0001
-          console.log('employment', employment);
-          if (!employment || !employment.company) return null; //empty test
+          const employment = await getItem('employment', employmentSK); // SK = job0001
+          if (!employment || !employment.company) return null;
+
+          const companyDetails = await getItem('contact', employment.company); // PK = contact
+          const companyName = companyDetails?.name || employment.company;
+
+          return {
+            ...employment,
+            companyName,
+          };
         })
       );
       setEmploymentData(results.filter(Boolean));
@@ -30,12 +35,20 @@ const ProfileShellEmployment = ({ item }) => {
   return (
     <div className="profile-employment">
       <h3>Employment</h3>
-      {employmentData.map(employment => (
-        <div key={employment.SK}>
-          <p>{employment.company}</p>
-        </div>
-      ))}
-      {employmentData.length === 0 && <p>No employment linked.</p>}
+      {employmentData.length > 0 ? (
+        employmentData.map((job) => (
+          <div key={job.SK}>
+            <p>
+              {job.position} at {job.companyName}
+              {job.endmonth && job.endyear
+                ? ` (ended ${job.endmonth} ${job.endyear})`
+                : ''}
+            </p>
+          </div>
+        ))
+      ) : (
+        <p>No employment linked.</p>
+      )}
     </div>
   );
 };
