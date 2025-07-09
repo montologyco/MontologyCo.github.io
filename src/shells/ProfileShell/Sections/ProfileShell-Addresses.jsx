@@ -16,11 +16,10 @@ const ProfileShellAddresses = ({ item }) => {
         addressSKs.map(async (homeSK) => {
           const address = await getItem('address', homeSK); // SK home0001
           if (!address || !address.street) return null; //empty test
-
           const streetDetails = await getItem('address', address.street); // SK street0001, GET street, city0001
-          if (!streetDetails || !streetDetails.street) return null; //empty test
+          if (!streetDetails || !streetDetails.city) return null; //empty test
           const cityDetails = await getItem('address', streetDetails.city); // SK city0001, GET city, state0001, zip
-          if (!cityDetails || !cityDetails.city) return null; //empty test
+          if (!cityDetails || !cityDetails.state) return null; //empty test
           const stateDetails = await getItem('address', cityDetails.state);   // SK state0040, GET state/st
           if (!stateDetails || !stateDetails.state) return null; //empty test
           return {
