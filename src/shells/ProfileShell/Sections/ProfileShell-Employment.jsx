@@ -14,13 +14,10 @@ const ProfileShellEmployment = ({ item }) => {
   useEffect(() => {
     setEmploymentData([]);
     const fetchEmployment = async () => {
-      console.log("All employment SKs:", employmentSKs);
 
       const results = await Promise.all(
         employmentSKs.map(async (employmentSK) => {
-          console.log("→ Fetching employment:", employmentSK);
           const employment = await getItem('employment', employmentSK);
-          console.log("  Employment result:", employment);
 
           if (!employment) {
             console.warn("  ✖ Skipping due to missing employment");
@@ -31,7 +28,6 @@ const ProfileShellEmployment = ({ item }) => {
 
           if (employment.company) {
             const companyDetails = await getItem('contact', employment.company);
-            console.log("  Company details:", companyDetails);
             companyName = companyDetails?.name || companyName;
           }
 
@@ -42,7 +38,6 @@ const ProfileShellEmployment = ({ item }) => {
         })
       );
 
-      console.log("→ Final employment results:", results);
       setEmploymentData(results);
     };
 
