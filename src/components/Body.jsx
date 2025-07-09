@@ -7,7 +7,8 @@ import MontologyTagline from '../assets/Brand/MontologyTagline.jsx';
 import Dashboard from '../components/body/Dashboard.jsx';
 
 import Contacts from '../applications/Contacts/Contacts.jsx';
-import Budgets from '../applications/Budget/Budgets.jsx';
+import Budgets from '../applications/Budgets/Budgets.jsx';
+import Tasks from '../applications/Tasks/Tasks.jsx';
 
 import Login from './auth/Login.jsx';
 import Logout from './auth/Logout.jsx';
