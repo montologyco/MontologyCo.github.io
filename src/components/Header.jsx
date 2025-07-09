@@ -8,7 +8,6 @@ import NavigationBridge from '../navigation/NavigationBridge.jsx';
 import loggedInLinks from '../navigation/loggedInLinks.json';
 import loggedOutLinks from '../navigation/loggedOutLinks.json';
 
-
 function Header({ isAuthenticated, setIsAuthenticated}) {
 
   return (

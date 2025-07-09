@@ -1,6 +1,5 @@
 {
   "links": [
-    { "name": "Solutions", "url": "/solutions" },
     { "name": "Properties", "url": "/properties", "PK": "property" },
     {
       "name": "Contacts", "url": "/contacts", "PK": "contact",
@@ -25,7 +24,7 @@
       ]
     },
     { "name": "Tasks", "url": "/tasks", "PK": "task" },
-    { "name": "Budget", "url": "/budget", "PK": "budget" },
+    { "name": "Budgets", "url": "/budget", "PK": "budget" },
     { "name": "Contracts", "url": "/contracts", "PK": "contract" }
   ]
 }
