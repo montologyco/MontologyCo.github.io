@@ -27,7 +27,7 @@
       "name": "Tasks","url": "/tasks", "PK": "task",
       "SKs": [
         { "SK": "task",
-          "SKheading": ["name"],
+          "SKheading": ["task"],
           "SKsections": ["Status","Notes"]
         }
       ]
