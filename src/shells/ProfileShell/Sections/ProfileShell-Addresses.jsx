@@ -9,34 +9,29 @@ const ProfileShellAddresses = ({ item }) => {
   const [addressData, setAddressData] = useState([]);
 
   useEffect(() => {
-    setAddressData([]); // Clear on re-run
+    setAddressData([]);
 
     const fetchAddresses = async () => {
       const results = await Promise.all(
-        addressSKs.map(async (addressSK) => {
-          const address = await getItem('address', addressSK);
-          if (!address?.street) return null;
+        addressSKs.map(async (homeSK) => {
+          const address = await getItem('address', homeSK); // SK home0001
+          if (!address || !address.street) return null; //empty test
 
-          const streetDetails = await getItem('address', address.street);
-          if (!streetDetails?.state) return null;
-
-          const cityDetails = await getItem('address', streetDetails.city);
-          if (!cityDetails?.state) return null;
-
-          const stateDetails = await getItem('address', cityDetails.state);
-          if (!stateDetails?.state) return null;
-
+          const streetDetails = await getItem('address', address.street); // SK street0001, GET street, city0001
+          if (!streetDetails || !streetDetails.state) return null; //empty test
+          const cityDetails = await getItem('address', streetDetails.city); // SK city0001, GET city, state0001, zip
+          if (!cityDetails || !cityDetails.state) return null; //empty test
+          const stateDetails = await getItem('address', cityDetails.state);   // SK state0040, GET state/st
+          if (!stateDetails || !stateDetails.state) return null; //empty test
           return {
             ...address,
             ...streetDetails,
-            st: stateDetails.st || '',
-            stateFull: stateDetails.state || '',
-            city: cityDetails.city || '',
-            zip: cityDetails.zip || '',
+            ...cityDetails,
+            st: stateDetails?.st || '',           // state abbreviation
+            stateFull: stateDetails?.state || ''  // full state name
           };
         })
       );
-
       setAddressData(results.filter(Boolean));
     };
 
@@ -48,17 +43,12 @@ const ProfileShellAddresses = ({ item }) => {
   return (
     <div className="profile-addresses">
       <h3>Addresses</h3>
-      {addressData.length > 0 ? (
-        addressData.map((address) => (
-          <div key={address.SK}>
-            <p>
-              {address.number} {address.street} {address.city}, {address.st} {address.zip}
-            </p>
-          </div>
-        ))
-      ) : (
-        <p>No addresses linked.</p>
-      )}
+      {addressData.map(address => (
+        <div key={address.SK}>
+          <p>{address.number} {address.street} {address.city}, {address.st} {address.zip}</p>
+        </div>
+      ))}
+      {addressData.length === 0 && <p>No addresses linked.</p>}
     </div>
   );
 };
