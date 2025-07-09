@@ -23,7 +23,9 @@
         }
       ]
     },
-    { "name": "Tasks", "url": "/tasks", "PK": "task" },
+    {
+      "name": "Tasks","url": "/tasks", "PK": "task"
+    },
     { "name": "Budgets", "url": "/budget", "PK": "budget" },
     { "name": "Contracts", "url": "/contracts", "PK": "contract" }
   ]
