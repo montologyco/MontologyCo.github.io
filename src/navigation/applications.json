@@ -24,7 +24,13 @@
       ]
     },
     {
-      "name": "Tasks","url": "/tasks", "PK": "task"
+      "name": "Tasks","url": "/tasks", "PK": "task",
+      "SKs": [
+        { "SK": "task",
+          "SKheading": ["name"],
+          "SKsections": ["Status","Notes"]
+        }
+      ]
     },
     { "name": "Budgets", "url": "/budget", "PK": "budget" },
     { "name": "Contracts", "url": "/contracts", "PK": "contract" }
