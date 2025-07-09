@@ -7,7 +7,7 @@ import MontologyTagline from '../assets/Brand/MontologyTagline.jsx';
 import Dashboard from '../components/body/Dashboard.jsx';
 
 import Contacts from '../applications/Contacts/Contacts.jsx';
-import Budget from '../applications/Budget/Budget.jsx';
+import Budgets from '../applications/Budget/Budgets.jsx';
 
 import Login from './auth/Login.jsx';
 import Logout from './auth/Logout.jsx';
@@ -29,7 +29,8 @@ function Body({ isAuthenticated, setIsAuthenticated}) {
               <Route path="/login" element={<Navigate to="/" />} />
             
             <Route path="/contacts" element={<Contacts setIsAuthenticated={setIsAuthenticated} />} />
-            <Route path="/budget" element={<Budget setIsAuthenticated={setIsAuthenticated} />} />
+            <Route path="/budgets" element={<Budgets setIsAuthenticated={setIsAuthenticated} />} />
+            <Route path="/tasks" element={<Tasks setIsAuthenticated={setIsAuthenticated} />} />
             
             <Route path="/logout" element={<Logout setIsAuthenticated={setIsAuthenticated} />} />
             <Route path="/settings" element={<Settings setIsAuthenticated={setIsAuthenticated} />} />
