@@ -1,9 +1,9 @@
-// TableShell-Filter.jsx
+// TableTemplate-Filter.jsx
 
 import { useEffect } from 'react';
 import queryItems from '../../server/aws-sdk/dynamoDB/services/aws-dynamoDB-queryItems-API.jsx';
 
-const TableShellFilter = ({ PK, selectedSKs, inputValue, setDirectory }) => {
+const TableTemplateFilter = ({ PK, selectedSKs, inputValue, setDirectory }) => {
 
   useEffect(() => {
     const fetchData = async () => {
@@ -14,7 +14,7 @@ const TableShellFilter = ({ PK, selectedSKs, inputValue, setDirectory }) => {
     fetchData();
   }, [PK, selectedSKs, inputValue, setDirectory]);
 
-  return <div className="tableShellFilter" />;
+  return <div className="tableTemplateFilter" />;
 };
 
-export default TableShellFilter;
+export default TableTemplateFilter;

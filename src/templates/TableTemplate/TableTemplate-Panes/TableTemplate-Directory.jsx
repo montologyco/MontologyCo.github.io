@@ -1,8 +1,8 @@
-// TableShell-Directory.jsx
+// TableTemplate-Directory.jsx
 
 import React from 'react';
 
-const TableShellDirectory = ({ directory, directoryWidth, onSelectItem, SKs = [] }) => {
+const TableTemplateDirectory = ({ directory, directoryWidth, onSelectItem, SKs = [] }) => {
   const handleItemClick = (directoryitem) => {
     if (onSelectItem) {
       onSelectItem({ PK: directoryitem.PK, SK: directoryitem.SK });
@@ -22,7 +22,7 @@ const TableShellDirectory = ({ directory, directoryWidth, onSelectItem, SKs = []
   };
 
   return (
-    <div className="tableShell-directory" style={{ width: `${directoryWidth}px` }}>
+    <div className="tableTemplate-directory" style={{ width: `${directoryWidth}px` }}>
       <ul>
         {directory.map((directoryitem) => (
           <li key={directoryitem.SK}>
@@ -36,4 +36,4 @@ const TableShellDirectory = ({ directory, directoryWidth, onSelectItem, SKs = []
   );
 };
 
-export default TableShellDirectory;
+export default TableTemplateDirectory;

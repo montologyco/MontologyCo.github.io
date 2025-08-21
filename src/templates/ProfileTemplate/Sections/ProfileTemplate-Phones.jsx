@@ -1,9 +1,9 @@
-// ProfileShell-Phones.jsx
+// ProfileTemplate-Phones.jsx
 
 import { useEffect, useState } from 'react';
 import getItem from '../../../server/aws-sdk/dynamoDB/services/aws-dynamoDB-getItem-API.jsx';
 
-const ProfileShellPhones = ({ item }) => {
+const ProfileTemplatePhones = ({ item }) => {
   const phoneSet = item.phones;
   const phoneSKs = Array.isArray(phoneSet?.values) ? phoneSet.values : [];
 
@@ -68,4 +68,4 @@ const ProfileShellPhones = ({ item }) => {
   );
 };
 
-export default ProfileShellPhones;
+export default ProfileTemplatePhones;

@@ -1,8 +1,8 @@
-// TableShell-TypeSK.jsx
+// TableTemplate-TypeSK.jsx
 
 import React from 'react';
 
-const TableShellTypeSK = ({ SKs = [], selectedSKs = [], onSKChange }) => {
+const TableTemplateTypeSK = ({ SKs = [], selectedSKs = [], onSKChange }) => {
   const handleCheckboxChange = (skValue) => {
     if (selectedSKs.includes(skValue)) {
       onSKChange(selectedSKs.filter(s => s !== skValue));
@@ -12,7 +12,7 @@ const TableShellTypeSK = ({ SKs = [], selectedSKs = [], onSKChange }) => {
   };
 
   return (
-    <div className="tableShell-typeSK">
+    <div className="tableTemplate-typeSK">
       {SKs.map((entry, index) => {
         const skString = entry?.SK;
         if (!skString) return null;
@@ -32,4 +32,4 @@ const TableShellTypeSK = ({ SKs = [], selectedSKs = [], onSKChange }) => {
   );
 };
 
-export default TableShellTypeSK;
+export default TableTemplateTypeSK;
