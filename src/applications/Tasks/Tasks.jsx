@@ -2,14 +2,14 @@
 
 import React from 'react';
 import AuthChecker from '../../server/amplify/aws-amplify-authChecker-API.jsx';
-import TableShell from '../../shells/TableShell/TableShell.jsx';
+import TableTemplate from '../../shells/TableTemplate/TableTemplate.jsx';
 
 function Tasks({ setIsAuthenticated }) {
   return (
     <div>
       <AuthChecker setAuthState={setIsAuthenticated} />
       <h1>Tasks</h1>
-      <TableShell name="Tasks" />
+      <TableTemplate name="Tasks" />
     </div>
   );
 }

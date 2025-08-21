@@ -1,9 +1,9 @@
-// ProfileShell-Addresses.jsx
+// ProfileTemplate-Addresses.jsx
 
 import { useEffect, useState } from 'react';
 import getItem from '../../../server/aws-sdk/dynamoDB/services/aws-dynamoDB-getItem-API.jsx';
 
-const ProfileShellAddresses = ({ item }) => {
+const ProfileTemplateAddresses = ({ item }) => {
   const addressSet = item.addresses;
   const addressSKs = Array.isArray(addressSet?.values) ? addressSet.values : [];
   const [addressData, setAddressData] = useState([]);
@@ -52,4 +52,4 @@ const ProfileShellAddresses = ({ item }) => {
   );
 };
 
-export default ProfileShellAddresses;
+export default ProfileTemplateAddresses;

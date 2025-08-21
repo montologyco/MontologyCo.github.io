@@ -1,9 +1,9 @@
-// ProfileShell-Emails.jsx
+// ProfileTemplate-Emails.jsx
 
 import { useEffect, useState } from 'react';
 import getItem from '../../../server/aws-sdk/dynamoDB/services/aws-dynamoDB-getItem-API.jsx';
 
-const ProfileShellEmails = ({ item }) => {
+const ProfileTemplateEmails = ({ item }) => {
   const emailSet = item.emails;
   const emailSKs = Array.isArray(emailSet?.values) ? emailSet.values : [];
 
@@ -60,4 +60,4 @@ const ProfileShellEmails = ({ item }) => {
   );
 };
 
-export default ProfileShellEmails;
+export default ProfileTemplateEmails;

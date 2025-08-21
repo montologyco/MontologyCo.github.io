@@ -1,22 +1,22 @@
-.tableShell {
+.tableTemplate {
     display: flex;
     flex-direction: column;
     width: 100%;
     min-height: 100vh;
   }
   
-  .tableShell-panes {
+  .tableTemplate-panes {
     display: flex;
     flex: 1;
     height: calc(100vh - 100px);
   }
   
-  .tableShell-directory {
+  .tableTemplate-directory {
     background-color: var(--white);
     height: 100%;
   }  
 
-  .tableShell-divider {
+  .tableTemplate-divider {
     width: 4px;
     background-color: var(--gray);
     cursor: col-resize;
@@ -28,7 +28,7 @@
     }
   }
   
-  .tableShell-profile {
+  .tableTemplate-profile {
     flex: 1;
     padding: 20px;
     overflow-y: auto;

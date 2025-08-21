@@ -1,11 +1,11 @@
-// ProfileShell.jsx
+// ProfileTemplate.jsx
 
 import React, { useEffect, useState } from 'react';
 import AuthChecker from '../../server/amplify/aws-amplify-authChecker-API.jsx';
 import getItem from '../../server/aws-sdk/dynamoDB/services/aws-dynamoDB-getItem-API.jsx';
-import ProfileShellSections from './ProfileShell-Sections.jsx';
+import ProfileTemplateSections from './ProfileTemplate-Sections.jsx';
 
-function ProfileShell({ directoryitem, SKs = [], setIsAuthenticated = () => {} }) {
+function ProfileTemplate({ directoryitem, SKs = [], setIsAuthenticated = () => {} }) {
   const [item, setItem] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -51,7 +51,7 @@ function ProfileShell({ directoryitem, SKs = [], setIsAuthenticated = () => {} }
   };
 
   return (
-    <div className="tableShell-profile">
+    <div className="tableTemplate-profile">
       <AuthChecker setAuthState={setIsAuthenticated} />
       {!directoryitem && <p>Select a item to view their profile.</p>}
       {loading && <p>Loading...</p>}
@@ -64,11 +64,11 @@ function ProfileShell({ directoryitem, SKs = [], setIsAuthenticated = () => {} }
           <h3>
             {getSKsubheadings().map(f => item[f]).filter(Boolean).join(' ')}
           </h3>
-          <ProfileShellSections item={item} sections={getSKsections()} />
+          <ProfileTemplateSections item={item} sections={getSKsections()} />
         </div>
       )}
     </div>
   );
 }
 
-export default ProfileShell;
+export default ProfileTemplate;

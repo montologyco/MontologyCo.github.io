@@ -1,9 +1,9 @@
-// ProfileShell-Employment.jsx
+// ProfileTemplate-Employment.jsx
 
 import { useEffect, useState } from 'react';
 import getItem from '../../../server/aws-sdk/dynamoDB/services/aws-dynamoDB-getItem-API.jsx';
 
-const ProfileShellEmployment = ({ item }) => {
+const ProfileTemplateEmployment = ({ item }) => {
   const employmentSet = item.employment;
   const employmentSKs = Array.isArray(employmentSet?.values)
     ? employmentSet.values
@@ -74,4 +74,4 @@ const ProfileShellEmployment = ({ item }) => {
   );
 };
 
-export default ProfileShellEmployment;
+export default ProfileTemplateEmployment;
