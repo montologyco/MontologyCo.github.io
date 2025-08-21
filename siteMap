@@ -60,11 +60,11 @@ MontologyCo.github.io
 │   ├── shells
 │   │   ├── Search
 │   │   │   └── Search.jsx
-│   │   ├── TableShell
-│   │   │   ├── TableShell-Panes.jsx
-│   │   │   ├── TableShell-Filter.jsx
-│   │   │   ├── TableShell-TypeSK.jsx
-│   │   │   └── TableShell.jsx
+│   │   ├── TableTemplate
+│   │   │   ├── TableTemplate-Panes.jsx
+│   │   │   ├── TableTemplate-Filter.jsx
+│   │   │   ├── TableTemplate-TypeSK.jsx
+│   │   │   └── TableTemplate.jsx
 │   ├── styles
 │   │   ├── assets
 │   │   │   └── montologyTagline.scss
@@ -78,7 +78,7 @@ MontologyCo.github.io
 │   │   │   └── Body.scss
 │   │   ├── shells
 │   │   │   ├── search.scss
-│   │   │   └── TableShell.scss
+│   │   │   └── TableTemplate.scss
 │   │   └── index.scss
 │   ├── App.jsx
 │   └── main.jsx

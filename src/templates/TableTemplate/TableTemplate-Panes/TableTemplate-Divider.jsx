@@ -1,8 +1,8 @@
-// TableShell-Divider.jsx
+// TableTemplate-Divider.jsx
 
 import React, { useRef, useEffect } from 'react';
 
-const TableShellDivider = ({ onDrag }) => {
+const TableTemplateDivider = ({ onDrag }) => {
   const isDragging = useRef(false);
 
   useEffect(() => {
@@ -26,10 +26,10 @@ const TableShellDivider = ({ onDrag }) => {
 
   return (
     <div
-      className="tableShell-divider"
+      className="tableTemplate-divider"
       onMouseDown={() => { isDragging.current = true; }}
     />
   );
 };
 
-export default TableShellDivider;
+export default TableTemplateDivider;

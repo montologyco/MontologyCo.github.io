@@ -1,26 +1,26 @@
-// TableShell-Panes.jsx
+// TableTemplate-Panes.jsx
 
 import React, { useState } from 'react';
-import TableShellDirectory from './TableShell-Directory.jsx';
-import TableShellProfile from './TableShell-Profile.jsx';
-import TableShellDivider from './TableShell-Divider.jsx';
+import TableTemplateDirectory from './TableTemplate-Directory.jsx';
+import TableTemplateProfile from './TableTemplate-Profile.jsx';
+import TableTemplateDivider from './TableTemplate-Divider.jsx';
 
-const TableShellPanes = ({ directory, SKs }) => {
+const TableTemplatePanes = ({ directory, SKs }) => {
   const [directoryWidth, setDirectoryWidth] = useState(400);
   const [directoryitem, setDirectoryitem] = useState(null);
 
   return (
-    <div className="tableShell-panes" style={{ display: 'flex' }}>
-      <TableShellDirectory
+    <div className="tableTemplate-panes" style={{ display: 'flex' }}>
+      <TableTemplateDirectory
         directory={directory}
         directoryWidth={directoryWidth}
         onSelectItem={setDirectoryitem}
         SKs={SKs}
       />
-      <TableShellDivider onDrag={delta => setDirectoryWidth(prev => Math.max(200, prev + delta))} />
-      <TableShellProfile directoryitem={directoryitem} SKs={SKs}/>
+      <TableTemplateDivider onDrag={delta => setDirectoryWidth(prev => Math.max(200, prev + delta))} />
+      <TableTemplateProfile directoryitem={directoryitem} SKs={SKs}/>
     </div>
   );
 };
 
-export default TableShellPanes;
+export default TableTemplatePanes;

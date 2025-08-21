@@ -1,13 +1,13 @@
-// TableShell.jsx
+// TableTemplate.jsx
 
 import React, { useState } from 'react';
 import Search from '../Search/Search.jsx';
-import TableShellTypeSK from './TableShell-TypeSK.jsx';
-import TableShellPanes from './TableShell-Panes/TableShell-Panes.jsx';
-import TableShellFilter from './TableShell-Filter.jsx';
+import TableTemplateTypeSK from './TableTemplate-TypeSK.jsx';
+import TableTemplatePanes from './TableTemplate-Panes/TableTemplate-Panes.jsx';
+import TableTemplateFilter from './TableTemplate-Filter.jsx';
 import applications from '../../navigation/applications.json';
 
-const TableShell = ({ name }) => {
+const TableTemplate = ({ name }) => {
   const [directory, setDirectory] = useState([]);
   const [inputValue, setInputValue] = useState('');
 
@@ -19,15 +19,15 @@ const TableShell = ({ name }) => {
   };
 
   return (
-    <div className="tableShell">
+    <div className="tableTemplate">
       <div className="searchTopbar">
         <Search inputValue={inputValue} onSearch={handleSearch} />
-        <TableShellTypeSK SKs={SKs} selectedSKs={selectedSKs} onSKChange={setSelectedSKs} />
+        <TableTemplateTypeSK SKs={SKs} selectedSKs={selectedSKs} onSKChange={setSelectedSKs} />
       </div>
-      <TableShellFilter inputValue={inputValue} PK={PK} selectedSKs={selectedSKs} setDirectory={setDirectory} />
-      <TableShellPanes directory={directory} SKs={SKs} />
+      <TableTemplateFilter inputValue={inputValue} PK={PK} selectedSKs={selectedSKs} setDirectory={setDirectory} />
+      <TableTemplatePanes directory={directory} SKs={SKs} />
     </div>
   );
 };
 
-export default TableShell;
+export default TableTemplate;
