@@ -14,4 +14,4 @@ function Tasks({ setIsAuthenticated }) {
   );
 }
 
-export default Tasks;d
+export default Tasks;
