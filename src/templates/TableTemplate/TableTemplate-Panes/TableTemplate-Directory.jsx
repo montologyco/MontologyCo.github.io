@@ -8,7 +8,7 @@ const TableTemplateDirectory = ({ directory, directoryWidth, onSelectItem, SKs =
   };
 
   const stringifyItem = (item) => {
-    const skPrefix = item.SK.match(/^[a-zA-Z]+/)?.[0];
+    const skPrefix = item.SK.match(/^[a-zA-Z]+/)?.[0]; // Extract type from SK like "individual0001" → "individual"
     const skConfig = SKs.find(sk => sk.SK === skPrefix);
     const SKheading = skConfig?.SKheading || [];
 
@@ -21,20 +21,15 @@ const TableTemplateDirectory = ({ directory, directoryWidth, onSelectItem, SKs =
 
   return (
     <div className="tableTemplate-directory" style={{ width: `${directoryWidth}px` }}>
-      <table>
-        <thead>
-          <tr>
-            <th>name of list or blank</th>
-          </tr>
-        </thead>
-        <tbody>
-          {directory.map((directoryitem) => (
-            <tr key={directoryitem.SK} onClick={() => handleItemClick(directoryitem)}>
-              <td>{stringifyItem(directoryitem)}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <ul>
+        {directory.map((directoryitem) => (
+          <li key={directoryitem.SK}>
+            <a href="#" onClick={(e) => { e.preventDefault(); handleItemClick(directoryitem); }}>
+              {stringifyItem(directoryitem)}
+            </a>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

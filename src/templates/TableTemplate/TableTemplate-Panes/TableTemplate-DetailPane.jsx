@@ -1,6 +1,5 @@
 // TableTemplate-Profile.jsx
 
-import React from 'react';
 import DetailPaneTemplate from '../../DetailPaneTemplate/DetailPaneTemplate.jsx';
 
 function TableTemplateDetailPane({ directoryitem, SKs = [], setIsAuthenticated = () => {} }) {

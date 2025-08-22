@@ -1,6 +1,6 @@
 // TableTemplate-Panes.jsx
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import TableTemplateDirectory from './TableTemplate-Directory.jsx';
 import TableTemplateDetailPane from './TableTemplate-DetailPane.jsx';
 import TableTemplateDivider from './TableTemplate-Divider.jsx';
