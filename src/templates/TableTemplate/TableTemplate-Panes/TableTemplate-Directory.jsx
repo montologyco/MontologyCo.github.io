@@ -7,30 +7,30 @@ const TableTemplateDirectory = ({ directory, directoryWidth, onSelectItem, SKs =
     }
   };
 
-  const getRowLabel = (item) => {
+  const stringifyItem = (item) => {
     const skPrefix = item.SK.match(/^[a-zA-Z]+/)?.[0];
     const skConfig = SKs.find(sk => sk.SK === skPrefix);
     const SKheading = skConfig?.SKheading || [];
 
     const values = SKheading
-      .map(key => item[key])
+      .map(SKheading => item[SKheading])
       .filter(Boolean);
 
     return values.join(' ');
   };
 
   return (
-    <div className="tableTemplate-directory" style={{ width: `${directoryWidth}px`, overflowX: 'auto' }}>
-      <table className="directory-table">
+    <div className="tableTemplate-directory" style={{ width: `${directoryWidth}px` }}>
+      <table>
         <thead>
           <tr>
             <th>Name</th>
           </tr>
         </thead>
         <tbody>
-          {directory.map((item) => (
-            <tr key={item.SK} onClick={() => handleItemClick(item)} className="directory-row">
-              <td>{getRowLabel(item)}</td>
+          {directory.map((directoryitem) => (
+            <tr key={directoryitem.SK} onClick={() => handleItemClick(directoryitem)}>
+              <td>{stringifyItem(directoryitem)}</td>
             </tr>
           ))}
         </tbody>
