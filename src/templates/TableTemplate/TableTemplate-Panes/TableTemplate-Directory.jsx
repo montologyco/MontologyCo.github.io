@@ -21,13 +21,6 @@ const TableTemplateDirectory = ({ directory, directoryWidth, onSelectItem, SKs =
   return (
     <div className="tableTemplate-directory" style={{ width: `${directoryWidth}px` }}>
       <table>
-        <thead>
-          <tr>
-            {/* {headings.map((heading) => (
-              <th key={heading}>{heading}</th>
-            ))} */}
-          </tr>
-        </thead>
         <tbody>
           {directory.map((item) => (
             <tr key={item.SK} onClick={() => handleItemClick(item)} style={{ cursor: 'pointer' }}>
