@@ -7,27 +7,30 @@ const TableTemplateDirectory = ({ directory, directoryWidth, onSelectItem, SKs =
     }
   };
 
+  // Determine the unique column keys from the first object
+  const columnKeys = directory.length > 0 ? Object.keys(directory[0]) : [];
+
   return (
     <div className="tableTemplate-directory" style={{ width: `${directoryWidth}px` }}>
-
       <table>
         <thead>
           <tr>
-            {directory.map(key => (
+            {columnKeys.map((key) => (
               <th key={key}>{key}</th>
             ))}
           </tr>
         </thead>
         <tbody>
           {directory.map((item) => (
-            <tr key={item.SK} onClick={() => handleItemClick(item)} style={{ cursor: 'pointer' }}>
-              {directory.map((key) => (
+            <tr key={item.SK || JSON.stringify(item)} onClick={() => handleItemClick(item)} style={{ cursor: 'pointer' }}>
+              {columnKeys.map((key) => (
                 <td key={key}>{item[key] || ''}</td>
               ))}
             </tr>
           ))}
         </tbody>
       </table>
+
       {/* <ul>
         {directory.map((directoryitem) => (
           <li key={directoryitem.SK}>
