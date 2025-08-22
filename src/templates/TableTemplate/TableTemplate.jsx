@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Search from '../Search/Search.jsx';
+import AuthChecker from '../../server/amplify/aws-amplify-authChecker-API.jsx';
 import TableTemplateTypeSK from './TableTemplate-TypeSK.jsx';
 import TableTemplatePanes from './TableTemplate-Panes/TableTemplate-Panes.jsx';
 import TableTemplateFilter from './TableTemplate-Filter.jsx';

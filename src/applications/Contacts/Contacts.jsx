@@ -8,8 +8,8 @@ function Contacts({ setIsAuthenticated }) {
   return (
     <div>
       <AuthChecker setAuthState={setIsAuthenticated} />
-      <h1>Contacts <button>Upload</button> </h1> 
-      <UploadTemplate setIsAuthenticated={setIsAuthenticated} application="Contacts" />
+      <h1>Contacts <button>On Click, load UploadTemplate, else load TableTemplate</button> </h1> 
+      {/* <UploadTemplate setIsAuthenticated={setIsAuthenticated} application="Contacts" /> */}
       <TableTemplate setIsAuthenticated={setIsAuthenticated} application="Contacts" />
     </div>
   );
