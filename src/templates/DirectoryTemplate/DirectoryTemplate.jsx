@@ -3,10 +3,10 @@
 import { useState } from 'react';
 
 const DirectoryTemplate = ({ directory, directoryWidth, onSelectItem, SKs = [] }) => {
-  const [selectedSK, setSelectedSK] = useState(null); // ← Track selection
+  const [selectedSK, setSelectedSK] = useState(null);
 
   const handleItemClick = (directoryitem) => {
-    setSelectedSK(directoryitem.SK); // ← Save selected SK
+    setSelectedSK(directoryitem.SK);
     if (onSelectItem) {
       onSelectItem({ PK: directoryitem.PK, SK: directoryitem.SK });
     }
@@ -31,31 +31,17 @@ const DirectoryTemplate = ({ directory, directoryWidth, onSelectItem, SKs = [] }
               <tr
                 key={item.SK}
                 className={isSelected ? 'selected-row' : ''}
+                onClick={() => handleItemClick(item)}
+                style={{ cursor: 'pointer' }}
               >
                 {isSingleField ? (
                   <td colSpan={5}>
-                    <a
-                      href="#"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        handleItemClick(item);
-                      }}
-                    >
-                      {item[dynamoFields[0]]}
-                    </a>
+                    {item[dynamoFields[0]]}
                   </td>
                 ) : (
                   dynamoFields.map((field, i) => (
                     <td key={i}>
-                      <a
-                        href="#"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          handleItemClick(item);
-                        }}
-                      >
-                        {item[field] || ''}
-                      </a>
+                      {item[field] || ''}
                     </td>
                   ))
                 )}
