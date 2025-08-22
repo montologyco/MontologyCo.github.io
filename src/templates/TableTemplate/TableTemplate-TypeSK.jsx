@@ -1,7 +1,5 @@
 // TableTemplate-TypeSK.jsx
 
-import React from 'react';
-
 const TableTemplateTypeSK = ({ SKs = [], selectedSKs = [], onSKChange }) => {
   const handleCheckboxChange = (skValue) => {
     if (selectedSKs.includes(skValue)) {

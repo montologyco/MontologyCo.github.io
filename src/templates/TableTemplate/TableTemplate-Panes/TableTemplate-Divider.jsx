@@ -1,6 +1,6 @@
 // TableTemplate-Divider.jsx
 
-import React, { useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 
 const TableTemplateDivider = ({ onDrag }) => {
   const isDragging = useRef(false);

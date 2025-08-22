@@ -1,6 +1,6 @@
 // TableTemplate.jsx
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Search from '../Search/Search.jsx';
 import TableTemplateTypeSK from './TableTemplate-TypeSK.jsx';
 import TableTemplatePanes from './TableTemplate-Panes/TableTemplate-Panes.jsx';
