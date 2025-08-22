@@ -4,8 +4,8 @@ a {
 }
   
 // styles for active and focus
-a:hover,
-a:focus {
+        // tr:hover, tr.focus,
+a:hover {
     filter: drop-shadow(4px 4px 8px var(--primary));
     color: var(--primary);
 }
@@ -24,15 +24,8 @@ a:focus {
 
 
 
-// , tr:hover, tr.focus,
 
 
-
-
-// a.active, tr.active {
-//     filter: drop-shadow(4px 4px 8px var(--primary));
-//     color: var(--primary);           
-// }
 
 // a.visited {
 //     filter: drop-shadow(4px 4px 8px var(--primary));
