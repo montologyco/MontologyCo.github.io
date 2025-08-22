@@ -6,19 +6,36 @@ import TableTemplate from '../../templates/TableTemplate/TableTemplate.jsx';
 import UploadTemplate from '../../templates/UploadTemplate/UploadTemplate.jsx';
 
 function Contacts({ setIsAuthenticated }) {
-  const [showUpload, setShowUpload] = useState(false);
+  const [view, setView] = useState('table'); // 'table' or 'upload'
+  const [uploadTriggered, setUploadTriggered] = useState(false);
+
+  const handleUploadClick = () => {
+    setUploadTriggered(true);
+    setView('upload');
+  };
+
+  const handleHeaderClick = () => {
+    if (uploadTriggered) setView('table');
+  };
 
   return (
     <div>
       <AuthChecker setAuthState={setIsAuthenticated} />
-      <h1>
-        Contacts{' '}
-        <button onClick={() => setShowUpload(prev => !prev)}>
-          {showUpload ? 'View Table' : 'Upload Data'}
-        </button>
+
+      <h1
+        onClick={handleHeaderClick}
+        style={{ cursor: uploadTriggered ? 'pointer' : 'default', display: 'inline-block' }}
+      >
+        Contacts
       </h1>
 
-      {showUpload ? (
+      {!uploadTriggered && (
+        <button onClick={handleUploadClick} style={{ marginLeft: '1rem' }}>
+          Upload
+        </button>
+      )}
+
+      {view === 'upload' ? (
         <UploadTemplate setIsAuthenticated={setIsAuthenticated} application="Contacts" />
       ) : (
         <TableTemplate setIsAuthenticated={setIsAuthenticated} application="Contacts" />
