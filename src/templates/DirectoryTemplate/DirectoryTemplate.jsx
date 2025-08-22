@@ -7,7 +7,6 @@ const DirectoryTemplate = ({ directory, directoryWidth, onSelectItem, SKs = [] }
     }
   };
 
-  // Determine the SKheading fields for each item dynamically
   const getSKheading = (item) => {
     const skPrefix = item.SK?.match(/^[a-zA-Z]+/)?.[0];
     return SKs.find((entry) => entry.SK === skPrefix)?.SKheading || [];
