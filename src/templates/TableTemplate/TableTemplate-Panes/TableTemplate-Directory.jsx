@@ -27,7 +27,7 @@ const TableTemplateDirectory = ({ directory, directoryWidth, onSelectItem, SKs =
 
             return (
               <tr key={item.SK} onClick={() => handleItemClick(item)} style={{ cursor: 'pointer' }}>
-                <td>{item.SK}</td>
+                {/* <td>{item.SK}</td> */} {/* Uncomment if SK display is needed */}
                 {isSingleField ? (
                   <>
                     <td></td> {/* Blank first detail column - add more? */}
