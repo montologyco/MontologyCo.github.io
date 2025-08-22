@@ -36,7 +36,9 @@ const TableTemplateDirectory = ({ directory, directoryWidth, onSelectItem, SKs =
                   </>
                 ) : (
                   headingFields.map((field, i) => (
-                    <td key={i}>{item[field] || ''}</td>
+                    <td key={i}>
+                      {item[field] || ''}
+                    </td>
                   ))
                 )}
               </tr>
