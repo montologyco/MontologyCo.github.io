@@ -23,9 +23,9 @@ const TableTemplateDirectory = ({ directory, directoryWidth, onSelectItem, SKs =
       <table>
         <thead>
           <tr>
-            {headings.map((heading) => (
+            {/* {headings.map((heading) => (
               <th key={heading}>{heading}</th>
-            ))}
+            ))} */}
           </tr>
         </thead>
         <tbody>
