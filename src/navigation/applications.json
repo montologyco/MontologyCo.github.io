@@ -5,7 +5,7 @@
       "name": "Contacts", "url": "/contacts", "PK": "contact",
       "SKs": [
         { "SK": "individual",
-          "SKheading": ["honorific", "first", "middle", "last", "pn"],
+          "SKheading": ["honorific", "first", "middle", "last", "suffix"],
           "SKsubheading": ["pronouns"],
           "SKsections": ["Addresses","Phones","Emails","Employment","Social Media","Associates","Notes"]
         },
