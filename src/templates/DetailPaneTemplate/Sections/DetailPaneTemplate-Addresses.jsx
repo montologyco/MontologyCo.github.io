@@ -1,9 +1,9 @@
-// ProfileTemplate-Addresses.jsx
+// DetailPaneTemplate-Addresses.jsx
 
 import { useEffect, useState } from 'react';
 import getItem from '../../../server/aws-sdk/dynamoDB/services/aws-dynamoDB-getItem-API.jsx';
 
-const ProfileTemplateAddresses = ({ item }) => {
+const DetailPaneTemplateAddresses = ({ item }) => {
   const addressSet = item.addresses;
   const addressSKs = Array.isArray(addressSet?.values) ? addressSet.values : [];
   const [addressData, setAddressData] = useState([]);
@@ -52,4 +52,4 @@ const ProfileTemplateAddresses = ({ item }) => {
   );
 };
 
-export default ProfileTemplateAddresses;
+export default DetailPaneTemplateAddresses;

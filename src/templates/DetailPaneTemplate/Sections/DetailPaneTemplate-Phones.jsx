@@ -1,9 +1,9 @@
-// ProfileTemplate-Phones.jsx
+// DetailPaneTemplate-Phones.jsx
 
 import { useEffect, useState } from 'react';
 import getItem from '../../../server/aws-sdk/dynamoDB/services/aws-dynamoDB-getItem-API.jsx';
 
-const ProfileTemplatePhones = ({ item }) => {
+const DetailPaneTemplatePhones = ({ item }) => {
   const phoneSet = item.phones;
   const phoneSKs = Array.isArray(phoneSet?.values) ? phoneSet.values : [];
 
@@ -68,4 +68,4 @@ const ProfileTemplatePhones = ({ item }) => {
   );
 };
 
-export default ProfileTemplatePhones;
+export default DetailPaneTemplatePhones;

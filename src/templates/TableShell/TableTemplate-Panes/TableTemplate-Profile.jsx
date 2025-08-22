@@ -1,11 +1,11 @@
 // TableTemplate-Profile.jsx
 
 import React from 'react';
-import ProfileTemplate from '../../ProfileTemplate/ProfileTemplate.jsx';
+import DetailPaneTemplate from '../../DetailPaneTemplate/DetailPaneTemplate.jsx';
 
 function TableTemplateProfile({ directoryitem, SKs = [], setIsAuthenticated = () => {} }) {
   return (
-    <ProfileTemplate
+    <DetailPaneTemplate
       directoryitem={directoryitem}
       SKs={SKs}
       setIsAuthenticated={setIsAuthenticated}

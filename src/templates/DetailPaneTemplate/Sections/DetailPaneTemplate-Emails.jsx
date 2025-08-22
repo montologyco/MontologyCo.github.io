@@ -1,9 +1,9 @@
-// ProfileTemplate-Emails.jsx
+// DetailPaneTemplate-Emails.jsx
 
 import { useEffect, useState } from 'react';
 import getItem from '../../../server/aws-sdk/dynamoDB/services/aws-dynamoDB-getItem-API.jsx';
 
-const ProfileTemplateEmails = ({ item }) => {
+const DetailPaneTemplateEmails = ({ item }) => {
   const emailSet = item.emails;
   const emailSKs = Array.isArray(emailSet?.values) ? emailSet.values : [];
 
@@ -60,4 +60,4 @@ const ProfileTemplateEmails = ({ item }) => {
   );
 };
 
-export default ProfileTemplateEmails;
+export default DetailPaneTemplateEmails;

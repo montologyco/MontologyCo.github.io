@@ -1,9 +1,9 @@
-// ProfileTemplate-Employment.jsx
+// DetailPaneTemplate-Employment.jsx
 
 import { useEffect, useState } from 'react';
 import getItem from '../../../server/aws-sdk/dynamoDB/services/aws-dynamoDB-getItem-API.jsx';
 
-const ProfileTemplateEmployment = ({ item }) => {
+const DetailPaneTemplateEmployment = ({ item }) => {
   const employmentSet = item.employment;
   const employmentSKs = Array.isArray(employmentSet?.values)
     ? employmentSet.values
@@ -74,4 +74,4 @@ const ProfileTemplateEmployment = ({ item }) => {
   );
 };
 
-export default ProfileTemplateEmployment;
+export default DetailPaneTemplateEmployment;

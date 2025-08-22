@@ -1,11 +1,11 @@
-// ProfileTemplate.jsx
+// DetailPaneTemplate.jsx
 
 import React, { useEffect, useState } from 'react';
 import AuthChecker from '../../server/amplify/aws-amplify-authChecker-API.jsx';
 import getItem from '../../server/aws-sdk/dynamoDB/services/aws-dynamoDB-getItem-API.jsx';
-import ProfileTemplateSections from './ProfileTemplate-Sections.jsx';
+import DetailPaneTemplateSections from './DetailPaneTemplate-Sections.jsx';
 
-function ProfileTemplate({ directoryitem, SKs = [], setIsAuthenticated = () => {} }) {
+function DetailPaneTemplate({ directoryitem, SKs = [], setIsAuthenticated = () => {} }) {
   const [item, setItem] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -64,11 +64,11 @@ function ProfileTemplate({ directoryitem, SKs = [], setIsAuthenticated = () => {
           <h3>
             {getSKsubheadings().map(f => item[f]).filter(Boolean).join(' ')}
           </h3>
-          <ProfileTemplateSections item={item} sections={getSKsections()} />
+          <DetailPaneTemplateSections item={item} sections={getSKsections()} />
         </div>
       )}
     </div>
   );
 }
 
-export default ProfileTemplate;
+export default DetailPaneTemplate;
