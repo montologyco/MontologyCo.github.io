@@ -7,11 +7,11 @@ import TableTemplatePanes from './TableTemplate-Panes/TableTemplate-Panes.jsx';
 import TableTemplateFilter from './TableTemplate-Filter.jsx';
 import applications from '../../navigation/applications.json';
 
-const TableTemplate = ({ name }) => {
+const TableTemplate = ({ application }) => {
   const [directory, setDirectory] = useState([]);
   const [inputValue, setInputValue] = useState('');
 
-  const { PK, SKs = [] } = applications.links.find(link => link.name === name) || {};
+  const { PK, SKs = [] } = applications.links.find(link => link.application === application) || {};
   const [selectedSKs, setSelectedSKs] = useState([]);
 
   const handleSearch = (value) => {

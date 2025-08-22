@@ -1,8 +1,8 @@
 {
   "links": [
-    { "name": "Properties", "url": "/properties", "PK": "property" },
+    { "application": "Properties", "url": "/properties", "PK": "property" },
     {
-      "name": "Contacts", "url": "/contacts", "PK": "contact",
+      "application": "Contacts", "url": "/contacts", "PK": "contact",
       "SKs": [
         { "SK": "individual",
           "SKheading": ["honorific", "first", "middle", "last", "suffix"],
@@ -26,7 +26,7 @@
       ]
     },
     {
-      "name": "Tasks","url": "/tasks", "PK": "task",
+      "application": "Tasks","url": "/tasks", "PK": "task",
       "SKs": [
         { "SK": "task",
           "SKheading": ["task"],
@@ -34,7 +34,7 @@
         }
       ]
     },
-    { "name": "Budgets", "url": "/budget", "PK": "budget" },
-    { "name": "Contracts", "url": "/contracts", "PK": "contract" }
+    { "application": "Budgets", "url": "/budget", "PK": "budget" },
+    { "application": "Contracts", "url": "/contracts", "PK": "contract" }
   ]
 }

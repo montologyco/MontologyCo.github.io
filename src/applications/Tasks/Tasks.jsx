@@ -9,7 +9,7 @@ function Tasks({ setIsAuthenticated }) {
     <div>
       <AuthChecker setAuthState={setIsAuthenticated} />
       <h1>Tasks</h1>
-      <TableTemplate name="Tasks" />
+      <TableTemplate application="Tasks" />
     </div>
   );
 }
