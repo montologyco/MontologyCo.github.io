@@ -12,22 +12,18 @@ const TableTemplateDirectory = ({ directory, directoryWidth, onSelectItem, SKs =
   return (
     <div className="tableTemplate-directory" style={{ width: `${directoryWidth}px` }}>
       <table>
-        {/* VISIBLE? */}
         <thead>
           <tr>
+            <th>SK</th>
           </tr>
         </thead>
-        {/* VISIBLE? */}
-
-
-
         <tbody>
-          <tr>
-          </tr>
+          {directory.map((directoryitem) => (
+            <tr key={directoryitem.SK} onClick={() => handleItemClick(directoryitem)}>
+              <td>{directoryitem.SK}</td>
+            </tr>
+          ))}
         </tbody>
-
-
-
       </table>
     </div>
   );
