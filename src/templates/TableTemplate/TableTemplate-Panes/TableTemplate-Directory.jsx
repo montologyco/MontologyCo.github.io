@@ -32,7 +32,7 @@ const TableTemplateDirectory = ({ directory, directoryWidth, onSelectItem, SKs =
           {directory.map((item) => (
             <tr key={item.SK} onClick={() => handleItemClick(item)} style={{ cursor: 'pointer' }}>
               {headings.map((heading) => (
-                <td key={heading}>{item[heading] || ''}</td>
+                <td key={heading}>{item[heading] || ''}</td>s
               ))}
             </tr>
           ))}
