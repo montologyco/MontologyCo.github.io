@@ -8,27 +8,39 @@ const TableTemplateDirectory = ({ directory, directoryWidth, onSelectItem, SKs =
       onSelectItem({ PK: directoryitem.PK, SK: directoryitem.SK });
     }
   };
-  const headingsSet = new Set();
 
-  directory.forEach((item) => {
+  // Determine the SKheading fields for each item dynamically
+  const getSKheading = (item) => {
     const skPrefix = item.SK?.match(/^[a-zA-Z]+/)?.[0];
-    const skConfig = SKs.find(entry => entry.SK === skPrefix);
-    skConfig?.SKheading?.forEach(h => headingsSet.add(h));
-  });
-
-  const headings = Array.from(headingsSet);
+    return SKs.find((entry) => entry.SK === skPrefix)?.SKheading || [];
+  };
 
   return (
     <div className="tableTemplate-directory" style={{ width: `${directoryWidth}px` }}>
       <table>
+        <thead>
+        </thead>
         <tbody>
-          {directory.map((item) => (
-            <tr key={item.SK} onClick={() => handleItemClick(item)} style={{ cursor: 'pointer' }}>
-              {headings.map((heading) => (
-                <td key={heading}>{item[heading] || ''}</td>
-              ))}
-            </tr>
-          ))}
+          {directory.map((item) => {
+            const headingFields = getSKheading(item);
+            const isSingleField = headingFields.length === 1;
+
+            return (
+              <tr key={item.SK} onClick={() => handleItemClick(item)} style={{ cursor: 'pointer' }}>
+                <td>{item.SK}</td>
+                {isSingleField ? (
+                  <>
+                    <td></td> {/* Blank first detail column */}
+                    <td colSpan={3}>{item[headingFields[0]]}</td>
+                  </>
+                ) : (
+                  headingFields.map((field, i) => (
+                    <td key={i}>{item[field] || ''}</td>
+                  ))
+                )}
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </div>
