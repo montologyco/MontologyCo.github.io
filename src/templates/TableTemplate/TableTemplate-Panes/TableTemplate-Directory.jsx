@@ -8,8 +8,6 @@ const TableTemplateDirectory = ({ directory, directoryWidth, onSelectItem, SKs =
       onSelectItem({ PK: directoryitem.PK, SK: directoryitem.SK });
     }
   };
-
-  // Determine unique headings from all SKs present in directory
   const headingsSet = new Set();
 
   directory.forEach((item) => {
