@@ -3,10 +3,8 @@ a {
     color: inherit;
 }
 
-// styles for hover
+// styles for hover & focus
 a:hover,
-
-// styles for focus
 a.focus {
     filter: drop-shadow(4px 4px 8px var(--primary));
     color: var(--primary);
