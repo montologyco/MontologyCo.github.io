@@ -9,18 +9,33 @@ const TableTemplateDirectory = ({ directory, directoryWidth, onSelectItem, SKs =
     }
   };
 
+  // Determine unique headings from all SKs present in directory
+  const headingsSet = new Set();
+
+  directory.forEach((item) => {
+    const skPrefix = item.SK?.match(/^[a-zA-Z]+/)?.[0];
+    const skConfig = SKs.find(entry => entry.SK === skPrefix);
+    skConfig?.SKheading?.forEach(h => headingsSet.add(h));
+  });
+
+  const headings = Array.from(headingsSet);
+
   return (
     <div className="tableTemplate-directory" style={{ width: `${directoryWidth}px` }}>
       <table>
         <thead>
           <tr>
-            <th>SK</th>
+            {headings.map((heading) => (
+              <th key={heading}>{heading}</th>
+            ))}
           </tr>
         </thead>
         <tbody>
-          {directory.map((directoryitem) => (
-            <tr key={directoryitem.SK} onClick={() => handleItemClick(directoryitem)}>
-              <td>{directoryitem.SK}</td>
+          {directory.map((item) => (
+            <tr key={item.SK} onClick={() => handleItemClick(item)} style={{ cursor: 'pointer' }}>
+              {headings.map((heading) => (
+                <td key={heading}>{item[heading] || ''}</td>
+              ))}
             </tr>
           ))}
         </tbody>
