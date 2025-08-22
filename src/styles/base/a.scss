@@ -11,25 +11,9 @@ a:focus {
     color: var(--primary);
 }
 
-// stles for visited links
+
 a.visited {
     filter: drop-shadow(4px 4px 8px var(--primary));
     color: var(--primary);
+    font-weight: bold;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-// a.visited {
-//     filter: drop-shadow(4px 4px 8px var(--primary));
-//     color: var(--primary);
-//     font-weight: bold;
-// }
