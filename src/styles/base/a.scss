@@ -2,10 +2,17 @@ a {
     text-decoration: none;
     color: inherit;
 }
-  
+
 a:hover,
+tr:hover,
 a:focus,
+tr:focus,
 a.active {
+    filter: drop-shadow(4px 4px 8px var(--primary));
+    color: var(--primary);
+}
+
+tr.active {
     filter: drop-shadow(4px 4px 8px var(--primary));
     color: var(--primary);
 }

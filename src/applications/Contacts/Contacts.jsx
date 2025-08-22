@@ -1,9 +1,9 @@
 // Contacts.jsx
 
-import { useState } from 'react';
+import React, { useState, Suspense } from 'react';
 import AuthChecker from '../../server/amplify/aws-amplify-authChecker-API.jsx';
 import TableTemplate from '../../templates/TableTemplate/TableTemplate.jsx';
-import UploadTemplate from '../../templates/UploadTemplate/UploadTemplate.jsx';
+const UploadTemplate = React.lazy(() => import('../../templates/UploadTemplate/UploadTemplate.jsx'));
 
 function Contacts({ setIsAuthenticated }) {
   const [view, setView] = useState('table');
@@ -35,11 +35,13 @@ function Contacts({ setIsAuthenticated }) {
         </button>
       )}
 
-      {view === 'upload' ? (
-        <UploadTemplate setIsAuthenticated={setIsAuthenticated} application="Contacts" />
-      ) : (
-        <TableTemplate setIsAuthenticated={setIsAuthenticated} application="Contacts" />
-      )}
+      <Suspense fallback={<div>Loading...</div>}>
+        {view === 'upload' ? (
+          <UploadTemplate setIsAuthenticated={setIsAuthenticated} application="Contacts" />
+        ) : (
+          <TableTemplate setIsAuthenticated={setIsAuthenticated} application="Contacts" />
+        )}
+      </Suspense>
     </div>
   );
 }
