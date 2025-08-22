@@ -3,26 +3,28 @@ a {
     color: inherit;
 }
 
-a:hover,
-    tr:hover,
-a:focus,
-    tr:focus,
+a.focus {
+    filter: drop-shadow(4px 4px 8px var(--primary));
+    color: var(--primary);
+}
+tr:focus,
+
 a.active {
     filter: drop-shadow(4px 4px 8px var(--primary));
     color: var(--primary);
         font-weight: bold;
 }
-    tr.active {
-        filter: drop-shadow(4px 4px 8px var(--primary));
-        color: var(--primary);
-        font-weight: bold;
-    }
+tr.active {
+    filter: drop-shadow(4px 4px 8px var(--primary));
+    color: var(--primary);
+    font-weight: bold;
+}
 
 a.selected {
     filter: drop-shadow(4px 4px 8px var(--primary));
     color: var(--primary);
 }
-    tr.selected {
-        filter: drop-shadow(4px 4px 8px var(--primary));
-        color: var(--primary);
-    }
+tr.selected {
+    filter: drop-shadow(4px 4px 8px var(--primary));
+    color: var(--primary);
+}
