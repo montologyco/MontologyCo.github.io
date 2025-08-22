@@ -3,21 +3,17 @@ a {
     color: inherit;
 }
 
-// Styles for focused
+// styles for hover
+a:hover,
+
+// styles for focus
 a.focus {
     filter: drop-shadow(4px 4px 8px var(--primary));
     color: var(--primary);
 }
-tr:focus,
 
-// Styles for active
-a.active {
-    filter: drop-shadow(4px 4px 8px var(--primary));
-    color: var(--primary);
-    font-weight: bold;
-}
-tr.active {
-    filter: drop-shadow(4px 4px 8px var(--primary));
-    color: var(--primary);
-    font-weight: bold;
-}
+// // styles for active
+// a.active {
+//     filter: drop-shadow(4px 4px 8px var(--primary));
+//     color: var(--primary);
+// }
