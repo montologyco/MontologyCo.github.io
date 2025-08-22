@@ -3,7 +3,7 @@
 import React from 'react';
 import DetailPaneTemplate from '../../DetailPaneTemplate/DetailPaneTemplate.jsx';
 
-function TableTemplateProfile({ directoryitem, SKs = [], setIsAuthenticated = () => {} }) {
+function TableTemplateDetailPane({ directoryitem, SKs = [], setIsAuthenticated = () => {} }) {
   return (
     <DetailPaneTemplate
       directoryitem={directoryitem}
@@ -13,4 +13,4 @@ function TableTemplateProfile({ directoryitem, SKs = [], setIsAuthenticated = ()
   );
 }
 
-export default TableTemplateProfile;
+export default TableTemplateDetailPane;

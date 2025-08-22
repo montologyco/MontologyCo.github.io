@@ -24,7 +24,7 @@ const TableTemplateDirectory = ({ directory, directoryWidth, onSelectItem, SKs =
       <table>
         <thead>
           <tr>
-            <th>Name</th>
+            <th>name of list or blank</th>
           </tr>
         </thead>
         <tbody>

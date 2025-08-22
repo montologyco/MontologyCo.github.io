@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import TableTemplateDirectory from './TableTemplate-Directory.jsx';
-import TableTemplateProfile from './TableTemplate-Profile.jsx';
+import TableTemplateDetailPane from './TableTemplate-DetailPane.jsx';
 import TableTemplateDivider from './TableTemplate-Divider.jsx';
 
 const TableTemplatePanes = ({ directory, SKs }) => {
@@ -18,7 +18,7 @@ const TableTemplatePanes = ({ directory, SKs }) => {
         SKs={SKs}
       />
       <TableTemplateDivider onDrag={delta => setDirectoryWidth(prev => Math.max(200, prev + delta))} />
-      <TableTemplateProfile directoryitem={directoryitem} SKs={SKs}/>
+      <TableTemplateDetailPane directoryitem={directoryitem} SKs={SKs}/>
     </div>
   );
 };
