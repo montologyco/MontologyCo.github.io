@@ -10,7 +10,8 @@
           "SKsections": ["Addresses","Phones","Emails","Employment","Social Media","Associates","Notes"]
         },
         { "SK": "business",
-          "SKheading": ["name"],
+          "SKheading": ["dba"],
+          "SKALTheading": ["registered"],
           "SKsections": ["Addresses","Phones","Emails","Social Media","Employees","Notes"]
         },
         { "SK": "government",
@@ -18,7 +19,8 @@
           "SKsections": ["Addresses","Phones","Emails","Social Media","Employees","Notes"]
         },
         { "SK": "campaign",
-          "SKheading": ["name"],
+          "SKheading": ["dba"],
+          "SKALTheading": ["registered"],
           "SKsections": ["Addresses","Phones","Emails","Social Media","Cycles","Notes"]
         }
       ]
