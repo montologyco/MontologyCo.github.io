@@ -6,7 +6,8 @@ a {
 // styles for active and focus
         // tr:hover, tr.focus,
 a:hover,
-a:focus {
+a:focus,
+a:visited {
     filter: drop-shadow(4px 4px 8px var(--primary));
     color: var(--primary);
 }
