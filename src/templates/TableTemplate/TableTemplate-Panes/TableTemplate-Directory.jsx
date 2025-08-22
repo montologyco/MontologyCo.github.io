@@ -9,10 +9,11 @@ const TableTemplateDirectory = ({ directory, directoryWidth, onSelectItem, SKs =
 
   return (
     <div className="tableTemplate-directory" style={{ width: `${directoryWidth}px` }}>
+
       <table>
         <thead>
           <tr>
-            {allKeys.map(key => (
+            {directory.map(key => (
               <th key={key}>{key}</th>
             ))}
           </tr>
@@ -20,7 +21,7 @@ const TableTemplateDirectory = ({ directory, directoryWidth, onSelectItem, SKs =
         <tbody>
           {directory.map((item) => (
             <tr key={item.SK} onClick={() => handleItemClick(item)} style={{ cursor: 'pointer' }}>
-              {allKeys.map((key) => (
+              {directory.map((key) => (
                 <td key={key}>{item[key] || ''}</td>
               ))}
             </tr>
