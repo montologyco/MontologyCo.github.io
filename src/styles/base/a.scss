@@ -4,7 +4,7 @@ a {
 }
 
 // styles for hover & focus
-// tr:hover, tr.focus,
+// , tr:hover, tr.focus,
 
 a:hover, a.focus {
     filter: drop-shadow(4px 4px 8px var(--primary));
@@ -13,15 +13,13 @@ a:hover, a.focus {
 
 // styles for active
 
-
-// tr.active,
-// a.active {
+// a.active, tr.active {
 //     filter: drop-shadow(4px 4px 8px var(--primary));
 //     color: var(--primary);           
 // }
 
-a.visited {
-    filter: drop-shadow(4px 4px 8px var(--primary));
-    color: var(--primary);
-    font-weight: bold;
-}
+// a.visited {
+//     filter: drop-shadow(4px 4px 8px var(--primary));
+//     color: var(--primary);
+//     font-weight: bold;
+// }
