@@ -11,8 +11,7 @@ a:focus {
     color: var(--primary);
 }
 
-
-a.visited {
+a.acive {
     filter: drop-shadow(4px 4px 8px var(--primary));
     color: var(--primary);
     font-weight: bold;
