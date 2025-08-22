@@ -6,7 +6,7 @@ a {
 // styles for hover & focus
 // tr:hover, tr.focus,
 // , a.focus
-a:hover {
+:hover {
     filter: drop-shadow(4px 4px 8px var(--primary));
     color: var(--primary);
 }
