@@ -20,8 +20,8 @@ const DirectoryTemplate = ({ directory, directoryWidth, onSelectItem, SKs = [] }
         </thead>
         <tbody>
           {directory.map((item) => {
-            const headingFields = getSKheading(item);
-            const isSingleField = headingFields.length === 1;
+            const dynamoFields = getSKheading(item);
+            const isSingleField = dynamoFields.length === 1;
 
             return (
               <tr key={item.SK} onClick={() => handleItemClick(item)} style={{ cursor: 'pointer' }}>
@@ -29,11 +29,11 @@ const DirectoryTemplate = ({ directory, directoryWidth, onSelectItem, SKs = [] }
                 {isSingleField ? (
                   <>
                     <td colSpan={5}>
-                      {item[headingFields[0]]}
+                      {item[dynamoFields[0]]}
                     </td>
                   </>
                 ) : (
-                  headingFields.map((field, i) => (
+                  dynamoFields.map((field, i) => (
                     <td key={i}>
                       {item[field] || ''}
                     </td>

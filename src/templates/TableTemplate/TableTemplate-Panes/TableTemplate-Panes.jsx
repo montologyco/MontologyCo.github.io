@@ -18,7 +18,10 @@ const TableTemplatePanes = ({ directory, SKs }) => {
         SKs={SKs}
       />
       <TableTemplateDivider onDrag={delta => setDirectoryWidth(prev => Math.max(200, prev + delta))} />
-      <TableTemplateDetailPane directoryitem={directoryitem} SKs={SKs}/>
+      <TableTemplateDetailPane
+        directoryitem={directoryitem}
+        SKs={SKs}
+      />
     </div>
   );
 };
