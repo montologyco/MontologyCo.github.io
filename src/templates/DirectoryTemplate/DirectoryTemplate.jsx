@@ -1,7 +1,12 @@
 // DirectoryTemplate.jsx
 
+import { useState } from 'react';
+
 const DirectoryTemplate = ({ directory, directoryWidth, onSelectItem, SKs = [] }) => {
+  const [selectedSK, setSelectedSK] = useState(null); // ← Track selection
+
   const handleItemClick = (directoryitem) => {
+    setSelectedSK(directoryitem.SK); // ← Save selected SK
     if (onSelectItem) {
       onSelectItem({ PK: directoryitem.PK, SK: directoryitem.SK });
     }
@@ -20,9 +25,13 @@ const DirectoryTemplate = ({ directory, directoryWidth, onSelectItem, SKs = [] }
           {directory.map((item) => {
             const dynamoFields = getSKheading(item);
             const isSingleField = dynamoFields.length === 1;
+            const isSelected = item.SK === selectedSK;
 
             return (
-              <tr key={item.SK}>
+              <tr
+                key={item.SK}
+                className={isSelected ? 'selected-row' : ''}
+              >
                 {isSingleField ? (
                   <td colSpan={5}>
                     <a
