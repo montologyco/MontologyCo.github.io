@@ -1,1 +1,0 @@
-import{j as t,A as a}from"./index-QbTN2x-s.js";function i({setIsAuthenticated:e,application:s}){return t.jsxs("div",{children:[t.jsx(a,{setAuthState:e}),t.jsx("h1",{children:"Upload ??"})]})}export{i as default};
