@@ -1,12 +1,19 @@
+// Base Styles
 @forward "base/_root";
 @forward "base/_header";
 @forward "base/_body";
 @forward "base/_footer";
-@forward "base/_a";
 
+// Base Styles- Components
+@forward "base/a";
+@forward "base/table";
+
+// Layouts
 @forward "components/Body";
 
-@forward "assets/montologyTagline";
-
+// Templates
 @forward "templates/search";
 @forward "templates/tableTemplate";
+
+// Montology® Assets
+@forward "assets/montologyTagline";
