@@ -2,7 +2,7 @@
 
 import React from 'react';
 import AuthChecker from '../../server/amplify/aws-amplify-authChecker-API.jsx';
-import TableTemplate from '../../shells/TableTemplate/TableTemplate.jsx';
+import TableTemplate from '../../templates/TableTemplate/TableTemplate.jsx';
 
 function Tasks({ setIsAuthenticated }) {
   return (

@@ -57,7 +57,7 @@ MontologyCo.github.io
 │   │   │   │   │   └── aws-dynamoDB-updateItem-API.jsx
 │   │   │   │   └── aws-dynamoDB-API.jsx
 │   │   │   ├── aws-sdk-config.js
-│   ├── shells
+│   ├── templates
 │   │   ├── Search
 │   │   │   └── Search.jsx
 │   │   ├── TableTemplate
@@ -76,7 +76,7 @@ MontologyCo.github.io
 │   │   │   └── _root.scss
 │   │   ├── components
 │   │   │   └── Body.scss
-│   │   ├── shells
+│   │   ├── templates
 │   │   │   ├── search.scss
 │   │   │   └── TableTemplate.scss
 │   │   └── index.scss
