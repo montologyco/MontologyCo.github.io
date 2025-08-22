@@ -6,7 +6,7 @@ import TableTemplate from '../../templates/TableTemplate/TableTemplate.jsx';
 import UploadTemplate from '../../templates/UploadTemplate/UploadTemplate.jsx';
 
 function Contacts({ setIsAuthenticated }) {
-  const [view, setView] = useState('table'); // 'table' or 'upload'
+  const [view, setView] = useState('table');
   const [uploadTriggered, setUploadTriggered] = useState(false);
 
   const handleUploadClick = () => {
