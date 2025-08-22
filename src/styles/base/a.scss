@@ -2,16 +2,32 @@ a {
     text-decoration: none;
     color: inherit;
 }
-
-// styles for hover & focus
-// , tr:hover, tr.focus,
-
-a:hover, a.focus {
+  
+// styles for active and focus
+a:hover,
+a:focus {
     filter: drop-shadow(4px 4px 8px var(--primary));
     color: var(--primary);
 }
 
-// styles for active
+// stles for visited links
+// a.visited {
+//     filter: drop-shadow(4px 4px 8px var(--primary));
+//     color: var(--primary);
+// }
+
+
+
+
+
+
+
+
+
+// , tr:hover, tr.focus,
+
+
+
 
 // a.active, tr.active {
 //     filter: drop-shadow(4px 4px 8px var(--primary));
