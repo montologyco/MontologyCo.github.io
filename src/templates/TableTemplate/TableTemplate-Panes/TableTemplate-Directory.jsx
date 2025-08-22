@@ -12,14 +12,22 @@ const TableTemplateDirectory = ({ directory, directoryWidth, onSelectItem, SKs =
   return (
     <div className="tableTemplate-directory" style={{ width: `${directoryWidth}px` }}>
       <table>
+        {/* VISIBLE? */}
         <thead>
           <tr>
           </tr>
         </thead>
+        {/* VISIBLE? */}
+
+
+
         <tbody>
-            <tr>
-            </tr>
+          <tr>
+          </tr>
         </tbody>
+
+
+
       </table>
     </div>
   );
