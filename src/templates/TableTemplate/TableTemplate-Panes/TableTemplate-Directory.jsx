@@ -30,7 +30,6 @@ const TableTemplateDirectory = ({ directory, directoryWidth, onSelectItem, SKs =
                 {/* <td>{item.SK}</td> */} {/* Uncomment if SK display is needed */}
                 {isSingleField ? (
                   <>
-                    <td></td> {/* Blank first detail column - add more? */}
                     <td colSpan={3}>{item[headingFields[0]]}</td>
                   </>
                 ) : (
