@@ -5,17 +5,17 @@ a {
   
 // styles for active and focus
         // tr:hover, tr.focus,
-// a:hover,
+a:hover,
 a:focus {
     filter: drop-shadow(4px 4px 8px var(--primary));
     color: var(--primary);
 }
 
 // stles for visited links
-// a.visited {
-//     filter: drop-shadow(4px 4px 8px var(--primary));
-//     color: var(--primary);
-// }
+a.visited {
+    filter: drop-shadow(4px 4px 8px var(--primary));
+    color: var(--primary);
+}
 
 
 
