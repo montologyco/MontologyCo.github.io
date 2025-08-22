@@ -1,9 +1,9 @@
 // ProfileTemplate-Sections.jsx
 
-import ProfileTemplateAddresses from './Sections/ProfileTemplate-Addresses.js';
-import ProfileTemplatePhones from './Sections/ProfileTemplate-Phones.js';
-import ProfileTemplateEmployment from './Sections/ProfileTemplate-Employment.js';
-import ProfileTemplateEmails from './Sections/ProfileTemplate-Emails.js';
+import ProfileTemplateAddresses from './Sections/ProfileTemplate-Addresses.jsx';
+import ProfileTemplatePhones from './Sections/ProfileTemplate-Phones.jsx';
+import ProfileTemplateEmployment from './Sections/ProfileTemplate-Employment.jsx';
+import ProfileTemplateEmails from './Sections/ProfileTemplate-Emails.jsx';
 
 const sectionMap = {
   Addresses: ProfileTemplateAddresses,
