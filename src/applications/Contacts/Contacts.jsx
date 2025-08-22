@@ -8,7 +8,7 @@ function Contacts({ setIsAuthenticated }) {
   return (
     <div>
       <AuthChecker setAuthState={setIsAuthenticated} />
-      <h1>Contacts</h1>
+      <h1>Contacts</h1><button>Upload</button>
       <UploadTemplate setIsAuthenticated={setIsAuthenticated} />
       <TableTemplate name="Contacts" />
     </div>
