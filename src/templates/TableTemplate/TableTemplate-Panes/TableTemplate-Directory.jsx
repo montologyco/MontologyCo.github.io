@@ -27,9 +27,7 @@ const TableTemplateDirectory = ({ directory, directoryWidth, onSelectItem, SKs =
           ))}
         </tbody>
       </table>
-
-      <h3>DELETE</h3>
-      <ul>
+      {/* <ul>
         {directory.map((directoryitem) => (
           <li key={directoryitem.SK}>
             <a href="#" onClick={(e) => { e.preventDefault(); handleItemClick(directoryitem); }}>
@@ -37,8 +35,7 @@ const TableTemplateDirectory = ({ directory, directoryWidth, onSelectItem, SKs =
             </a>
           </li>
         ))}
-      </ul>
-      
+      </ul> */}
     </div>
   );
 };
