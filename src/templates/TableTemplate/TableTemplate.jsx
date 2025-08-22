@@ -20,8 +20,8 @@ const TableTemplate = ({ setIsAuthenticated,application }) => {
 
   return (
     <div className="tableTemplate">
+      <AuthChecker setAuthState={setIsAuthenticated} />
       <div className="searchTopbar">
-        <AuthChecker setAuthState={setIsAuthenticated} />
         <Search inputValue={inputValue} onSearch={handleSearch} />
         <TableTemplateTypeSK SKs={SKs} selectedSKs={selectedSKs} onSKChange={setSelectedSKs} />
       </div>
