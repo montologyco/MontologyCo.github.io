@@ -17,3 +17,12 @@ a.active {
         color: var(--primary);
         font-weight: bold;
     }
+
+a.selected {
+    filter: drop-shadow(4px 4px 8px var(--primary));
+    color: var(--primary);
+}
+    tr.selected {
+        filter: drop-shadow(4px 4px 8px var(--primary));
+        color: var(--primary);
+    }
