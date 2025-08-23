@@ -6,15 +6,34 @@ a {
 // styles for active and focus
         // tr:hover, tr.focus,
         // a:link,
-
+        // a:visited,
 a:focus,
 a:hover {
-    filter: drop-shadow(4px 4px 8px var(--primary));
+    filter: drop-shadow(4px 4px 8px var(--black));
     color: var(--primary);
 }
 
 a:active {
-    filter: drop-shadow(4px 4px 8px var(--primary));
+    filter: drop-shadow(4px 4px 8px var(--black));
     color: var(--primary);
     font-weight: bold;
 }
+
+// styles for Header
+
+// links
+// header a:hover, header a:focus, header a.active {
+//   filter: drop-shadow(4px 4px 8px var(--black));
+//   color: var(--primary);
+// }
+// header a:visited {
+//   color: var(--white);
+// }
+
+
+header nav a {
+  color: var(--white);
+  padding: 20px;
+  display: inline-block;
+}
+
