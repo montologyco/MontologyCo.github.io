@@ -6,6 +6,7 @@ a {
 // styles for active and focus
         // tr:hover, tr.focus,
         // a:link,
+
 a:focus,
 a:hover {
     filter: drop-shadow(4px 4px 8px var(--primary));
