@@ -8,8 +8,7 @@ a {
         // a:link,
 
 a:focus,
-a:hover,
-a:target {
+a:hover {
     filter: drop-shadow(4px 4px 8px var(--primary));
     color: var(--primary);
 }
