@@ -22,7 +22,6 @@ function Contacts({ setIsAuthenticated }) {
     <div>
       <AuthChecker setAuthState={setIsAuthenticated} />
 
-      <h1>hello</h1>
       <h1
         onClick={handleHeaderClick}
         style={{ cursor: uploadTriggered ? 'pointer' : 'default', display: 'inline-block' }}
