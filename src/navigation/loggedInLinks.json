@@ -1,6 +1,6 @@
 {
   "links": [
-    { "name": "Settings", "url": "/settings" },
-    { "name": "Log Out", "url": "/logout" }
+    { "page": "Settings", "url": "/settings" },
+    { "page": "Log Out", "url": "/logout" }
   ]
 }

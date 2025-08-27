@@ -1,22 +1,22 @@
 {
   "links": [
-    { "name": "Home", "url": "https://montologyco.com" },
+    { "page": "Home", "url": "https://montologyco.com" },
 
-    { "name": "LinkedIn", "url": "https://www.linkedin.com/company/montologyco" },
-    { "name": "Facebook", "url": "https://www.facebook.com/montologyco" },
-    { "name": "Instagram", "url": "https://www.instagram.com/montologyco" },
-    { "name": "Twitter", "url": "https://twitter.com/montologyco" },
+    { "page": "LinkedIn", "url": "https://www.linkedin.com/company/montologyco" },
+    { "page": "Facebook", "url": "https://www.facebook.com/montologyco" },
+    { "page": "Instagram", "url": "https://www.instagram.com/montologyco" },
+    { "page": "Twitter", "url": "https://twitter.com/montologyco" },
 
-    { "name": "Reddit", "url": "https://www.reddit.com/r/montologyco" },
-    { "name": "Discord", "url": "https://discord.gg/montologyco" },
-    { "name": "WhatsApp", "url": "" },
+    { "page": "Reddit", "url": "https://www.reddit.com/r/montologyco" },
+    { "page": "Discord", "url": "https://discord.gg/montologyco" },
+    { "page": "WhatsApp", "url": "" },
 
-    { "name": "YouTube", "url": "https://www.youtube.com/c/montologyco" },
-    { "name": "Vimeo", "url": "https://vimeo.com/montologyco" },
-    { "name": "Medium", "url": "https://medium.com/@montologyco" },
+    { "page": "YouTube", "url": "https://www.youtube.com/c/montologyco" },
+    { "page": "Vimeo", "url": "https://vimeo.com/montologyco" },
+    { "page": "Medium", "url": "https://medium.com/@montologyco" },
 
-    { "name": "GitHub", "url": "https://github.com/montologyco" },
-    { "name": "GitLab", "url": "https://gitlab.com/montologyco" },
-    { "name": "Stack Overflow", "url": "https://stackoverflow.com/users/montologyco" }
+    { "page": "GitHub", "url": "https://github.com/montologyco" },
+    { "page": "GitLab", "url": "https://gitlab.com/montologyco" },
+    { "page": "Stack Overflow", "url": "https://stackoverflow.com/users/montologyco" }
   ]
 }

@@ -1,9 +1,9 @@
 {
   "links": [
-    { "name": "FAQ", "url": "/faq" },
-    { "name": "About", "url": "/about" },
-    { "name": "Careers", "url": "/careers" },
-    { "name": "Sitemap", "url": "/sitemap" },
-    { "name": "Contact", "url": "/contact" }
+    { "page": "FAQ", "url": "/faq" },
+    { "page": "About", "url": "/about" },
+    { "page": "Careers", "url": "/careers" },
+    { "page": "Sitemap", "url": "/sitemap" },
+    { "page": "Contact", "url": "/contact" }
   ]
 }
