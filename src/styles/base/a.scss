@@ -1,35 +1,8 @@
+// base styles
 a {
     text-decoration: none;
     color: inherit;
 }
-  
-// styles for active and focus
-        // tr:hover, tr.focus,
-        // a:link,
-        // a:visited,
-a:focus,
-a:hover {
-    filter: drop-shadow(4px 4px 8px var(--black));
-    color: var(--primary);
-}
-
-a:active {
-    filter: drop-shadow(4px 4px 8px var(--black));
-    color: var(--primary);
-    font-weight: bold;
-}
-
-// styles for Header
-
-// links
-// header a:hover, header a:focus, header a.active {
-//   filter: drop-shadow(4px 4px 8px var(--black));
-//   color: var(--primary);
-// }
-// header a:visited {
-//   color: var(--white);
-// }
-
 
 header nav a {
   color: var(--white);
@@ -37,3 +10,19 @@ header nav a {
   display: inline-block;
 }
 
+// styles for active, hover, and focus
+
+
+        // tr:hover, tr.focus,
+        // a:link,
+        // a:visited,
+a:focus,
+a:hover,
+a:active {
+    filter: drop-shadow(4px 4px 8px var(--black));
+    color: var(--primary);
+}
+
+a:active {
+    font-weight: bold;
+}
